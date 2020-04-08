@@ -11,6 +11,6 @@ class ThumbsDoesNotExists extends Exception
      */
     public static function thumbsConversionNotFound(): ThumbsDoesNotExists
     {
-        return new static(trans('brackets/media::media.exceptions.thumbs_does_not_exists'));
+        return new static(trans('strathmore/media::media.exceptions.thumbs_does_not_exists'));
     }
 }

@@ -21,7 +21,7 @@ class LoginBracketsTest extends BracketsTestCase
             'forbidden' => $forbidden,
         ]);
 
-        $this->assertDatabaseHas('test_brackets_user_models', [
+        $this->assertDatabaseHas('test_strathmore_user_models', [
             'email' => 'john@example.com',
             'activated' => $activated,
             'forbidden' => $forbidden,
@@ -109,7 +109,7 @@ class LoginBracketsTest extends BracketsTestCase
         ]);
         TestBracketsUserModel::reguard();
 
-        $this->assertDatabaseHas('test_brackets_user_models', [
+        $this->assertDatabaseHas('test_strathmore_user_models', [
             'email' => 'john@example.com',
             'activated' => true,
             'forbidden' => false,

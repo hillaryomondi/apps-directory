@@ -31,7 +31,7 @@
                     <div class="card-footer">
                         <button type="button" class="btn btn-primary">
                             <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
-                            @{{ trans('brackets/admin-ui::admin.btn.save') }}
+                            @{{ trans('strathmore/admin-ui::admin.btn.save') }}
                         </button>
                     </div>
                 </div>

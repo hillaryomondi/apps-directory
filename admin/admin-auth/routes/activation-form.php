@@ -13,7 +13,7 @@
 
 Route::middleware(['web'])->group(static function () {
     Route::namespace('Strathmore\AdminAuth\Http\Controllers\Auth')->group(static function () {
-        Route::get('/admin/activation', 'ActivationEmailController@showLinkRequestForm')->name('brackets/admin-auth::admin/activation');
+        Route::get('/admin/activation', 'ActivationEmailController@showLinkRequestForm')->name('strathmore/admin-auth::admin/activation');
         Route::post('/admin/activation/send', 'ActivationEmailController@sendActivationEmail');
     });
 });

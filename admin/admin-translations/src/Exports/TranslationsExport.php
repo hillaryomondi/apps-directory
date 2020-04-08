@@ -35,10 +35,10 @@ class TranslationsExport implements FromCollection, WithMapping, WithHeadings
     public function headings(): array
     {
         $headings = [
-            trans('brackets/admin-translations::admin.fields.namespace'),
-            trans('brackets/admin-translations::admin.fields.group'),
-            trans('brackets/admin-translations::admin.fields.default'),
-            trans('brackets/admin-translations::admin.fields.created_at'),
+            trans('strathmore/admin-translations::admin.fields.namespace'),
+            trans('strathmore/admin-translations::admin.fields.group'),
+            trans('strathmore/admin-translations::admin.fields.default'),
+            trans('strathmore/admin-translations::admin.fields.created_at'),
         ];
 
         $this->exportLanguages->each(static function ($language) use (&$headings) {

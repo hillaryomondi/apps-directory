@@ -19,7 +19,7 @@ class Handler extends ParentHandler
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         if (strpos($request->getRequestUri(), '/admin') === 0) {
-            $url = route('brackets/admin-auth::admin/login');
+            $url = route('strathmore/admin-auth::admin/login');
         } else {
             $url = route('login');
         }

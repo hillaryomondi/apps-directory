@@ -21,7 +21,7 @@ class CraftableInstall extends Command
      *
      * @var string
      */
-    protected $description = 'Install a Craftable (brackets/craftable) instance';
+    protected $description = 'Install a Craftable (strathmore/craftable) instance';
 
     /**
      * Password for generated default admin
@@ -177,16 +177,16 @@ class CraftableInstall extends Command
             '// here you can add your own directories',
             '// here you can add your own directories
         // base_path(\'routes\'), // uncomment if you have translations in your routes i.e. you have localized URLs
-        base_path(\'vendor/brackets/admin-auth/src\'),
-        base_path(\'vendor/brackets/admin-auth/resources\'),
-        base_path(\'vendor/brackets/admin-ui/resources\'),
-        base_path(\'vendor/brackets/admin-translations/resources\'),'
+        base_path(\'vendor/strathmore/admin-auth/src\'),
+        base_path(\'vendor/strathmore/admin-auth/resources\'),
+        base_path(\'vendor/strathmore/admin-ui/resources\'),
+        base_path(\'vendor/strathmore/admin-translations/resources\'),'
         );
 
         $this->call('admin-translations:scan-and-save', [
             'paths' => array_merge(
                 config('admin-translations.scanned_directories'),
-                ['vendor/brackets/admin-auth/src', 'vendor/brackets/admin-auth/resources']
+                ['vendor/strathmore/admin-auth/src', 'vendor/strathmore/admin-auth/resources']
             ),
         ]);
     }

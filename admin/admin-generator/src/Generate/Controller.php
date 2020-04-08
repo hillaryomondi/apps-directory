@@ -87,7 +87,7 @@ class Controller extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('brackets/admin-generator::'.$this->view, [
+        return view('strathmore/admin-generator::'.$this->view, [
             'controllerBaseName' => $this->classBaseName,
             'controllerNamespace' => $this->classNamespace,
             'modelBaseName' => $this->modelBaseName,

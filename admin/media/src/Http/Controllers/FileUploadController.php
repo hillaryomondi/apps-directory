@@ -29,6 +29,6 @@ class FileUploadController extends BaseController
             return response()->json(['path' => $path], 200);
         }
 
-        return response()->json(trans('brackets/media::media.file.not_provided'), 422);
+        return response()->json(trans('strathmore/media::media.file.not_provided'), 422);
     }
 }

@@ -27,7 +27,7 @@ class ResetPasswordTest extends BracketsTestCase
             'password' => bcrypt('testpass123'),
         ]);
 
-        $this->assertDatabaseHas('test_brackets_user_models', [
+        $this->assertDatabaseHas('test_strathmore_user_models', [
             'email' => 'john@example.com',
         ]);
 
@@ -48,7 +48,7 @@ class ResetPasswordTest extends BracketsTestCase
     /** @test */
     public function can_see_reset_password_form(): void
     {
-        $response = $this->get(route('brackets/admin-auth::admin/password/showResetForm', ['token' => $this->token]));
+        $response = $this->get(route('strathmore/admin-auth::admin/password/showResetForm', ['token' => $this->token]));
         $response->assertStatus(200);
     }
 
@@ -127,7 +127,7 @@ class ResetPasswordTest extends BracketsTestCase
             'password' => bcrypt('testpass123'),
         ]);
 
-        $this->assertDatabaseHas('test_brackets_user_models', [
+        $this->assertDatabaseHas('test_strathmore_user_models', [
             'email' => 'john2@example.com',
         ]);
 

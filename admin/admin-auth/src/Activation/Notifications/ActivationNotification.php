@@ -46,8 +46,8 @@ class ActivationNotification extends Notification
     {
         //TODO change to template?
         return (new MailMessage)
-            ->line(trans('brackets/admin-auth::activations.email.line'))
-            ->action(trans('brackets/admin-auth::activations.email.action'), route('brackets/admin-auth::admin/activation/activate', $this->token))
-            ->line(trans('brackets/admin-auth::activations.email.notRequested'));
+            ->line(trans('strathmore/admin-auth::activations.email.line'))
+            ->action(trans('strathmore/admin-auth::activations.email.action'), route('strathmore/admin-auth::admin/activation/activate', $this->token))
+            ->line(trans('strathmore/admin-auth::activations.email.notRequested'));
     }
 }

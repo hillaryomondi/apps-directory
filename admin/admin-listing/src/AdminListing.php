@@ -116,7 +116,7 @@ class AdminListing
     private function init(): void
     {
 
-        // this class name is hard-coded because we don't want to have dependency on brackets/translatable package, if it's not completely necessary
+        // this class name is hard-coded because we don't want to have dependency on strathmore/translatable package, if it's not completely necessary
         if (in_array('Strathmore\Translatable\Traits\HasTranslations', class_uses($this->model), true)) {
             $this->modelHasTranslations = true;
             $this->locale = $this->model->locale ?: app()->getLocale();

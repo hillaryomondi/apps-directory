@@ -48,7 +48,7 @@ class ResetPasswordTest extends StandardTestCase
     /** @test */
     public function can_see_reset_password_form(): void
     {
-        $response = $this->get(route('brackets/admin-auth::admin/password/showResetForm', ['token' => $this->token]));
+        $response = $this->get(route('strathmore/admin-auth::admin/password/showResetForm', ['token' => $this->token]));
         $response->assertStatus(200);
     }
 

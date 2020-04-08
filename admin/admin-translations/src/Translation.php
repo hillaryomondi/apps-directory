@@ -82,7 +82,7 @@ class Translation extends Model
      */
     public static function getCacheKey(string $namespace, string $group, string $locale): string
     {
-        return "brackets.admin-translations.{$namespace}.{$group}.{$locale}";
+        return "strathmore.admin-translations.{$namespace}.{$group}.{$locale}";
     }
 
     /**

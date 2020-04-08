@@ -36,7 +36,7 @@ class BulkDestroyRequest extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('brackets/admin-generator::bulk-destroy-request', [
+        return view('strathmore/admin-generator::bulk-destroy-request', [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'modelWithNamespaceFromDefault' => $this->modelWithNamespaceFromDefault,

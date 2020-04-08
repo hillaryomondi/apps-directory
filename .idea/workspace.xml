@@ -2,11 +2,163 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff1076e2-e7d5-4f2a-8ab0-3ffadf1c51f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/apps-directory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/apps-directory.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/auth/activation/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/auth/activation/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/auth/activation/error.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/auth/activation/error.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/homepage/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/resources/views/admin/homepage/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/routes/activation-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/routes/activation-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Activation/Notifications/ActivationNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Activation/Notifications/ActivationNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/AdminAuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/AdminAuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Console/Commands/AdminAuthInstall.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Console/Commands/AdminAuthInstall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/AdminHomepageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/AdminHomepageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/Auth/ActivationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/Auth/ActivationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/Auth/ActivationEmailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/Auth/ActivationEmailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/MissingRoutesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Http/Controllers/MissingRoutesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Notifications/ActivationNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Notifications/ActivationNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/src/Notifications/ResetPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/src/Notifications/ResetPassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Activation/ActivationEmailTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Activation/ActivationEmailTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Activation/ActivationTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Activation/ActivationTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Activation/DisabledActivationTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Activation/DisabledActivationTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Auth/LoginBracketsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Auth/LoginBracketsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Auth/LogoutTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Auth/LogoutTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Password/ForgotPasswordTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Password/ForgotPasswordTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Password/ResetPasswordTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/AdminUser/Password/ResetPasswordTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/StandardUser/Password/ResetPasswordTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/tests/Feature/StandardUser/Password/ResetPasswordTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-auth/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-auth/tests/TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/controller.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/controller.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/form-right.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/form-right.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/full-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/full-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/admin-user/controller.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/admin-user/controller.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/admin-user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/admin-user/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/admin-user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/admin-user/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/admin-user/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/admin-user/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/admin-user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/admin-user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/profile/controller.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/profile/controller.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/profile/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/profile/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/profile/full-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/profile/full-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/profile/password/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/profile/password/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/profile/password/full-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/profile/password/full-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/user/controller.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/user/controller.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/user/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/user/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/user/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/user/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/resources/views/templates/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/AdminGeneratorServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/AdminGeneratorServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/BulkDestroyRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/BulkDestroyRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/DestroyRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/DestroyRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Export.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/ImpersonalLoginRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/ImpersonalLoginRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/IndexRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/IndexRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Lang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/ModelFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/ModelFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Permissions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/Routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/StoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/StoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/UpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/UpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/ViewForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/ViewForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/ViewFullForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/ViewFullForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/src/Generate/ViewIndex.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/src/Generate/ViewIndex.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/AdminUsers/AdminUserCrudGeneratorWithCustomModelNameTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/AdminUsers/AdminUserCrudGeneratorWithCustomModelNameTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/AdminUsers/DefaultAdminUserCrudGeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/AdminUsers/DefaultAdminUserCrudGeneratorTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Profile/DefaultProfileGeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Profile/DefaultProfileGeneratorTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Users/DefaultUserCrudGeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Users/DefaultUserCrudGeneratorTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Users/UserCrudGeneratorWithCustomModelNameTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Users/UserCrudGeneratorWithCustomModelNameTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Views/FormTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Views/FormTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Views/FullFormTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Views/FullFormTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Views/IndexTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/tests/Feature/Views/IndexTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/tests/fixtures/resources/views/admin/layout/profile-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/tests/fixtures/resources/views/admin/layout/profile-dropdown.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-generator/tests/fixtures/resources/views/admin/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-generator/tests/fixtures/resources/views/admin/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-listing/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-listing/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-listing/src/AdminListing.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-listing/src/AdminListing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-listing/src/Console/Commands/AdminListingInstall.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-listing/src/Console/Commands/AdminListingInstall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-translations/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-translations/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-translations/resources/views/admin/translation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-translations/resources/views/admin/translation/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-translations/src/AdminTranslationsServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-translations/src/AdminTranslationsServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-translations/src/Console/Commands/AdminTranslationsInstall.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-translations/src/Console/Commands/AdminTranslationsInstall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-translations/src/Exports/TranslationsExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-translations/src/Exports/TranslationsExport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-translations/src/Http/Responses/TranslationsAdminListingResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-translations/src/Http/Responses/TranslationsAdminListingResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-translations/src/Translation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-translations/src/Translation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-translations/tests/Unit/Scanner/TranslationsScannerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-translations/tests/Unit/Scanner/TranslationsScannerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-translations/tests/fixtures/resources/views/vendor/brackets/admin-ui/admin/layout/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-translations/tests/fixtures/resources/views/vendor/brackets/admin-ui/admin/layout/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-translations/tests/fixtures/views/fooA.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-translations/tests/fixtures/views/fooA.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/install-stubs/resources/views/admin/layout/profile-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/install-stubs/resources/views/admin/layout/profile-dropdown.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/install-stubs/resources/views/admin/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/install-stubs/resources/views/admin/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/resources/views/admin/includes/avatar-uploader.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/resources/views/admin/includes/avatar-uploader.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/resources/views/admin/includes/media-uploader.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/resources/views/admin/includes/media-uploader.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/resources/views/admin/layout/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/resources/views/admin/layout/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/resources/views/admin/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/resources/views/admin/layout/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/resources/views/admin/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/resources/views/admin/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/src/AdminUIServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/src/AdminUIServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/src/Console/Commands/AdminUIInstall.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/src/Console/Commands/AdminUIInstall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin-ui/tests/fixtures/resources/views/admin/test/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-ui/tests/fixtures/resources/views/admin/test/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/advanced-logger/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/admin/advanced-logger/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/craftable/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/admin/craftable/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/craftable/src/Console/Commands/CraftableInstall.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/craftable/src/Console/Commands/CraftableInstall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/media/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/media/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/media/src/Exceptions/Collections/ThumbsDoesNotExists.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/media/src/Exceptions/Collections/ThumbsDoesNotExists.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/media/src/Exceptions/FileCannotBeAdded/FileIsTooBig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/media/src/Exceptions/FileCannotBeAdded/FileIsTooBig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/media/src/Exceptions/FileCannotBeAdded/TooManyFiles.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/media/src/Exceptions/FileCannotBeAdded/TooManyFiles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/media/src/Http/Controllers/FileUploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/media/src/Http/Controllers/FileUploadController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/media/src/UrlGenerator/LocalUrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/media/src/UrlGenerator/LocalUrlGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/controller.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/controller.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/form-right.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/form-right.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/full-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/full-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/controller.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/controller.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/admin-user/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/profile/controller.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/profile/controller.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/profile/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/profile/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/profile/full-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/profile/full-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/profile/password/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/profile/password/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/profile/password/full-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/profile/password/full-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/controller.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/controller.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/resources/views/templates/user/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/tests/fixtures/resources/views/admin/layout/profile-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/tests/fixtures/resources/views/admin/layout/profile-dropdown.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/web-generator/tests/fixtures/resources/views/admin/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/web-generator/tests/fixtures/resources/views/admin/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,10 +295,19 @@
       <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
       <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
       <path value="$PROJECT_DIR$/vendor/league/glide" />
+      <path value="$PROJECT_DIR$/vendor/strathmore/admin-generator" />
+      <path value="$PROJECT_DIR$/vendor/strathmore/web-generator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1aFvg1mhkmCA7YEzxBcLUAdgcdf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -156,7 +317,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -167,6 +328,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views" />
+      <recent name="$PROJECT_DIR$/resources/js" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -198,5 +361,9 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="96" y="96" width="1728" height="852" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1586354224483" />
+    <state x="603" y="261" width="881" height="590" key="find.popup" timestamp="1586356365314">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="603" y="261" width="881" height="590" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1586356365314" />
   </component>
 </project>

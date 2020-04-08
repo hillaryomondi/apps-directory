@@ -19,7 +19,7 @@ class AdminTranslationsInstall extends Command
      *
      * @var string
      */
-    protected $description = 'Install a brackets/admin-translations package';
+    protected $description = 'Install a strathmore/admin-translations package';
 
     /**
      * Execute the console command.
@@ -28,7 +28,7 @@ class AdminTranslationsInstall extends Command
      */
     public function handle()
     {
-        $this->info('Installing package brackets/admin-translations');
+        $this->info('Installing package strathmore/admin-translations');
 
         $this->call('admin-ui:install');
 
@@ -53,7 +53,7 @@ class AdminTranslationsInstall extends Command
 
         $this->call('migrate');
 
-        $this->info('Package brackets/admin-translations installed');
+        $this->info('Package strathmore/admin-translations installed');
     }
 
     /**
@@ -81,9 +81,9 @@ class AdminTranslationsInstall extends Command
         // webpack
         $this->strReplaceInFile(
             'webpack.mix.js',
-            '|vendor/brackets/admin-translations|',
+            '|vendor/strathmore/admin-translations|',
             '// Do not delete this comment, it\'s used for auto-generation :)',
-            'path.resolve(__dirname, \'vendor/brackets/admin-translations/resources/assets/js\'),
+            'path.resolve(__dirname, \'vendor/strathmore/admin-translations/resources/assets/js\'),
 				// Do not delete this comment, it\'s used for auto-generation :)'
         );
 

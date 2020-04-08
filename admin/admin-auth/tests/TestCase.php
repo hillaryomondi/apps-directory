@@ -115,7 +115,7 @@ abstract class TestCase extends Orchestra
                 $table->dateTime('updated_at');
             });
 
-        $app['db']->connection()->getSchemaBuilder()->create('test_brackets_user_models',
+        $app['db']->connection()->getSchemaBuilder()->create('test_strathmore_user_models',
             static function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('first_name')->nullable();

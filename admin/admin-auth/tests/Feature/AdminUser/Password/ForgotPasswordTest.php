@@ -19,7 +19,7 @@ class ForgotPasswordTest extends BracketsTestCase
             'password' => bcrypt('testpass123'),
         ]);
 
-        $this->assertDatabaseHas('test_brackets_user_models', [
+        $this->assertDatabaseHas('test_strathmore_user_models', [
             'email' => 'john@example.com',
         ]);
 

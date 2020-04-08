@@ -154,7 +154,7 @@ class {{ $controllerBaseName }} extends Controller
 @endif
 @endif
         if ($request->ajax()) {
-            return ['redirect' => url('admin/{{ $resource }}'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('admin/{{ $resource }}'), 'message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/{{ $resource }}');
@@ -247,7 +247,7 @@ class {{ $controllerBaseName }} extends Controller
         if ($request->ajax()) {
             return [
                 'redirect' => url('admin/{{ $resource }}'),
-                'message' => trans('brackets/admin-ui::admin.operation.succeeded'),
+                'message' => trans('strathmore/admin-ui::admin.operation.succeeded'),
 @if($containsPublishedAtColumn)
                 'object' => ${{ $modelVariableName }}
 @endif
@@ -270,7 +270,7 @@ class {{ $controllerBaseName }} extends Controller
         ${{ $modelVariableName }}->delete();
 
         if ($request->ajax()) {
-            return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
+            return response(['message' => trans('strathmore/admin-ui::admin.operation.succeeded')]);
         }
 
         return redirect()->back();
@@ -310,7 +310,7 @@ class {{ $controllerBaseName }} extends Controller
         });
 @endif
 
-        return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
+        return response(['message' => trans('strathmore/admin-ui::admin.operation.succeeded')]);
     }
 @endif
 @if($export)

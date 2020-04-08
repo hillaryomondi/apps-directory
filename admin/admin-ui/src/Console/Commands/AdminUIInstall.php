@@ -18,7 +18,7 @@ class AdminUIInstall extends Command
      *
      * @var string
      */
-    protected $description = 'Install a brackets/admin-ui package';
+    protected $description = 'Install a strathmore/admin-ui package';
 
     /**
      * Execute the console command.
@@ -27,7 +27,7 @@ class AdminUIInstall extends Command
      */
     public function handle(Filesystem $files)
     {
-        $this->info('Installing package brackets/admin-ui');
+        $this->info('Installing package strathmore/admin-ui');
 
         $this->call('vendor:publish', [
             '--provider' => "Strathmore\\AdminUI\\AdminUIServiceProvider",
@@ -35,7 +35,7 @@ class AdminUIInstall extends Command
 
         $this->frontendAdjustments($files);
 
-        $this->info('Package brackets/admin-ui installed');
+        $this->info('Package strathmore/admin-ui installed');
     }
 
     private function strReplaceInFile($fileName, $ifExistsRegex, $find, $replaceWith) {

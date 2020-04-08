@@ -65,7 +65,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('brackets/admin-auth::admin.auth.login');
+        return view('strathmore/admin-auth::admin.auth.login');
     }
 
     /**

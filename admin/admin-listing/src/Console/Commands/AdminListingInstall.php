@@ -19,7 +19,7 @@ class AdminListingInstall extends Command
      *
      * @var string
      */
-    protected $description = 'Install a brackets/admin-listing package';
+    protected $description = 'Install a strathmore/admin-listing package';
 
     /**
      * Execute the console command.
@@ -30,7 +30,7 @@ class AdminListingInstall extends Command
     {
         $this->alterEncryptCookiesMiddleware();
 
-        $this->info('Package brackets/admin-listing installed');
+        $this->info('Package strathmore/admin-listing installed');
     }
 
     private function strReplaceInFile($fileName, $find, $replaceWith)

@@ -34,7 +34,7 @@ class ImpersonalLoginRequest extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('brackets/admin-generator::templates.admin-user.impersonal-login-request', [
+        return view('strathmore/admin-generator::templates.admin-user.impersonal-login-request', [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'modelWithNamespaceFromDefault' => $this->modelWithNamespaceFromDefault,

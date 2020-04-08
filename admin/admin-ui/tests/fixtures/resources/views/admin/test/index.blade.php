@@ -1,4 +1,4 @@
-@extends('brackets/admin-ui::admin.layout.default')
+@extends('strathmore/admin-ui::admin.layout.default')
 
 @section('body')
 

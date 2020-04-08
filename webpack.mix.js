@@ -11,5 +11,16 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.setResourceRoot(`/${process.env.MIX_APP_URI || ''}/`);
+
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+
+mix.js(['resources/js/admin/admin.js'], 'public/js')
+    .js(['resources/js/web/frontend.js'],'public/js')
+    .sass('resources/sass/admin/admin.scss', 'public/css');
+
+if (mix.inProduction()) {
+    mix.version();
+}
