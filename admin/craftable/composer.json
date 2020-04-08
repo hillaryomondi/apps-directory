@@ -1,0 +1,55 @@
+{
+    "name": "strathmore/craftable",
+    "description": "Administration toolkit for Laravel 7 - starting point for developing administration interface",
+    "keywords": [
+        "craftable",
+        "crud",
+        "strathmore",
+        "admin",
+        "administration",
+        "toolkit",
+        "framework",
+        "cms",
+        "laravel"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Samson Maosa",
+            "email": "smaosa@strathmore.edu",
+            "homepage": "https://www.savannabits.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "strathmore/admin-auth": "^5.0",
+        "strathmore/admin-listing": "^3.0",
+        "strathmore/admin-translations": "^4.0",
+        "strathmore/admin-ui": "^4.0",
+        "strathmore/advanced-logger": "^2.0",
+        "strathmore/media": "^4.0",
+        "strathmore/translatable": "^2.0",
+        "illuminate/support": "^6.0|^7.0",
+        "spatie/laravel-permission": "^3.0",
+        "spatie/laravel-backup": "^6.0",
+        "maatwebsite/excel": "^3.1"
+    },
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Strathmore\\Craftable\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Strathmore\\Craftable\\CraftableServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "5.0-dev"
+        }
+    }
+}

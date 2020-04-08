@@ -1,0 +1,51 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: ${APP_USER}
+        uid: ${APP_UID}
+      context: ./
+      dockerfile: Dockerfile
+    image: apps-directory
+    container_name: apps-directory-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - ${NETWORK_NAME}
+
+  db:
+    image: mysql:5.7
+    container_name: apps-directory-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    ports:
+      - 3310:3306
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - ${NETWORK_NAME}
+
+  server:
+    image: nginx:alpine
+    container_name: apps-directory-server
+    restart: unless-stopped
+    ports:
+      - 8005:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - ${NETWORK_NAME}
+
+networks:
+  csm:
+    external: true
