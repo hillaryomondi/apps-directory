@@ -51,6 +51,7 @@ Route::group(['middleware' => 'cas.auth'], function () {
 });
 Route::middleware(['auth'])->any('logout',"Auth\LoginController@logout")->name('web.logout');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/backend', 'HomeController@backend')->name('backend');
 
 
 /* Auto-generated admin routes */
