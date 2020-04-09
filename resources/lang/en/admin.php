@@ -31,5 +31,72 @@ return [
         ],
     ],
 
+    'user' => [
+        'title' => 'Users',
+
+        'actions' => [
+            'index' => 'Users',
+            'create' => 'New User',
+            'edit' => 'Edit :name',
+            'edit_profile' => 'Edit Profile',
+            'edit_password' => 'Edit Password',
+        ],
+
+        'columns' => [
+            'id' => "ID",
+            'name' => "Name",
+            'email' => "Email",
+            'email_verified_at' => "Email verified at",
+            'password' => "Password",
+            'password_repeat' => "Password Confirmation",
+            'username' => "Username",
+            'user_number' => "User number",
+            'first_name' => "First name",
+            'middle_name' => "Middle name",
+            'last_name' => "Last name",
+            'activated' => "Activated",
+            'last_login_at' => "Last login at",
+            'last_login_ip' => "Last login ip",
+                
+            //Belongs to many relations
+            'roles' => "Roles",
+                
+        ],
+    ],
+
+    'role' => [
+        'title' => 'Roles',
+
+        'actions' => [
+            'index' => 'Roles',
+            'create' => 'New Role',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'name' => 'Name',
+            'guard_name' => 'Guard name',
+            
+        ],
+    ],
+
+    'permission' => [
+        'title' => 'Permissions',
+
+        'actions' => [
+            'index' => 'Permissions',
+            'create' => 'New Permission',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'name' => 'Name',
+            'guard_name' => 'Guard name',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

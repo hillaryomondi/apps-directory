@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+URL::forceScheme(env('FORCE_SCHEME','https'));
+URL::forceRootUrl(config('app.url'));
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +46,54 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     });
 });
 
-Auth::routes();
-
+Route::group(['middleware' => 'cas.auth'], function () {
+    Auth::routes(['register' => false]);
+});
+Route::middleware(['auth'])->any('logout',"Auth\LoginController@logout")->name('web.logout');
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('Admin')->name('admin/')->group(static function() {
+        Route::prefix('users')->name('users/')->group(static function() {
+            Route::get('/',                                             'UsersController@index')->name('index');
+            Route::get('/create',                                       'UsersController@create')->name('create');
+            Route::post('/',                                            'UsersController@store')->name('store');
+            Route::get('/{user}/edit',                                  'UsersController@edit')->name('edit');
+            Route::post('/{user}',                                      'UsersController@update')->name('update');
+            Route::delete('/{user}',                                    'UsersController@destroy')->name('destroy');
+            Route::get('/{user}/resend-activation',                     'UsersController@resendActivationEmail')->name('resendActivationEmail');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('Admin')->name('admin/')->group(static function() {
+        Route::prefix('roles')->name('roles/')->group(static function() {
+            Route::get('/',                                             'RolesController@index')->name('index');
+            Route::get('/create',                                       'RolesController@create')->name('create');
+            Route::post('/',                                            'RolesController@store')->name('store');
+            Route::get('/{role}/edit',                                  'RolesController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'RolesController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{role}',                                      'RolesController@update')->name('update');
+            Route::delete('/{role}',                                    'RolesController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('Admin')->name('admin/')->group(static function() {
+        Route::prefix('permissions')->name('permissions/')->group(static function() {
+            Route::get('/',                                             'PermissionsController@index')->name('index');
+            Route::get('/create',                                       'PermissionsController@create')->name('create');
+            Route::post('/',                                            'PermissionsController@store')->name('store');
+            Route::get('/{permission}/edit',                            'PermissionsController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'PermissionsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{permission}',                                'PermissionsController@update')->name('update');
+            Route::delete('/{permission}',                              'PermissionsController@destroy')->name('destroy');
+        });
+    });
+});

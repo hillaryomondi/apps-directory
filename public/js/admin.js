@@ -112573,7 +112573,71 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _admin_user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-user */ "./resources/js/admin/admin-user/index.js");
 /* harmony import */ var _profile_edit_profile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile-edit-profile */ "./resources/js/admin/profile-edit-profile/index.js");
 /* harmony import */ var _profile_edit_password__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile-edit-password */ "./resources/js/admin/profile-edit-password/index.js");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user */ "./resources/js/admin/user/index.js");
+/* harmony import */ var _role__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./role */ "./resources/js/admin/role/index.js");
+/* harmony import */ var _permission__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./permission */ "./resources/js/admin/permission/index.js");
 
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./resources/js/admin/permission/Form.js":
+/*!***********************************************!*\
+  !*** ./resources/js/admin/permission/Form.js ***!
+  \***********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
+
+Vue.component('permission-form', {
+  mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  data: function data() {
+    return {
+      form: {
+        name: '',
+        guard_name: ''
+      }
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/permission/Listing.js":
+/*!**************************************************!*\
+  !*** ./resources/js/admin/permission/Listing.js ***!
+  \**************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Listing/AppListing */ "./resources/js/admin/app-components/Listing/AppListing.js");
+
+Vue.component('permission-listing', {
+  mixins: [_app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__["default"]]
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/permission/index.js":
+/*!************************************************!*\
+  !*** ./resources/js/admin/permission/index.js ***!
+  \************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/permission/Listing.js");
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/permission/Form.js");
 
 
 
@@ -112679,6 +112743,225 @@ Vue.component('profile-edit-profile-form', {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/profile-edit-profile/Form.js");
+
+
+/***/ }),
+
+/***/ "./resources/js/admin/role/AssignPermissions.js":
+/*!******************************************************!*\
+  !*** ./resources/js/admin/role/AssignPermissions.js ***!
+  \******************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
+
+Vue.component('assign-permissions', {
+  mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  data: function data() {
+    return {
+      form: {
+        selected_permissions: []
+      }
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/role/Form.js":
+/*!*****************************************!*\
+  !*** ./resources/js/admin/role/Form.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
+
+Vue.component('role-form', {
+  mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  props: ['permissions'],
+  mounted: function mounted() {
+    var self = this;
+    console.log(self.form.permissions_matrix);
+    self.bak = Object.assign(self.bak, self.form.permissions_matrix);
+  },
+  data: function data() {
+    return {
+      form: {
+        name: '',
+        guard_name: '',
+        permissions: [],
+        permissions_matrix: []
+      },
+      check_all: false,
+      bak: []
+    };
+  },
+  methods: {
+    checkAll: function checkAll() {
+      var check = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+      var self = this;
+
+      for (var key in self.form.permissions_matrix) {
+        if (!self.form.permissions_matrix.hasOwnProperty(key)) continue;
+        var permGroup = self.form.permissions_matrix[key];
+
+        if (check) {
+          permGroup.forEach(function (perm) {
+            return perm.checked = true;
+          });
+        } else {
+          permGroup.forEach(function (perm) {
+            return perm.checked = false;
+          });
+        }
+      }
+    }
+  },
+  watch: {
+    check_all: function check_all(c, o) {
+      this.checkAll(c);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/role/Listing.js":
+/*!********************************************!*\
+  !*** ./resources/js/admin/role/Listing.js ***!
+  \********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Listing/AppListing */ "./resources/js/admin/app-components/Listing/AppListing.js");
+
+Vue.component('role-listing', {
+  mixins: [_app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__["default"]]
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/role/index.js":
+/*!******************************************!*\
+  !*** ./resources/js/admin/role/index.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/role/Listing.js");
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/role/Form.js");
+/* harmony import */ var _AssignPermissions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AssignPermissions */ "./resources/js/admin/role/AssignPermissions.js");
+
+
+
+
+/***/ }),
+
+/***/ "./resources/js/admin/user/Form.js":
+/*!*****************************************!*\
+  !*** ./resources/js/admin/user/Form.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
+
+Vue.component('user-form', {
+  mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  data: function data() {
+    return {
+      form: {
+        name: '',
+        email: '',
+        email_verified_at: '',
+        password: '',
+        username: '',
+        user_number: '',
+        first_name: '',
+        middle_name: '',
+        last_name: '',
+        activated: false,
+        last_login_at: '',
+        last_login_ip: ''
+      }
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/user/Listing.js":
+/*!********************************************!*\
+  !*** ./resources/js/admin/user/Listing.js ***!
+  \********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Listing/AppListing */ "./resources/js/admin/app-components/Listing/AppListing.js");
+
+Vue.component('user-listing', {
+  mixins: [_app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  methods: {
+    resendActivation: function resendActivation(url) {
+      var _this = this;
+
+      axios.get(url).then(function (response) {
+        if (response.data.message) {
+          _this.$notify({
+            type: 'success',
+            title: 'Success',
+            text: response.data.message
+          });
+        } else if (response.data.redirect) {
+          window.location.replace(response.data.redirect);
+        }
+      })["catch"](function (errors) {
+        if (errors.response.data.message) {
+          _this.$notify({
+            type: 'error',
+            title: 'Error!',
+            text: errors.response.data.message
+          });
+        }
+      });
+    }
+  },
+  props: {
+    'activation': {
+      type: Boolean,
+      required: true
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/user/index.js":
+/*!******************************************!*\
+  !*** ./resources/js/admin/user/index.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/user/Listing.js");
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/user/Form.js");
+
 
 
 /***/ }),

@@ -2,38 +2,77 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Laravel\Passport\HasApiTokens;
+use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Strathmore\AdminAuth\Activation\Traits\CanActivate;
+use Strathmore\AdminAuth\Notifications\ResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements CanActivateContract
 {
     use Notifiable;
+    use CanActivate;
+    use HasRoles;
+    use HasApiTokens;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'email_verified_at',
+        'password',
+        'username',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'activated',
+        'last_login_at',
+        'last_login_ip',
+
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
+
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
+    protected $dates = [
+        'email_verified_at',
+        'created_at',
+        'updated_at',
+        'last_login_at',
+
     ];
+
+
+
+    protected $appends = ['full_name', 'resource_url'];
+
+    /* ************************ ACCESSOR ************************* */
+
+    public function getResourceUrlAttribute() {
+        return url('/admin/users/'.$this->getKey());
+    }
+
+    public function getFullNameAttribute() {
+        return $this->first_name." ".$this->last_name;
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param string $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(app( ResetPassword::class, ['token' => $token]));
+    }
+
+    /* ************************ RELATIONS ************************ */
+
+
 }

@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+URL::forceScheme(env('FORCE_SCHEME','https'));
+URL::forceRootUrl(config('app.url'));
 /*
 |--------------------------------------------------------------------------
 | API Routes
