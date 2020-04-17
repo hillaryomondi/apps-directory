@@ -15,6 +15,13 @@ URL::forceRootUrl(config('app.url'));
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+  //  return $request->user();
+//});
+Route::post('/register', 'api\AuthController@register');
+Route::post('/login', 'api\AuthController@login');
+Route::get('/index', 'api\DepartmentsController@index');
+Route::get('/index', 'api\SuApplicationController@index');
+Route::get('/index', 'api\BugController@index');
+
+
