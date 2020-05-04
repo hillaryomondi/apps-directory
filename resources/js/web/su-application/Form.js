@@ -2,15 +2,16 @@ import AppForm from '../app-components/Form/AppForm';
 
 Vue.component('su-application-form', {
     mixins: [AppForm],
-    props: [],
+    props: ['departments'],
     data: function() {
         return {
             form: {
                 name:  '' ,
+                url:  '' ,
                 description:  '' ,
                 enabled:  false ,
-                department_id:  '' ,
-                
+                department:  null ,
+
             }
         }
     },

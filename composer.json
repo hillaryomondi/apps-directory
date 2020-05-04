@@ -21,7 +21,8 @@
         "strathmore/craftable": "^5.0",
         "strathmore/web-generator": "^5.0",
         "subfission/cas": "^3.1",
-        "teamtnt/laravel-scout-tntsearch-driver": "^8.1"
+        "teamtnt/laravel-scout-tntsearch-driver": "^8.1",
+        "ext-json": "*"
     },
     "repositories": [
         {

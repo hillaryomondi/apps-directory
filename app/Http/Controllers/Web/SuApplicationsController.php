@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Department;
+use App\Helpers\SavbitsHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Web\SuApplication\BulkDestroySuApplication;
 use App\Http\Requests\Web\SuApplication\DestroySuApplication;
@@ -32,16 +34,9 @@ class SuApplicationsController extends Controller
     public function index(IndexSuApplication $request)
     {
         // create and AdminListing instance for a specific model and
-        $data = AdminListing::create(SuApplication::class)->processRequestAndGet(
-            // pass the request with params
-            $request,
-
-            // set columns to query
-            ['id', 'name', 'enabled', 'department_id'],
-
-            // set columns to searchIn
-            ['id', 'name', 'description']
-        );
+        $data =SavbitsHelper::listing(SuApplication::class, $request)->customQuery(function($q) {
+            $q->with(['department']);
+        })->process();
 
         if ($request->ajax()) {
             if ($request->has('bulk')) {
@@ -65,7 +60,8 @@ class SuApplicationsController extends Controller
     {
         $this->authorize('su-application.create');
 
-        return view('frontend.su-application.create');
+        $departments = Department::whereEnabled(true)->get();
+        return view('frontend.su-application.create', compact('departments'));
     }
 
     /**
@@ -79,9 +75,11 @@ class SuApplicationsController extends Controller
         // Sanitize input
         $sanitized = $request->getSanitized();
 
+        $data =  json_decode(collect($sanitized)->toJson());
         // Store the SuApplication
-        $suApplication = SuApplication::create($sanitized);
-
+        $suApplication = new SuApplication($sanitized);
+        $suApplication->department()->associate($data->department->id);
+        $suApplication->saveOrFail();
         if ($request->ajax()) {
             return ['redirect' => url('su-applications'), 'message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
         }
@@ -100,7 +98,7 @@ class SuApplicationsController extends Controller
     {
         $this->authorize('su-application.show', $suApplication);
 
-        
+
                 return view('frontend.su-application.show', [
         'suApplication' => $suApplication,
                 ]);
@@ -116,10 +114,11 @@ class SuApplicationsController extends Controller
     public function edit(SuApplication $suApplication)
     {
         $this->authorize('su-application.edit', $suApplication);
-
-
+        $departments = Department::whereEnabled(true)->get();
+        $suApplication->load(['department']);
         return view('frontend.su-application.edit', [
             'suApplication' => $suApplication,
+            'departments' => $departments
         ]);
     }
 

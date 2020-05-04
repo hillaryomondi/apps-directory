@@ -15,6 +15,8 @@ URL::forceRootUrl(config('app.url'));
 |
 */
 
+Route::get("search", "Api\SuApplicationController@search")->name('search');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

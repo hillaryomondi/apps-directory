@@ -10,9 +10,10 @@
             <su-application-form
                 :action="'{{ $suApplication->resource_url }}'"
                 :data="{{ $suApplication->toJson() }}"
+                :departments="{{$departments->toJson()}}"
                 v-cloak
                 inline-template>
-            
+
                 <form class="form-edit" method="post" @submit.prevent="onSubmit" :action="action" novalidate>
 
 
@@ -23,21 +24,21 @@
                     <div class="card-body">
                         @include('frontend.su-application.components.form-elements')
                     </div>
-                    
-                    
+
+
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary" :disabled="submiting">
                             <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
                             {{ trans('strathmore/admin-ui::admin.btn.save') }}
                         </button>
                     </div>
-                    
+
                 </form>
 
         </su-application-form>
 
         </div>
-    
+
 </div>
 
 @endsection

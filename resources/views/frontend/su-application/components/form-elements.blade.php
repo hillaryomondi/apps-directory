@@ -5,6 +5,20 @@
         <div v-if="errors.has('name')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('name') }}</div>
     </div>
 </div>
+<div class="form-group row align-items-center" :class="{'has-danger': errors.has('url'), 'has-success': fields.url && fields.url.valid }">
+    <label for="url" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('App URL') }}</label>
+    <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+        <input type="text" v-model="form.url" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('url'), 'form-control-success': fields.url && fields.url.valid}" id="url" name="url" placeholder="{{ trans('App URL') }}">
+        <div v-if="errors.has('url')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('url') }}</div>
+    </div>
+</div>
+<div class="form-group row align-items-center" :class="{'has-danger': errors.has('department'), 'has-success': fields.department && fields.department.valid }">
+    <label for="department" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('Department') }}</label>
+    <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+        <multiselect :options="departments" track-by="id" label="display_name" v-model="form.department" v-validate="'required'" @change="validate($event)" :class="{'form-control-danger': errors.has('department'), 'form-control-success': fields.department && fields.department.valid}" id="department" name="department" placeholder="{{ trans('Department') }}"></multiselect>
+        <div v-if="errors.has('department')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('department') }}</div>
+    </div>
+</div>
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('description'), 'has-success': fields.description && fields.description.valid }">
     <label for="description" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.su-application.columns.description') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
@@ -22,13 +36,6 @@
         </label>
         <input type="hidden" name="enabled" :value="form.enabled">
         <div v-if="errors.has('enabled')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('enabled') }}</div>
-    </div>
-</div>
-<div class="form-group row align-items-center" :class="{'has-danger': errors.has('department_id'), 'has-success': fields.department_id && fields.department_id.valid }">
-    <label for="department_id" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.su-application.columns.department_id') }}</label>
-        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text" v-model="form.department_id" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('department_id'), 'form-control-success': fields.department_id && fields.department_id.valid}" id="department_id" name="department_id" placeholder="{{ trans('admin.su-application.columns.department_id') }}">
-        <div v-if="errors.has('department_id')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('department_id') }}</div>
     </div>
 </div>
 

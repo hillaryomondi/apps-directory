@@ -10,13 +10,19 @@ class SuApplication extends Model
     use Searchable;
     protected $fillable = [
         'name',
+        'url',
         'description',
         'enabled',
         'department_id',
 
     ];
 
-
+    protected $searchable = [
+        'id',
+        'name',
+        'url',
+        'description',
+    ];
     protected $dates = [
         'created_at',
         'updated_at',
@@ -31,14 +37,14 @@ class SuApplication extends Model
     {
         return url('/su-applications/'.$this->getKey());
     }
-    public function department(){
+    public function department() {
         return $this->belongsTo('App\Department', 'department_id');
     }
     public function toSearchableArray(){
         $array = collect($this->only($this->searchable))->toArray();
         return array_merge($array, [
             //relationships
-
+            'department' => $this->department->display_name,
         ]);
     }
 }
