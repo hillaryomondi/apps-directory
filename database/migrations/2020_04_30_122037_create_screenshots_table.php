@@ -17,7 +17,7 @@ class CreateScreenshotsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("file_path");
-            $table->foreignId('bug_id')->constrained();
+            $table->foreignId('bug_id')->constrained('bugs')->onDelete('restrict');
         });
     }
 

@@ -23,7 +23,10 @@ class CreateBugsTable extends Migration
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('resolved_by');
             $table->timestamp('resolved_at');
-            $table->foreignId('user_id');
+//            $table->foreignId('user_id');
+
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('restrict');
+            $table->foreign('resolved_by')->references('id')->on('users')->onDelete('restrict');
 
         });
     }
