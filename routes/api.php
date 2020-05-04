@@ -15,13 +15,21 @@ URL::forceRootUrl(config('app.url'));
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-  //  return $request->user();
-//});
-Route::post('/register', 'api\AuthController@register');
-Route::post('/login', 'api\AuthController@login');
-Route::get('/index', 'api\DepartmentsController@index');
-Route::get('/index', 'api\SuApplicationController@index');
-Route::get('/index', 'api\BugController@index');
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::group(['as' =>'departments', 'prefix' => 'departments', 'middleware' => []], function (){
+    //
+    Route::get("", "Api\DepartmentController@index")->name('index');
+});
+
+Route::group(['as' => 'bugs', 'prefix' => 'bugs', 'middleware' => []], function (){
+    Route::get("", "Api\BugController@index")->name('index');
+});
+
+Route::group(['as' => 'su-applications', 'prefix' => 'su-applications', 'middleware' => []], function (){
+    Route::get("", "Api\SuApplicationController@index")->name('index');
+});
 
 

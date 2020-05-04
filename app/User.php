@@ -73,6 +73,9 @@ class User extends Authenticatable implements CanActivateContract
     }
 
     /* ************************ RELATIONS ************************ */
+    public function bugs(){
+        return $this->hasMany('App\Bug');
+    }
 
 
 }

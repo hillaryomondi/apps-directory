@@ -73,3 +73,121 @@ $factory->define(App\Permission::class, static function (Faker\Generator $faker)
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Department::class, static function (Faker\Generator $faker) {
+    return [
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Department::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'name' => $faker->firstName,
+        'description' => $faker->text(),
+        'activated' => $faker->boolean(),
+        'deleted_at' => null,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Bug::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'title' => $faker->sentence,
+        'description' => $faker->sentence,
+        'resolved' => $faker->boolean(),
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Department::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'name' => $faker->firstName,
+        'display_name' => $faker->sentence,
+        'description' => $faker->text(),
+        'enabled' => $faker->boolean(),
+        'deleted_at' => null,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Bug::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'title' => $faker->sentence,
+        'display_title' => $faker->sentence,
+        'description' => $faker->sentence,
+        'resolved' => $faker->boolean(),
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Bug::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'reference_number' => $faker->sentence,
+        'title' => $faker->sentence,
+        'description' => $faker->text(),
+        'resolved' => $faker->boolean(),
+        'created_by' => $faker->sentence,
+        'resolved_by' => $faker->sentence,
+        'resolved_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\SuApplication::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'name' => $faker->firstName,
+        'description' => $faker->text(),
+        'activated' => $faker->boolean(),
+        'deleted_at' => null,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\SuApplication::class, static function (Faker\Generator $faker) {
+    return [
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\SuApplication::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'name' => $faker->firstName,
+        'description' => $faker->text(),
+        'enabled' => $faker->boolean(),
+        'department_id' => $faker->sentence,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Screenshot::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'file_path' => $faker->sentence,
+        
+        
+    ];
+});

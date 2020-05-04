@@ -112860,7 +112860,7 @@ Vue.component('role-listing', {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/role/Listing.js");
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/role/Form.js");
-/* harmony import */ var _AssignPermissions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AssignPermissions */ "./resources/js/admin/role/AssignPermissions.js");
+/* harmony import */ var _AssignPermissions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AssignPermissions */ "./resources/js/admin/role/AssignPermissions.js");
 
 
 
@@ -112973,7 +112973,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/resources/js/admin/admin.js */"./resources/js/admin/admin.js");
+module.exports = __webpack_require__(/*! /var/www/su-app-directory/resources/js/admin/admin.js */"./resources/js/admin/admin.js");
 
 
 /***/ })

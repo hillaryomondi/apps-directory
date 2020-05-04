@@ -8,3 +8,7 @@ import './grn';
 import './grn-item';
 import './menu';
 import './menu-item';
+import './department';
+import './bug';
+import './su-application';
+import './screenshot';
