@@ -25,7 +25,7 @@ class SuApplicationController extends Controller
 
         }
     }
-    public function search(IndexSuApplication $request) {
+    public function search(Request $request) {
         try {
             $results = SavbitsHelper::listing(SuApplication::class, $request)->customQuery(function($q) {
                 /**@var SuApplication|Builder $q*/
