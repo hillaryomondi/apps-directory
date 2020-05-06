@@ -7,7 +7,8 @@ Vue.component('search-component', {
             search_query: null,
             searchResultsObject: {
                 data: []
-            }
+            },
+            searched: false //initially false before we search.
         }
     },
     mounted() {
@@ -24,7 +25,7 @@ Vue.component('search-component', {
            Axios.get(`/user`).then(res => {
                console.log(res.data);
            }).catch(err => {
-               console.err(err?.response?.data?.message || err.message || err);
+               console.error(err?.response?.data?.message || err.message || err);
            });
         },
         fetchAppResults(query) {
@@ -34,9 +35,14 @@ Vue.component('search-component', {
                     search: query
                 },
             }).then((res) =>  {
+                //When we hit results, we set searched = true
+
                 vm.searchResultsObject = res.data.payload;
+                vm.searched = true;
             }).catch(err => {
                 console.log(err);
+                //If an error occured we set searched = false;
+                vm.searched = false;
             });
         }
     },
