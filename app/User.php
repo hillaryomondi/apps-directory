@@ -2,13 +2,14 @@
 
 namespace App;
 
-use Laravel\Passport\HasApiTokens;
+
 use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
 use Strathmore\AdminAuth\Activation\Traits\CanActivate;
 use Strathmore\AdminAuth\Notifications\ResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements CanActivateContract
 {

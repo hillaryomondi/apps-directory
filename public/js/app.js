@@ -49562,7 +49562,7 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.baseURL = "https://cera.strathmore.edu/apps-directory/api";
+window.axios.defaults.baseURL = "https://hillary.strathmore.edu/apps-directory/api";
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -49695,11 +49695,22 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
   },
   mounted: function mounted() {
     console.log("The search component is working.");
+    console.log("We will call the api for testing when this component is mounted and monitor the console to see the response.");
+    this.testApi();
   },
   methods: {
     debounceInput: lodash__WEBPACK_IMPORTED_MODULE_1___default.a.debounce(function (e) {
       this.fetchAppResults(this.search_query);
     }, 300),
+    testApi: function testApi() {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/user").then(function (res) {
+        console.log(res.data);
+      })["catch"](function (err) {
+        var _err$response, _err$response$data;
+
+        console.err((err === null || err === void 0 ? void 0 : (_err$response = err.response) === null || _err$response === void 0 ? void 0 : (_err$response$data = _err$response.data) === null || _err$response$data === void 0 ? void 0 : _err$response$data.message) || err.message || err);
+      });
+    },
     fetchAppResults: function fetchAppResults(query) {
       var vm = this;
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/search", {
