@@ -1,4 +1,14 @@
 /*!
+ * BootstrapVue 2.14.0
+ *
+ * @link https://bootstrap-vue.org
+ * @source https://github.com/bootstrap-vue/bootstrap-vue
+ * @copyright (c) 2016-2020 BootstrapVue
+ * @license MIT
+ * https://github.com/bootstrap-vue/bootstrap-vue/blob/master/LICENSE
+ */
+
+/*!
  * BootstrapVue Icons, generated from Bootstrap Icons 1.0.0-alpha3
  *
  * @link https://icons.getbootstrap.com/

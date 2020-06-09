@@ -5,5 +5,5 @@
 </a>
 
 <a href="{{route('home')}}" class="navbar-brand">
-    <span class="text-white">MyStrath</span>
+    <span class="text-white">{{config('app.name')}}</span>
 </a>
