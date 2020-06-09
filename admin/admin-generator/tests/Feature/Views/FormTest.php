@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Tests\Feature\Views;
+namespace Savannabits\AdminGenerator\Tests\Feature\Views;
 
-use Strathmore\AdminGenerator\Tests\TestCase;
+use Savannabits\AdminGenerator\Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -39,8 +39,8 @@ class FormTest extends TestCase
         $this->assertFileExists($indexJsPath);
         $this->assertFileExists($bootstrapJsPath);
         $this->assertStringStartsWith('<div ', File::get($elementsPath));
-        $this->assertStringStartsWith('@extends(\'strathmore/admin-ui::admin.layout.default\')', File::get($createPath));
-        $this->assertStringStartsWith('@extends(\'strathmore/admin-ui::admin.layout.default\')', File::get($editPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($createPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($editPath));
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';
 
 Vue.component(\'category-form\', {
@@ -78,8 +78,8 @@ Vue.component(\'category-form\', {
         $this->assertFileExists($indexJsPath);
         $this->assertFileExists($bootstrapJsPath);
         $this->assertStringStartsWith('<div ', File::get($elementsPath));
-        $this->assertStringStartsWith('@extends(\'strathmore/admin-ui::admin.layout.default\')', File::get($createPath));
-        $this->assertStringStartsWith('@extends(\'strathmore/admin-ui::admin.layout.default\')', File::get($editPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($createPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($editPath));
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';
 
 Vue.component(\'billing-my-article-form\', {

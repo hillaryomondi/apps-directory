@@ -1,8 +1,8 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
-use Strathmore\AdminGenerator\Generate\Traits\Helpers;
-use Strathmore\AdminGenerator\Generate\Traits\Names;
-use Strathmore\AdminGenerator\Generate\Traits\Columns;
+use Savannabits\AdminGenerator\Generate\Traits\Helpers;
+use Savannabits\AdminGenerator\Generate\Traits\Names;
+use Savannabits\AdminGenerator\Generate\Traits\Columns;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Schema;
 use Symfony\Component\Console\Input\InputArgument;

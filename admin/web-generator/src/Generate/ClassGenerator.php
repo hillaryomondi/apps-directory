@@ -1,8 +1,8 @@
-<?php namespace Strathmore\WebGenerator\Generate;
+<?php namespace Savannabits\WebGenerator\Generate;
 
-use Strathmore\WebGenerator\Generate\Traits\Helpers;
-use Strathmore\WebGenerator\Generate\Traits\Names;
-use Strathmore\WebGenerator\Generate\Traits\Columns;
+use Savannabits\WebGenerator\Generate\Traits\Helpers;
+use Savannabits\WebGenerator\Generate\Traits\Names;
+use Savannabits\WebGenerator\Generate\Traits\Columns;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Schema;
 use Symfony\Component\Console\Input\InputArgument;

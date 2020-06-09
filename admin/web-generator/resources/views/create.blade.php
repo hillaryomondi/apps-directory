@@ -1,4 +1,4 @@
-{{'@'}}extends('frontend.layout.base.layout.default')
+{{'@'}}extends('web.layout.base.layout.default')
 
 {{'@'}}section('title', trans('admin.{{ $modelLangFormat }}.actions.create'))
 
@@ -29,13 +29,13 @@
                                 <i class="fa fa-plus"></i> {{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.create') }}
                             </div>
                             <div class="card-body">
-                                {{'@'}}include('frontend.{{ $modelDotNotation }}.components.form-elements')
+                                {{'@'}}include('web.{{ $modelDotNotation }}.components.form-elements')
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-12 col-lg-12 col-xl-5 col-xxl-4">
-                        {{'@'}}include('frontend.{{ $modelDotNotation }}.components.form-elements-right')
+                        {{'@'}}include('web.{{ $modelDotNotation }}.components.form-elements-right')
                     </div>
                 </div>
                 @else
@@ -45,25 +45,25 @@
                 </div>
 
                 <div class="card-body">
-                    {{'@'}}include('frontend.{{ $modelDotNotation }}.components.form-elements')
+                    {{'@'}}include('web.{{ $modelDotNotation }}.components.form-elements')
                 </div>
                 @endif
                 @if($isUsedTwoColumnsLayout)
 
                 <button type="submit" class="btn btn-primary fixed-cta-button button-save" :disabled="submiting">
                     <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-save'"></i>
-                    @{{ trans('strathmore/admin-ui::admin.btn.save') }}
+                    @{{ trans('savannabits/admin-ui::admin.btn.save') }}
                 </button>
                 <button type="submit" style="display: none" class="btn btn-success fixed-cta-button button-saved" :disabled="submiting" :class="">
                     <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-check'"></i>
-                    <span>@{{ trans('strathmore/admin-ui::admin.btn.saved') }}</span>
+                    <span>@{{ trans('savannabits/admin-ui::admin.btn.saved') }}</span>
                 </button>
                 @else
 
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary" :disabled="submiting">
                         <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
-                        @{{ trans('strathmore/admin-ui::admin.btn.save') }}
+                        @{{ trans('savannabits/admin-ui::admin.btn.save') }}
                     </button>
                 </div>
                 @endif

@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Tests\Feature\Users;
+namespace Savannabits\AdminGenerator\Tests\Feature\Users;
 
-use Strathmore\AdminGenerator\Tests\UserTestCase;
+use Savannabits\AdminGenerator\Tests\UserTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -63,9 +63,9 @@ use App\Http\Requests\Admin\User\StoreUser;
 use App\Http\Requests\Admin\User\UpdateUser;
 use App\User;
 use Spatie\Permission\Models\Role;
-use Strathmore\AdminAuth\Activation\Facades\Activation;
-use Strathmore\AdminAuth\Services\ActivationService;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminAuth\Activation\Facades\Activation;
+use Savannabits\AdminAuth\Services\ActivationService;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -123,13 +123,13 @@ Route::middleware([\'auth:\' . config(\'admin-auth.defaults.guard\'), \'admin\']
     });
 });',
             File::get($routesPath));
-        $this->assertStringStartsWith('@extends(\'strathmore/admin-ui::admin.layout.default\')', File::get($indexPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($indexPath));
         $this->assertStringStartsWith('import AppListing from \'../app-components/Listing/AppListing\';
 
 Vue.component(\'user-listing\'', File::get($indexJsPath));
         $this->assertStringStartsWith('<div ', File::get($elementsPath));
-        $this->assertStringStartsWith('@extends(\'strathmore/admin-ui::admin.layout.default\')', File::get($createPath));
-        $this->assertStringStartsWith('@extends(\'strathmore/admin-ui::admin.layout.default\')', File::get($editPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($createPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($editPath));
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';
 
 Vue.component(\'user-form\'', File::get($formJsPath));

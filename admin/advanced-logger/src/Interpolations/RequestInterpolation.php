@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Interpolations;
+namespace Savannabits\AdvancedLogger\Interpolations;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;

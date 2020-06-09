@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminTranslations;
+namespace Savannabits\AdminTranslations;
 
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Finder\SplFileInfo;

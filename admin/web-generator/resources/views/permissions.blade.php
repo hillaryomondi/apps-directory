@@ -23,11 +23,17 @@ class {{ $className }} extends Migration
     protected $roles;
 
     /**
+     * {{'@'}}var string
+     */
+    protected $group;
+    /**
      * {{ $className }} constructor.
      */
     public function __construct()
     {
         $this->guardName = config('auth.defaults.guard');
+        $explode = explode(".",'{{ $modelDotNotation }}');
+        $this->group = isset($explode[1]) ? $explode[1] : $explode[0];
 
         $permissions = collect([
             '{{ $modelDotNotation }}',
@@ -36,9 +42,9 @@ class {{ $className }} extends Migration
             '{{ $modelDotNotation }}.show',
             '{{ $modelDotNotation }}.edit',
             '{{ $modelDotNotation }}.delete',
-@if(!$withoutBulk)
-            '{{ $modelDotNotation }}.bulk-delete',
-@endif
+            @if(!$withoutBulk)
+                '{{ $modelDotNotation }}.bulk-delete',
+            @endif
         ]);
 
         //Add New permissions
@@ -46,6 +52,7 @@ class {{ $className }} extends Migration
             return [
                 'name' => $permission,
                 'guard_name' => $this->guardName,
+                'group'      => $this->group,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ];

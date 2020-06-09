@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Feature\AdminUser\Activation;
+namespace Savannabits\AdminAuth\Tests\Feature\AdminUser\Activation;
 
-use Strathmore\AdminAuth\Notifications\ActivationNotification;
-use Strathmore\AdminAuth\Tests\BracketsTestCase;
-use Strathmore\AdminAuth\Tests\Models\TestBracketsUserModel;
+use Savannabits\AdminAuth\Notifications\ActivationNotification;
+use Savannabits\AdminAuth\Tests\BracketsTestCase;
+use Savannabits\AdminAuth\Tests\Models\TestBracketsUserModel;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Notification;
 
@@ -21,7 +21,7 @@ class ActivationEmailTest extends BracketsTestCase
             'forbidden' => $forbidden,
         ]);
 
-        $this->assertDatabaseHas('test_strathmore_user_models', [
+        $this->assertDatabaseHas('test_savannabits_user_models', [
             'email' => 'john@example.com',
             'activated' => $activated,
             'forbidden' => $forbidden,

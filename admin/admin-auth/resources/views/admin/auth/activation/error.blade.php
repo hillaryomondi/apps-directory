@@ -1,6 +1,6 @@
-@extends('strathmore/admin-ui::admin.layout.master')
+@extends('savannabits/admin-ui::admin.layout.master')
 
-@section('title', trans('strathmore/admin-auth::admin.activation_form.title'))
+@section('title', trans('savannabits/admin-auth::admin.activation_form.title'))
 
 @section('content')
     <div class="container" id="app">
@@ -17,10 +17,10 @@
                                   novalidate>
                                 {{ csrf_field() }}
                                 <div class="auth-header">
-                                    <h1 class="auth-title">{{ trans('strathmore/admin-auth::admin.activation_form.title') }}</h1>
+                                    <h1 class="auth-title">{{ trans('savannabits/admin-auth::admin.activation_form.title') }}</h1>
                                 </div>
                                 <div class="auth-body">
-                                    @include('strathmore/admin-auth::admin.auth.includes.messages')
+                                    @include('savannabits/admin-auth::admin.auth.includes.messages')
                                 </div>
                             </form>
                         </auth-form>

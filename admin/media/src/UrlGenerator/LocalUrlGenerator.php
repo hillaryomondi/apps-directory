@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Media\UrlGenerator;
+namespace Savannabits\Media\UrlGenerator;
 
 use Spatie\MediaLibrary\Exceptions\UrlCannotBeDetermined;
 use Spatie\MediaLibrary\UrlGenerator\LocalUrlGenerator as SpatieLocalUrlGenerator;
@@ -16,7 +16,7 @@ class LocalUrlGenerator extends SpatieLocalUrlGenerator
         if ($this->media->disk === 'media_private') {
             $url = $this->getPathRelativeToRoot();
 
-            return route('strathmore/media::view', [], false) . '?path=' . $this->makeCompatibleForNonUnixHosts($url);
+            return route('savannabits/media::view', [], false) . '?path=' . $this->makeCompatibleForNonUnixHosts($url);
         } else {
             return parent::getUrl();
         }

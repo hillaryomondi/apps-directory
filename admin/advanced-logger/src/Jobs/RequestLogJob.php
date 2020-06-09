@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Jobs;
+namespace Savannabits\AdvancedLogger\Jobs;
 
-use Strathmore\AdvancedLogger\Services\RequestLoggerService;
+use Savannabits\AdvancedLogger\Services\RequestLoggerService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

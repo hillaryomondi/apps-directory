@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminListing\Tests;
+namespace Savannabits\AdminListing\Tests;
 
-use Strathmore\AdminListing\AdminListing;
+use Savannabits\AdminListing\AdminListing;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\Builder;

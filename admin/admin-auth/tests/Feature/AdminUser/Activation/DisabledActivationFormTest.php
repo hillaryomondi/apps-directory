@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Feature\AdminUser\Activation;
+namespace Savannabits\AdminAuth\Tests\Feature\AdminUser\Activation;
 
-use Strathmore\AdminAuth\Tests\BracketsTestCase;
+use Savannabits\AdminAuth\Tests\BracketsTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class DisabledActivationFormTest extends BracketsTestCase

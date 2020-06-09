@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Http\Middleware;
+namespace Savannabits\AdminAuth\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

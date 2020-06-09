@@ -28,6 +28,7 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    'mix_url' => env('MIX_ASSET_URL', null),
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -67,7 +68,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Africa/Nairobi',
 
     /*
     |--------------------------------------------------------------------------

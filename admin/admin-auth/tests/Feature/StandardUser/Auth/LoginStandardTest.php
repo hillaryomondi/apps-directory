@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Feature\StandardUser\Auth;
+namespace Savannabits\AdminAuth\Tests\Feature\StandardUser\Auth;
 
-use Strathmore\AdminAuth\Tests\Models\TestStandardUserModel;
-use Strathmore\AdminAuth\Tests\StandardTestCase;
+use Savannabits\AdminAuth\Tests\Models\TestStandardUserModel;
+use Savannabits\AdminAuth\Tests\StandardTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Auth;
 

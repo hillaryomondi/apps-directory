@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Tests\Feature\Users;
+namespace Savannabits\AdminGenerator\Tests\Feature\Users;
 
-use Strathmore\AdminGenerator\Tests\UserTestCase;
+use Savannabits\AdminGenerator\Tests\UserTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -66,11 +66,11 @@ use App\Http\Requests\Admin\AdminUser\ImpersonalLoginAdminUser;
 use App\Http\Requests\Admin\AdminUser\IndexAdminUser;
 use App\Http\Requests\Admin\AdminUser\StoreAdminUser;
 use App\Http\Requests\Admin\AdminUser\UpdateAdminUser;
-use Strathmore\AdminAuth\Models\AdminUser;
+use Savannabits\AdminAuth\Models\AdminUser;
 use Spatie\Permission\Models\Role;
-use Strathmore\AdminAuth\Activation\Facades\Activation;
-use Strathmore\AdminAuth\Services\ActivationService;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminAuth\Activation\Facades\Activation;
+use Savannabits\AdminAuth\Services\ActivationService;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -146,13 +146,13 @@ Route::middleware([\'auth:\' . config(\'admin-auth.defaults.guard\'), \'admin\']
     });
 });',
             File::get($routesPath));
-        $this->assertStringStartsWith('@extends(\'strathmore/admin-ui::admin.layout.default\')', File::get($indexPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($indexPath));
         $this->assertStringStartsWith('import AppListing from \'../app-components/Listing/AppListing\';
 
 Vue.component(\'admin-user-listing\'', File::get($listingJsPath));
         $this->assertStringStartsWith('<div ', File::get($elementsPath));
-        $this->assertStringStartsWith('@extends(\'strathmore/admin-ui::admin.layout.default\')', File::get($createPath));
-        $this->assertStringStartsWith('@extends(\'strathmore/admin-ui::admin.layout.default\')', File::get($editPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($createPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($editPath));
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';
 
 Vue.component(\'admin-user-form\'', File::get($formJsPath));
@@ -160,7 +160,7 @@ Vue.component(\'admin-user-form\'', File::get($formJsPath));
         $this->assertStringStartsWith('<?php
 
 /** @var  \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Strathmore\AdminAuth\Models\AdminUser::class', File::get($factoryPath));
+$factory->define(Savannabits\AdminAuth\Models\AdminUser::class', File::get($factoryPath));
     }
 
 }

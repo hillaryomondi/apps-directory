@@ -96,7 +96,7 @@ class ProfileController extends Controller
         $this->adminUser->update($sanitized);
 
         if ($request->ajax()) {
-            return ['redirect' => url('admin/profile'), 'message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('admin/profile'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/profile');
@@ -149,7 +149,7 @@ class ProfileController extends Controller
         $this->adminUser->update($sanitized);
 
         if ($request->ajax()) {
-            return ['redirect' => url('admin/password'), 'message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('admin/password'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/password');

@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -54,7 +54,7 @@ class Model extends ClassGenerator {
     }
 
     protected function buildClass() {
-        return view('strathmore/admin-generator::'.$this->view, [
+        return view('savannabits/admin-generator::'.$this->view, [
             'modelBaseName' => $this->classBaseName,
             'modelNameSpace' => $this->classNamespace,
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Feature\StandardUser\Password;
+namespace Savannabits\AdminAuth\Tests\Feature\StandardUser\Password;
 
-use Strathmore\AdminAuth\Tests\Models\TestStandardUserModel;
-use Strathmore\AdminAuth\Tests\StandardTestCase;
+use Savannabits\AdminAuth\Tests\Models\TestStandardUserModel;
+use Savannabits\AdminAuth\Tests\StandardTestCase;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Hash;
@@ -48,7 +48,7 @@ class ResetPasswordTest extends StandardTestCase
     /** @test */
     public function can_see_reset_password_form(): void
     {
-        $response = $this->get(route('strathmore/admin-auth::admin/password/showResetForm', ['token' => $this->token]));
+        $response = $this->get(route('savannabits/admin-auth::admin/password/showResetForm', ['token' => $this->token]));
         $response->assertStatus(200);
     }
 

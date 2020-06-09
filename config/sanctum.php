@@ -13,8 +13,6 @@ return [
     |
     */
 
-    // To make things easier we can add a key to our env file and call it APP_BASE_DOMAIN, which should be changed for
-    // every environment. Then we concatenate it to the explode list
     'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'localhost,127.0.0.1').",".env('APP_BASE_DOMAIN')),
 
     /*

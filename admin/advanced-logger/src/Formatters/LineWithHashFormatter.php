@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Formatters;
+namespace Savannabits\AdvancedLogger\Formatters;
 
-use Strathmore\AdvancedLogger\Services\Benchmark;
+use Savannabits\AdvancedLogger\Services\Benchmark;
 use Monolog\Formatter\LineFormatter;
 
 /**

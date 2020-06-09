@@ -1,11 +1,11 @@
 <?php
 
-namespace Strathmore\AdminAuth\Activation\Facades;
+namespace Savannabits\AdminAuth\Activation\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Strathmore\AdminAuth\Activation\Brokers\ActivationBrokerManager
+ * @see \Savannabits\AdminAuth\Activation\Brokers\ActivationBrokerManager
  */
 class Activation extends Facade
 {

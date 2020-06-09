@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Media\Http\Controllers;
+namespace Savannabits\Media\Http\Controllers;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -29,6 +29,6 @@ class FileUploadController extends BaseController
             return response()->json(['path' => $path], 200);
         }
 
-        return response()->json(trans('strathmore/media::media.file.not_provided'), 422);
+        return response()->json(trans('savannabits/media::media.file.not_provided'), 422);
     }
 }

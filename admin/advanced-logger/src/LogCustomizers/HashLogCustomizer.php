@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\LogCustomizers;
+namespace Savannabits\AdvancedLogger\LogCustomizers;
 
-use Strathmore\AdvancedLogger\Formatters\LineWithHashFormatter;
+use Savannabits\AdvancedLogger\Formatters\LineWithHashFormatter;
 
 /**
  * Class HashLogCustomizer

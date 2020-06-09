@@ -14,7 +14,7 @@ namespace App\Http\Requests\Web\{{ $modelWithNamespaceFromDefault }};
     }
 @endphp
 
-@if($translatable->count() > 0)use Strathmore\AdminUI\TranslatableFormRequest;
+@if($translatable->count() > 0)use Savannabits\AdminUI\TranslatableFormRequest;
 @else
 use Illuminate\Foundation\Http\FormRequest;
 @endif

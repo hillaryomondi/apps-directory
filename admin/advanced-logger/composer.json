@@ -1,12 +1,12 @@
 {
-    "name": "strathmore/advanced-logger",
+    "name": "savannabits/advanced-logger",
     "description": "Advanced logger",
     "keywords": [
         "logger",
         "request logger"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",
@@ -30,18 +30,18 @@
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "Strathmore\\AdvancedLogger\\": "src/"
+            "Savannabits\\AdvancedLogger\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Strathmore\\AdvancedLogger\\Test\\": "tests/"
+            "Savannabits\\AdvancedLogger\\Test\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Strathmore\\AdvancedLogger\\AdvancedLoggerServiceProvider"
+                "Savannabits\\AdvancedLogger\\AdvancedLoggerServiceProvider"
             ]
         },
         "branch-alias": {

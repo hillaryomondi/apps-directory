@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminUI\Console\Commands;
+<?php namespace Savannabits\AdminUI\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -18,7 +18,7 @@ class AdminUIInstall extends Command
      *
      * @var string
      */
-    protected $description = 'Install a strathmore/admin-ui package';
+    protected $description = 'Install a savannabits/admin-ui package';
 
     /**
      * Execute the console command.
@@ -27,15 +27,15 @@ class AdminUIInstall extends Command
      */
     public function handle(Filesystem $files)
     {
-        $this->info('Installing package strathmore/admin-ui');
+        $this->info('Installing package savannabits/admin-ui');
 
         $this->call('vendor:publish', [
-            '--provider' => "Strathmore\\AdminUI\\AdminUIServiceProvider",
+            '--provider' => "Savannabits\\AdminUI\\AdminUIServiceProvider",
         ]);
 
         $this->frontendAdjustments($files);
 
-        $this->info('Package strathmore/admin-ui installed');
+        $this->info('Package savannabits/admin-ui installed');
     }
 
     private function strReplaceInFile($fileName, $ifExistsRegex, $find, $replaceWith) {

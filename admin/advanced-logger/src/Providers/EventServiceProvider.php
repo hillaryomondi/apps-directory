@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Providers;
+namespace Savannabits\AdvancedLogger\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -24,6 +24,6 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $subscribe = [
-        \Strathmore\AdvancedLogger\Listeners\RequestLoggerListener::class,
+        \Savannabits\AdvancedLogger\Listeners\RequestLoggerListener::class,
     ];
 }

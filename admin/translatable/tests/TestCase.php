@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Translatable\Test;
+namespace Savannabits\Translatable\Test;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\Builder;
@@ -43,7 +43,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            \Strathmore\Translatable\TranslatableServiceProvider::class
+            \Savannabits\Translatable\TranslatableServiceProvider::class
         ];
     }
 

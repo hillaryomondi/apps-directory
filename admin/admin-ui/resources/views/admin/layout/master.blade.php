@@ -10,9 +10,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	{{-- TODO translatable suffix --}}
-    <title>@yield('title', 'MC') - {{ trans('strathmore/admin-ui::admin.page_title_suffix') }}</title>
+    <title>@yield('title', 'MC') - {{ trans('savannabits/admin-ui::admin.page_title_suffix') }}</title>
 
-	@include('strathmore/admin-ui::admin.partials.main-styles')
+	@include('savannabits/admin-ui::admin.partials.main-styles')
 
     @yield('styles')
 
@@ -25,8 +25,8 @@
 
     @yield('footer')
 
-    @include('strathmore/admin-ui::admin.partials.wysiwyg-svgs')
-    @include('strathmore/admin-ui::admin.partials.main-bottom-scripts')
+    @include('savannabits/admin-ui::admin.partials.wysiwyg-svgs')
+    @include('savannabits/admin-ui::admin.partials.main-bottom-scripts')
     @yield('bottom-scripts')
 </body>
 

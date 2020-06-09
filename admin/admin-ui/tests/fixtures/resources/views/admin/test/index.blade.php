@@ -1,4 +1,4 @@
-@extends('strathmore/admin-ui::admin.layout.default')
+@extends('savannabits/admin-ui::admin.layout.default')
 
 @section('body')
 

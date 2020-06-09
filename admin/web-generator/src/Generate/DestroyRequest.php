@@ -1,4 +1,4 @@
-<?php namespace Strathmore\WebGenerator\Generate;
+<?php namespace Savannabits\WebGenerator\Generate;
 
 use Symfony\Component\Console\Input\InputOption;
 
@@ -34,7 +34,7 @@ class DestroyRequest extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('strathmore/web-generator::destroy-request', [
+        return view('savannabits/web-generator::destroy-request', [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'modelWithNamespaceFromDefault' => $this->modelWithNamespaceFromDefault,

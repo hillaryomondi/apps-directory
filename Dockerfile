@@ -3,7 +3,7 @@ FROM php:7.4-fpm
 # Arguments defined in docker-compose.yml
 ARG user
 ARG uid
-ARG eed
+
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
@@ -18,8 +18,14 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
+    libxrender1 \
+    libfontconfig1 \
+    libx11-dev \
+    libjpeg62 \
+    libxtst6 \
     libfreetype6-dev \
     libsqlite3-dev \
+    libldap2-dev \
     zip \
     unzip
 
@@ -31,6 +37,7 @@ RUN apt-get update && apt-get install -y \
 #ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg
+RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/
 # Install PHP extensions
 RUN docker-php-ext-install pdo_mysql \
     tokenizer \
@@ -46,6 +53,7 @@ RUN docker-php-ext-install pdo_mysql \
     curl \
     xml \
     zip \
+    ldap \
     pdo_sqlite
 
 # Get latest Composer
@@ -59,6 +67,7 @@ RUN chown -R $user:www-data /var/www
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
+
 WORKDIR /var/www
 USER $user
 ENV NVM_DIR /home/$user/.nvm

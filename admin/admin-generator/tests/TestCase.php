@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Tests;
+namespace Savannabits\AdminGenerator\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\File;
@@ -74,7 +74,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            \Strathmore\AdminGenerator\AdminGeneratorServiceProvider::class
+            \Savannabits\AdminGenerator\AdminGeneratorServiceProvider::class
         ];
     }
 

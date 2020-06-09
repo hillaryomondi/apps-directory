@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Models;
+namespace Savannabits\AdminAuth\Tests\Models;
 
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Activation\Traits\CanActivate;
-use Strathmore\AdminAuth\Notifications\ResetPassword;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Activation\Traits\CanActivate;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Models;
+namespace Savannabits\AdminAuth\Tests\Models;
 
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Activation\Traits\CanActivate;
-use Strathmore\AdminAuth\Notifications\ActivationNotification;
-use Strathmore\AdminAuth\Notifications\ResetPassword;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Activation\Traits\CanActivate;
+use Savannabits\AdminAuth\Notifications\ActivationNotification;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
 use Illuminate\Contracts\Routing\UrlGenerator;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;

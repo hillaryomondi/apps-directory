@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\Media\HasMedia;
+namespace Savannabits\Media\HasMedia;
 
-use Strathmore\Media\Exceptions\FileCannotBeAdded\FileIsTooBig;
-use Strathmore\Media\Exceptions\FileCannotBeAdded\TooManyFiles;
+use Savannabits\Media\Exceptions\FileCannotBeAdded\FileIsTooBig;
+use Savannabits\Media\Exceptions\FileCannotBeAdded\TooManyFiles;
 use Illuminate\Http\File;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;

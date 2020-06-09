@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Http\Controllers\Admin;
+namespace Savannabits\AdminTranslations\Http\Controllers\Admin;
 
-use Strathmore\AdminTranslations\Http\Requests\Admin\Translation\RescanTranslations;
+use Savannabits\AdminTranslations\Http\Requests\Admin\Translation\RescanTranslations;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;

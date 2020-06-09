@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Providers;
+namespace Savannabits\AdminTranslations\Providers;
 
 use Illuminate\Translation\TranslationServiceProvider as IlluminateTranslationServiceProvider;
 

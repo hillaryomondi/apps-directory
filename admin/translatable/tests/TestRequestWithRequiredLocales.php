@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\Translatable\Test;
+namespace Savannabits\Translatable\Test;
 
-use Strathmore\Translatable\TranslatableFormRequest;
+use Savannabits\Translatable\TranslatableFormRequest;
 use Illuminate\Support\Collection;
 
 class TestRequestWithRequiredLocales extends TranslatableFormRequest

@@ -2,22 +2,17 @@
 
 namespace App;
 
-
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Activation\Traits\CanActivate;
-use Strathmore\AdminAuth\Notifications\ResetPassword;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
 use Laravel\Sanctum\HasApiTokens;
+use Savannabits\AdminAuth\Activation\Traits\CanActivate;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
+use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements CanActivateContract
+class User extends Authenticatable
 {
-    use Notifiable;
-    use CanActivate;
-    use HasRoles;
-    use HasApiTokens;
-
+    use CanActivate,HasRoles,HasApiTokens, Notifiable;
 
     protected $fillable = [
         'name',
@@ -27,11 +22,16 @@ class User extends Authenticatable implements CanActivateContract
         'username',
         'first_name',
         'middle_name',
+        'last_name'
+    ];
+    protected $searchable = [
+        "id",
+        'name',
+        'email',
+        'username',
+        'first_name',
+        'middle_name',
         'last_name',
-        'activated',
-        'last_login_at',
-        'last_login_ip',
-
     ];
 
     protected $hidden = [
@@ -45,6 +45,7 @@ class User extends Authenticatable implements CanActivateContract
         'created_at',
         'updated_at',
         'last_login_at',
+        'deleted_at',
 
     ];
 
@@ -55,13 +56,12 @@ class User extends Authenticatable implements CanActivateContract
     /* ************************ ACCESSOR ************************* */
 
     public function getResourceUrlAttribute() {
-        return url('/admin/users/'.$this->getKey());
+        return url('/users/'.$this->getKey());
     }
 
     public function getFullNameAttribute() {
-        return $this->first_name." ".$this->last_name;
+        return "$this->first_name ". ($this->middle_name ? "$this->middle_name ": "")."$this->last_name";
     }
-
     /**
      * Send the password reset notification.
      *
@@ -74,9 +74,4 @@ class User extends Authenticatable implements CanActivateContract
     }
 
     /* ************************ RELATIONS ************************ */
-    public function bugs(){
-        return $this->hasMany('App\Bug');
-    }
-
-
 }

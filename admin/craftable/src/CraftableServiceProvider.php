@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\Craftable;
+namespace Savannabits\Craftable;
 
-use Strathmore\Craftable\Console\Commands\CraftableInitializeEnv;
-use Strathmore\Craftable\Console\Commands\CraftableInstall;
+use Savannabits\Craftable\Console\Commands\CraftableInitializeEnv;
+use Savannabits\Craftable\Console\Commands\CraftableInstall;
 use Illuminate\Support\ServiceProvider;
 
 class CraftableServiceProvider extends ServiceProvider

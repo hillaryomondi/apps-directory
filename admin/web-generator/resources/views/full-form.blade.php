@@ -1,4 +1,4 @@
-{{'@'}}extends('frontend.layout.base.layout.default')
+{{'@'}}extends('web.layout.base.layout.default')
 
 {{'@'}}section('title', trans('admin.{{ $modelLangFormat }}.actions.edit', ['name' => ${{ $modelVariableName }}->{{$modelTitle}}]))
 
@@ -30,14 +30,14 @@
 
                     <div class="card-body">
 
-                        @include('strathmore/web-generator::form')
+                        @include('savannabits/web-generator::form')
 
                     </div>
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">
                             <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
-                            @{{ trans('strathmore/admin-ui::admin.btn.save') }}
+                            @{{ trans('savannabits/admin-ui::admin.btn.save') }}
                         </button>
                     </div>
 

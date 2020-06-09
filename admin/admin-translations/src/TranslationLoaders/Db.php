@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminTranslations\TranslationLoaders;
+namespace Savannabits\AdminTranslations\TranslationLoaders;
 
-use Strathmore\AdminTranslations\Exceptions\InvalidConfiguration;
-use Strathmore\AdminTranslations\Translation;
+use Savannabits\AdminTranslations\Exceptions\InvalidConfiguration;
+use Savannabits\AdminTranslations\Translation;
 
 class Db implements TranslationLoader
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\Translatable\Test\Feature;
+namespace Savannabits\Translatable\Test\Feature;
 
-use Strathmore\Translatable\Test\TestCase;
+use Savannabits\Translatable\Test\TestCase;
 
 class TranslatableRequestTestTest extends TestCase
 {

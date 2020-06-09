@@ -8,11 +8,11 @@ use App\Http\Requests\Admin\AdminUser\ImpersonalLoginAdminUser;
 use App\Http\Requests\Admin\AdminUser\IndexAdminUser;
 use App\Http\Requests\Admin\AdminUser\StoreAdminUser;
 use App\Http\Requests\Admin\AdminUser\UpdateAdminUser;
-use Strathmore\AdminAuth\Models\AdminUser;
+use Savannabits\AdminAuth\Models\AdminUser;
 use Spatie\Permission\Models\Role;
-use Strathmore\AdminAuth\Activation\Facades\Activation;
-use Strathmore\AdminAuth\Services\ActivationService;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminAuth\Activation\Facades\Activation;
+use Savannabits\AdminAuth\Services\ActivationService;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -106,7 +106,7 @@ class AdminUsersController extends Controller
         $adminUser->roles()->sync(collect($request->input('roles', []))->map->id->toArray());
 
         if ($request->ajax()) {
-            return ['redirect' => url('admin/admin-users'), 'message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('admin/admin-users'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/admin-users');
@@ -167,7 +167,7 @@ class AdminUsersController extends Controller
         }
 
         if ($request->ajax()) {
-            return ['redirect' => url('admin/admin-users'), 'message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('admin/admin-users'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/admin-users');
@@ -186,7 +186,7 @@ class AdminUsersController extends Controller
         $adminUser->delete();
 
         if ($request->ajax()) {
-            return response(['message' => trans('strathmore/admin-ui::admin.operation.succeeded')]);
+            return response(['message' => trans('savannabits/admin-ui::admin.operation.succeeded')]);
         }
 
         return redirect()->back();
@@ -206,20 +206,20 @@ class AdminUsersController extends Controller
             $response = $activationService->handle($adminUser);
             if ($response == Activation::ACTIVATION_LINK_SENT) {
                 if ($request->ajax()) {
-                    return ['message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
+                    return ['message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
                 }
 
                 return redirect()->back();
             } else {
                 if ($request->ajax()) {
-                    abort(409, trans('strathmore/admin-ui::admin.operation.failed'));
+                    abort(409, trans('savannabits/admin-ui::admin.operation.failed'));
                 }
 
                 return redirect()->back();
             }
         } else {
             if ($request->ajax()) {
-                abort(400, trans('strathmore/admin-ui::admin.operation.not_allowed'));
+                abort(400, trans('savannabits/admin-ui::admin.operation.not_allowed'));
             }
 
             return redirect()->back();

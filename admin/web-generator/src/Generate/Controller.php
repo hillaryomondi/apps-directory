@@ -1,6 +1,6 @@
-<?php namespace Strathmore\WebGenerator\Generate;
+<?php namespace Savannabits\WebGenerator\Generate;
 
-use Strathmore\WebGenerator\Generate\Traits\FileManipulations;
+use Savannabits\WebGenerator\Generate\Traits\FileManipulations;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use Symfony\Component\Console\Input\InputOption;
@@ -74,7 +74,7 @@ class Controller extends ClassGenerator {
 
             $icon = Arr::random(['icon-graduation', 'icon-puzzle', 'icon-compass', 'icon-drop', 'icon-globe', 'icon-ghost', 'icon-book-open', 'icon-flag', 'icon-star', 'icon-umbrella', 'icon-energy', 'icon-plane', 'icon-magnet', 'icon-diamond']);
             if ($this->strReplaceInFile(
-                resource_path('views/frontend/layout/sidebar.blade.php'),
+                resource_path('views/web/layout/sidebar.blade.php'),
                 '|url\(\'\/'.$this->resource.'\'\)|',
                 "{{-- Do not delete me :) I'm used for auto-generation menu items --}}",
                 "<li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ url('".$this->resource."') }}\"><i class=\"nav-icon ".$icon."\"></i> {{ trans('admin.".$this->modelLangFormat.".title') }}</a></li>".PHP_EOL."           {{-- Do not delete me :) I'm used for auto-generation menu items --}}"
@@ -87,7 +87,7 @@ class Controller extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('strathmore/web-generator::'.$this->view, [
+        return view('savannabits/web-generator::'.$this->view, [
             'controllerBaseName' => $this->classBaseName,
             'controllerNamespace' => $this->classNamespace,
             'modelBaseName' => $this->modelBaseName,

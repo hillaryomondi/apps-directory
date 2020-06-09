@@ -1,7 +1,7 @@
-<?php namespace Strathmore\AdminGenerator\Generate\Traits;
+<?php namespace Savannabits\AdminGenerator\Generate\Traits;
 
-use Strathmore\AdminGenerator\Generate\Controller;
-use Strathmore\AdminGenerator\Generate\Model;
+use Savannabits\AdminGenerator\Generate\Controller;
+use Savannabits\AdminGenerator\Generate\Model;
 use Illuminate\Support\Str;
 
 trait Names

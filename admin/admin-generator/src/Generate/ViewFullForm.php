@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -140,7 +140,7 @@ class ViewFullForm extends ViewGenerator {
 
     protected function buildForm() {
 
-        return view('strathmore/admin-generator::'.$this->view, [
+        return view('savannabits/admin-generator::'.$this->view, [
             'modelBaseName' => $this->modelBaseName,
             'modelVariableName' => $this->modelVariableName,
             'route' => $this->route,
@@ -163,7 +163,7 @@ class ViewFullForm extends ViewGenerator {
     }
 
     protected function buildFormJs() {
-        return view('strathmore/admin-generator::'.$this->viewJs, [
+        return view('savannabits/admin-generator::'.$this->viewJs, [
             'modelJSName' => $this->formJsRelativePath,
 
             'columns' => $this->getVisibleColumns($this->tableName, $this->modelVariableName),

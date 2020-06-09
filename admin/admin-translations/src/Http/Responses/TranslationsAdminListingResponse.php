@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Http\Responses;
+namespace Savannabits\AdminTranslations\Http\Responses;
 
-use Strathmore\AdminTranslations\Translation;
-use Strathmore\Translatable\Facades\Translatable;
+use Savannabits\AdminTranslations\Translation;
+use Savannabits\Translatable\Facades\Translatable;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Contracts\View\Factory;
@@ -46,7 +46,7 @@ class TranslationsAdminListingResponse implements Responsable
             return ['data' => $this->data, 'locales' => $locales];
         }
 
-        return view('strathmore/admin-translations::admin.translation.index', [
+        return view('savannabits/admin-translations::admin.translation.index', [
             'data' => $this->data,
             'locales' => $locales,
             'groups' => $this->getUsedGroups(),

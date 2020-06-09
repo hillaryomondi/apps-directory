@@ -1,10 +1,10 @@
 {
-    "name": "strathmore/craftable",
+    "name": "savannabits/craftable",
     "description": "Administration toolkit for Laravel 7 - starting point for developing administration interface",
     "keywords": [
         "craftable",
         "crud",
-        "strathmore",
+        "savannabits",
         "admin",
         "administration",
         "toolkit",
@@ -24,28 +24,28 @@
     ],
     "require": {
         "php": "^7.2.5",
-        "strathmore/admin-auth": "^5.0",
-        "strathmore/admin-listing": "^3.0",
-        "strathmore/admin-translations": "^4.0",
-        "strathmore/admin-ui": "^4.0",
-        "strathmore/advanced-logger": "^2.0",
-        "strathmore/media": "^4.0",
-        "strathmore/translatable": "^2.0",
+        "savannabits/admin-auth": "^7.0",
+        "savannabits/admin-listing": "^7.0",
+        "savannabits/admin-translations": "^7.0",
+        "savannabits/admin-ui": "^7.0",
+        "savannabits/advanced-logger": "^7.0",
+        "savannabits/media": "^7.0",
+        "savannabits/translatable": "^7.0",
         "illuminate/support": "^6.0|^7.0",
         "spatie/laravel-permission": "^3.0",
-        "spatie/laravel-backup": "^6.0",
+        "spatie/laravel-backup": "6.9.0",
         "maatwebsite/excel": "^3.1"
     },
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "Strathmore\\Craftable\\": "src/"
+            "Savannabits\\Craftable\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Strathmore\\Craftable\\CraftableServiceProvider"
+                "Savannabits\\Craftable\\CraftableServiceProvider"
             ]
         },
         "branch-alias": {

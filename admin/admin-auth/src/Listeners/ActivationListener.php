@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminAuth\Listeners;
+namespace Savannabits\AdminAuth\Listeners;
 
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate;
-use Strathmore\AdminAuth\Activation\Facades\Activation;
-use Strathmore\AdminAuth\Services\ActivationService;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate;
+use Savannabits\AdminAuth\Activation\Facades\Activation;
+use Savannabits\AdminAuth\Services\ActivationService;
 use Illuminate\Events\Dispatcher;
 
 class ActivationListener

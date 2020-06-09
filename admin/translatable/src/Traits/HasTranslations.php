@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Translatable\Traits;
+namespace Savannabits\Translatable\Traits;
 
 use Illuminate\Database\Eloquent\JsonEncodingException;
 use Illuminate\Support\Facades\App;

@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -52,7 +52,7 @@ class ModelFactory extends FileAppender {
 
     protected function buildClass() {
 
-        return view('strathmore/admin-generator::'.$this->view, [
+        return view('savannabits/admin-generator::'.$this->view, [
             'modelFullName' => $this->modelFullName,
 
             'columns' => $this->readColumnsFromTable($this->tableName)

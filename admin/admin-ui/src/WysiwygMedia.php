@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminUI;
+namespace Savannabits\AdminUI;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;

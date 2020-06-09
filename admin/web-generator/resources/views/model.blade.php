@@ -17,8 +17,8 @@ namespace {{ $modelNameSpace }};
 
 use Illuminate\Database\Eloquent\Model;
 @if($fillable)@foreach($fillable as $fillableColumn)
-@if($fillableColumn === "created_by_admin_user_id")use Strathmore\Craftable\Traits\CreatedByAdminUserTrait;
-@elseif($fillableColumn === "updated_by_admin_user_id")use Strathmore\Craftable\Traits\UpdatedByAdminUserTrait;
+@if($fillableColumn === "created_by_admin_user_id")use Savannabits\Craftable\Traits\CreatedByAdminUserTrait;
+@elseif($fillableColumn === "updated_by_admin_user_id")use Savannabits\Craftable\Traits\UpdatedByAdminUserTrait;
 @endif
 @endforeach
 @endif
@@ -29,7 +29,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 @endif
 @if($hasRoles)use Spatie\Permission\Traits\HasRoles;
 @endif
-@if($translatable->count() > 0)use Strathmore\Translatable\Traits\HasTranslations;
+@if($translatable->count() > 0)use Savannabits\Translatable\Traits\HasTranslations;
 @endif
 
 class {{ $modelBaseName }} extends Model

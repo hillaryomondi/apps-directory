@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminUI\Http\Controllers;
+namespace Savannabits\AdminUI\Http\Controllers;
 
-use Strathmore\AdminUI\WysiwygMedia;
+use Savannabits\AdminUI\WysiwygMedia;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Config;

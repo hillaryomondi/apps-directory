@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminAuth\Activation\Brokers;
+namespace Savannabits\AdminAuth\Activation\Brokers;
 
-use Strathmore\AdminAuth\Activation\Contracts\ActivationBroker as ActivationBrokerContract;
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Activation\Repositories\TokenRepositoryInterface;
+use Savannabits\AdminAuth\Activation\Contracts\ActivationBroker as ActivationBrokerContract;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Activation\Repositories\TokenRepositoryInterface;
 use Closure;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Support\Arr;

@@ -1,87 +1,68 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{config('app.name')}}</title>
-        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
-        <link href="{{asset('css/app.css')}}" rel="stylesheet" />
-        <link href="{{asset('search-23/css/main.css')}}" rel="stylesheet" />
-    </head>
-    <body>
-        <div id="app">
-            <search-component
-                v-cloak
-                inline-template
-            >
-                <div>
-                    <div v-if="!searched" class="s130 bg-su-blue">
-                        {{--@if (Route::has('login'))
-                            <div class="top-right links">
-                                @auth
-                                    <a href="{{ url('/home') }}">Home</a>
-                                @else
-                                    <a href="{{ route('login') }}">Login</a>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                                    --}}{{--@if (Route::has('register'))
-                                        <a href="{{ route('register') }}">Register</a>
-                                    @endif--}}{{--
-                                @endauth
-                            </div>
-                        @endif--}}
-                        <form>
-                            <div class="d-flex align-items-end justify-content-center mb-4">
-                                <img src="{{asset('images/su-logo-white.png')}}" width="250">
-                                <h3 class="text-value-lg font-weight-bolder mb-4 pb-1 text-su-gold">apps directory</h3>
-                            </div>
-                            <div class="inner-form">
-                                <div class="input-field first-wrap">
-                                    <div class="svg-wrapper">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                                        </svg>
-                                    </div>
-                                    <input autofocus id="search" v-model='search_query' @input="debounceInput" type="text" placeholder="What are you looking for?" />
-                                </div>
-                                <div class="input-field second-wrap">
-                                    <button class="btn-search" type="button">SEARCH</button>
-                                </div>
-                            </div>
-                            <span class="info">ex. Cafeteria, Kuali, Payroll, Hrm, People and Culture, ICTS etc</span>
-                            {{-- <b-button
-                                pill
-                                size="lg"
-                                variant='warning'
-                                v-b-modal.dummy-modal
-                                >
-                                Click to launch a modal
-                            </b-button>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-                            <b-modal id='dummy-modal' title="Dummy Modal">
-                                Hello, I am just a dummy modal.
-                            </b-modal> --}}
-                            <!-- <code class="p-2 alert-danger">@{{ searchResultsObject?.data }}</code> -->
-                        </form>
-                    </div>
-                    <div v-else>
-                        <b-navbar type="light" variant="primary">
-                            <b-navbar-brand href="">
-                                <img src="{{asset('images/su-logo-white.png')}}" width="200">
-                            </b-navbar-brand>
-                            <b-nav-form>
-                              <b-form-input size="lg" style="background: #d9f1e3" v-model="search_query" @input="debounceInput" autofocus class="mr-sm-2 rounded-pill" placeholder="What are you looking for?"></b-form-input>
-                              {{-- <b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Search</b-button> --}}
-                            </b-nav-form>
-                          </b-navbar>
-                        {{-- Search Results  --}}
-                        @include('results')
-                    </div>
-                </div>
-            </search-component>
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="//rsms.me/inter/inter.css">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen antialiased leading-none">
+<div class="flex flex-col">
+    @if(Route::has('login'))
+        <div class="absolute top-0 right-0 mt-4 mr-4">
+            @auth
+                <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
+            @else
+                <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase pr-6">{{ __('Login') }}</a>
+                {{--@if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
+                @endif--}}
+            @endauth
         </div>
-        <script src="{{asset('js/app.js')}}"></script>
-        <script src="{{asset('search-23/js/extention/choices.js')}}"></script>
-    </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+    @endif
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="flex flex-col justify-around h-full">
+            <div>
+                <h1 class="text-gray-600 text-center font-light tracking-wider text-5xl mb-6">
+                    {{ config('app.name', 'Laravel') }}
+                </h1>
+                <ul class="list-reset">
+                    <li class="inline pr-8">
+                        <a href="https://laravel.com/docs" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Documentation">Documentation</a>
+                    </li>
+                    <li class="inline pr-8">
+                        <a href="https://laracasts.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Laracasts">Laracasts</a>
+                    </li>
+                    <li class="inline pr-8">
+                        <a href="https://laravel-news.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="News">News</a>
+                    </li>
+                    <li class="inline pr-8">
+                        <a href="https://nova.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Nova">Nova</a>
+                    </li>
+                    <li class="inline pr-8">
+                        <a href="https://forge.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Forge">Forge</a>
+                    </li>
+                    <li class="inline pr-8">
+                        <a href="https://vapor.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Vapor">Vapor</a>
+                    </li>
+                    <li class="inline pr-8">
+                        <a href="https://github.com/laravel/laravel" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="GitHub">GitHub</a>
+                    </li>
+                    <li class="inline pr-8">
+                        <a href="https://tailwindcss.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Tailwind Css">Tailwind CSS</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>

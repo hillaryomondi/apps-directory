@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminAuth\Activation\Traits;
+namespace Savannabits\AdminAuth\Activation\Traits;
 
-use Strathmore\AdminAuth\Activation\Notifications\ActivationNotification;
+use Savannabits\AdminAuth\Activation\Notifications\ActivationNotification;
 
 trait CanActivate
 {

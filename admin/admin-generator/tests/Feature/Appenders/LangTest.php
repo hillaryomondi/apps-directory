@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Tests\Feature\Appenders;
+namespace Savannabits\AdminGenerator\Tests\Feature\Appenders;
 
-use Strathmore\AdminGenerator\Tests\TestCase;
+use Savannabits\AdminGenerator\Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 

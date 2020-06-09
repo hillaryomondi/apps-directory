@@ -1,6 +1,6 @@
-@extends('strathmore/admin-ui::admin.layout.master')
+@extends('savannabits/admin-ui::admin.layout.master')
 
-@section('title', trans('strathmore/admin-auth::admin.forgot_password.title'))
+@section('title', trans('savannabits/admin-auth::admin.forgot_password.title'))
 
 @section('content')
 	<div class="container" id="app">
@@ -15,22 +15,22 @@
 								<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/password-reset/send') }}" novalidate>
 									{{ csrf_field() }}
 									<div class="auth-header">
-										<h1 class="auth-title">{{ trans('strathmore/admin-auth::admin.forgot_password.title') }}</h1>
-										<p class="auth-subtitle">{{ trans('strathmore/admin-auth::admin.forgot_password.note') }}</p>
+										<h1 class="auth-title">{{ trans('savannabits/admin-auth::admin.forgot_password.title') }}</h1>
+										<p class="auth-subtitle">{{ trans('savannabits/admin-auth::admin.forgot_password.note') }}</p>
 									</div>
 									<div class="auth-body">
-										@include('strathmore/admin-auth::admin.auth.includes.messages')
+										@include('savannabits/admin-auth::admin.auth.includes.messages')
 											<div class="form-group" :class="{'has-danger': errors.has('email'), 'has-success': fields.email && fields.email.valid }">
-												<label for="email">{{ trans('strathmore/admin-auth::admin.auth_global.email') }}</label>
+												<label for="email">{{ trans('savannabits/admin-auth::admin.auth_global.email') }}</label>
 												<div class="input-group input-group--custom">
 													<div class="input-group-addon"><i class="input-icon input-icon--mail"></i></div>
-													<input type="text" v-model="form.email" v-validate="'required|email'" class="form-control" :class="{'form-control-danger': errors.has('email'), 'form-control-success': fields.email && fields.email.valid}" id="email" name="email" placeholder="{{ trans('strathmore/admin-auth::admin.auth_global.email') }}">
+													<input type="text" v-model="form.email" v-validate="'required|email'" class="form-control" :class="{'form-control-danger': errors.has('email'), 'form-control-success': fields.email && fields.email.valid}" id="email" name="email" placeholder="{{ trans('savannabits/admin-auth::admin.auth_global.email') }}">
 												</div>
 													<div v-if="errors.has('email')" class="form-control-feedback" v-cloak>@{{ errors.first('email') }}</div>
 											</div>
 											<div class="form-grou">
 													<input type="hidden" name="remember" value="1">
-													<button type="submit" class="btn btn-primary btn-block btn-spinner"><i class="fa"></i> {{ trans('strathmore/admin-auth::admin.forgot_password.button') }}</button>
+													<button type="submit" class="btn btn-primary btn-block btn-spinner"><i class="fa"></i> {{ trans('savannabits/admin-auth::admin.forgot_password.button') }}</button>
 											</div>
 									</div>
 								</form>

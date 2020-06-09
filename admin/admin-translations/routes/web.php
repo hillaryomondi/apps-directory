@@ -1,7 +1,7 @@
 <?php
 
 Route::middleware(['auth:' . config('admin-auth.defaults.guard')])->group(static function () {
-    Route::namespace('Strathmore\AdminTranslations\Http\Controllers\Admin')->group(static function () {
+    Route::namespace('Savannabits\AdminTranslations\Http\Controllers\Admin')->group(static function () {
         Route::get('/admin/translations', 'TranslationsController@index');
         Route::get('/admin/translations/export', 'TranslationsController@export')->name('admin/translations/export');
         Route::post('/admin/translations/import', 'TranslationsController@import')->name('admin/translations/import');

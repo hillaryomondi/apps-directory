@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\WebGenerator\Tests\Feature\Views;
+namespace Savannabits\WebGenerator\Tests\Feature\Views;
 
-use Strathmore\WebGenerator\Tests\TestCase;
+use Savannabits\WebGenerator\Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -25,7 +25,7 @@ class FullFormTest extends TestCase
 
         $this->assertFileExists($formPath);
         $this->assertFileExists($formJsPath);
-        $this->assertStringStartsWith('@extends(\'frontend.layout.base.layout.default\')', File::get($formPath));
+        $this->assertStringStartsWith('@extends(\'web.layout.base.layout.default\')', File::get($formPath));
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';
 
 Vue.component(\'category-form\', {
@@ -48,7 +48,7 @@ Vue.component(\'category-form\', {
 
         $this->assertFileExists($formPath);
         $this->assertFileExists($formJsPath);
-        $this->assertStringStartsWith('@extends(\'frontend.layout.base.layout.default\')', File::get($formPath));
+        $this->assertStringStartsWith('@extends(\'web.layout.base.layout.default\')', File::get($formPath));
         $this->assertStringContainsString(':action="\'{{ route(\'admin/profile/edit-password\', [\'category\' => $category]) }}\'"',
             File::get($formPath));
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';

@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Feature\AdminUser\Activation;
+namespace Savannabits\AdminAuth\Tests\Feature\AdminUser\Activation;
 
-use Strathmore\AdminAuth\Tests\BracketsTestCase;
-use Strathmore\AdminAuth\Tests\Models\TestBracketsUserModel;
+use Savannabits\AdminAuth\Tests\BracketsTestCase;
+use Savannabits\AdminAuth\Tests\Models\TestBracketsUserModel;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -34,7 +34,7 @@ class ActivationTest extends BracketsTestCase
             'forbidden' => $forbidden,
         ]);
 
-        $this->assertDatabaseHas('test_strathmore_user_models', [
+        $this->assertDatabaseHas('test_savannabits_user_models', [
             'email' => 'john@example.com',
             'activated' => $activated,
             'forbidden' => $forbidden,
@@ -62,7 +62,7 @@ class ActivationTest extends BracketsTestCase
     {
         $user = $this->createTestUser(false);
 
-        $response = $this->get(route('strathmore/admin-auth::admin/activation/activate', ['token' => $this->token]));
+        $response = $this->get(route('savannabits/admin-auth::admin/activation/activate', ['token' => $this->token]));
         $response->assertStatus(302);
 
         $userNew = TestBracketsUserModel::where('email', 'john@example.com')->first();
@@ -82,7 +82,7 @@ class ActivationTest extends BracketsTestCase
         $user = $this->createTestUser(false);
 
         $response = $this->get(route(
-            'strathmore/admin-auth::admin/activation/activate',
+            'savannabits/admin-auth::admin/activation/activate',
             ['token' => $this->token . '11']
         ));
         $response->assertStatus(302);
@@ -102,7 +102,7 @@ class ActivationTest extends BracketsTestCase
     {
         $user = $this->createTestUser(false, false, true);
 
-        $response = $this->get(route('strathmore/admin-auth::admin/activation/activate', ['token' => $this->token]));
+        $response = $this->get(route('savannabits/admin-auth::admin/activation/activate', ['token' => $this->token]));
         $response->assertStatus(302);
 
         $userNew = TestBracketsUserModel::where('email', 'john@example.com')->first();
@@ -120,7 +120,7 @@ class ActivationTest extends BracketsTestCase
     {
         $user = $this->createTestUser(false, false, false, Carbon::now()->subDays(10));
 
-        $response = $this->get(route('strathmore/admin-auth::admin/activation/activate', ['token' => $this->token]));
+        $response = $this->get(route('savannabits/admin-auth::admin/activation/activate', ['token' => $this->token]));
         $response->assertStatus(302);
 
         $userNew = TestBracketsUserModel::where('email', 'john@example.com')->first();

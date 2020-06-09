@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Exceptions;
+namespace Savannabits\AdminAuth\Tests\Exceptions;
 
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;

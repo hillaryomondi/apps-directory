@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\Media\Test;
+namespace Savannabits\Media\Test;
 
-use Strathmore\Media\MediaServiceProvider;
-use Strathmore\Media\UrlGenerator\LocalUrlGenerator;
+use Savannabits\Media\MediaServiceProvider;
+use Savannabits\Media\UrlGenerator\LocalUrlGenerator;
 use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Database\Schema\Blueprint;

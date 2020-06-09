@@ -38,17 +38,17 @@ class SavbitsHelper
      * @return LengthAwarePaginator|\Illuminate\Pagination\LengthAwarePaginator
      */
     public function process() {
-        $per_page = intval($this->request->get('per_page'));
+        $per_page = intval($this->request->get('per_page')) ?? 10;
         $orderBy = $this->request->get('orderBy');
         $orderDirection = $this->request->get('orderDirection');
         $search = $this->request->get('search');
 //        $page = $this->request->get('page');
 
         if (!strlen($orderDirection) || ($orderDirection !=='asc' && $orderDirection !== 'desc')) {
-            $orderDirection = 'asc';
+            $orderDirection = 'desc';
         }
         if (!strlen($orderBy)) {
-            $orderBy = 'id';
+            $orderBy = 'created_at';
             $orderDirection = 'desc';
         }
         if (!!strlen($search)) {

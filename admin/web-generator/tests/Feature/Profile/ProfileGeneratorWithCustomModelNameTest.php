@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\WebGenerator\Tests\Feature\Users;
+namespace Savannabits\WebGenerator\Tests\Feature\Users;
 
-use Strathmore\WebGenerator\Tests\UserTestCase;
+use Savannabits\WebGenerator\Tests\UserTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 

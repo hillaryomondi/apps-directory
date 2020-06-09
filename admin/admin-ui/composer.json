@@ -1,5 +1,5 @@
 {
-    "name": "strathmore/admin-ui",
+    "name": "savannabits/admin-ui",
     "description": "Administration user interface template",
     "keywords": [
         "admin-ui",
@@ -7,10 +7,12 @@
         "administration",
         "admin",
         "cms",
-        "laravel"
+        "laravel",
+        "savannabits",
+        "savbits"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",
@@ -31,18 +33,18 @@
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "Strathmore\\AdminUI\\": "src/"
+            "Savannabits\\AdminUI\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Strathmore\\AdminUI\\Tests\\": "tests/"
+            "Savannabits\\AdminUI\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Strathmore\\AdminUI\\AdminUIServiceProvider"
+                "Savannabits\\AdminUI\\AdminUIServiceProvider"
             ]
         },
         "branch-alias": {

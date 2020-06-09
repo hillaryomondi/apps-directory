@@ -1,11 +1,11 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests;
+namespace Savannabits\AdminAuth\Tests;
 
-use Strathmore\AdminAuth\AdminAuthServiceProvider;
-use Strathmore\AdminAuth\Tests\Models\TestBracketsUserModel;
-use Strathmore\AdminAuth\Tests\Models\TestStandardUserModel;
-use Strathmore\AdminUI\AdminUIServiceProvider;
+use Savannabits\AdminAuth\AdminAuthServiceProvider;
+use Savannabits\AdminAuth\Tests\Models\TestBracketsUserModel;
+use Savannabits\AdminAuth\Tests\Models\TestStandardUserModel;
+use Savannabits\AdminUI\AdminUIServiceProvider;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -115,7 +115,7 @@ abstract class TestCase extends Orchestra
                 $table->dateTime('updated_at');
             });
 
-        $app['db']->connection()->getSchemaBuilder()->create('test_strathmore_user_models',
+        $app['db']->connection()->getSchemaBuilder()->create('test_savannabits_user_models',
             static function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('first_name')->nullable();

@@ -1,7 +1,7 @@
-<?php namespace Strathmore\WebGenerator\Generate\Traits;
+<?php namespace Savannabits\WebGenerator\Generate\Traits;
 
-use Strathmore\WebGenerator\Generate\Controller;
-use Strathmore\WebGenerator\Generate\Model;
+use Savannabits\WebGenerator\Generate\Controller;
+use Savannabits\WebGenerator\Generate\Model;
 use Illuminate\Support\Str;
 
 trait Names

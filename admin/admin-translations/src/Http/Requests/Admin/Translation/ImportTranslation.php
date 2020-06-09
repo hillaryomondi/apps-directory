@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Http\Requests\Admin\Translation;
+namespace Savannabits\AdminTranslations\Http\Requests\Admin\Translation;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;

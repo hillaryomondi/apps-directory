@@ -7,6 +7,7 @@ namespace {{ $controllerNamespace }};
 @if($export)
 use App\Exports\{{$exportBaseName}};
 @endif
+use App\Helpers\SavbitsHelper;
 use App\Http\Controllers\Controller;
 @if(!$withoutBulk)
 use App\Http\Requests\Web\{{ $modelWithNamespaceFromDefault }}\BulkDestroy{{ $modelBaseName }};
@@ -16,7 +17,7 @@ use App\Http\Requests\Web\{{ $modelWithNamespaceFromDefault }}\Index{{ $modelBas
 use App\Http\Requests\Web\{{ $modelWithNamespaceFromDefault }}\Store{{ $modelBaseName }};
 use App\Http\Requests\Web\{{ $modelWithNamespaceFromDefault }}\Update{{ $modelBaseName }};
 use {{ $modelFullName }};
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminListing\Facades\AdminListing;
 @if(!$withoutBulk && $hasSoftDelete)
 use Carbon\Carbon;
 @endif
@@ -58,32 +59,9 @@ class {{ $controllerBaseName }} extends Controller
     public function index(Index{{ $modelBaseName }} $request)
     {
         // create and AdminListing instance for a specific model and
-        $data = AdminListing::create({{ $modelBaseName }}::class)->processRequestAndGet(
-            // pass the request with params
-            $request,
-
-            // set columns to query
-            ['{!! implode('\', \'', $columnsToQuery) !!}'],
-
-            // set columns to searchIn
-            ['{!! implode('\', \'', $columnsToSearchIn) !!}']@if(in_array('created_by_admin_user_id', $columnsToQuery) || in_array('updated_by_admin_user_id', $columnsToQuery)),@endif
-
-@if(in_array('created_by_admin_user_id', $columnsToQuery) || in_array('updated_by_admin_user_id', $columnsToQuery))
-    @if(in_array('created_by_admin_user_id', $columnsToQuery) && in_array('updated_by_admin_user_id', $columnsToQuery))
-        function ($query) use ($request) {
-                $query->with(['createdByAdminUser', 'updatedByAdminUser']);
-            }
-    @elseif(in_array('created_by_admin_user_id', $columnsToQuery))
-        function ($query) use ($request) {
-                $query->with(['createdByAdminUser']);
-            }
-    @elseif(in_array('updated_by_admin_user_id', $columnsToQuery))
-        function ($query) use ($request) {
-                $query->with(['updatedByAdminUser']);
-            }
-    @endif
-@endif()
-        );
+        $data = SavbitsHelper::listing({{ $modelBaseName }}::class, $request)->customQuery(function($q) {
+            //TODO: Insert your query modification here
+        })->process();
 
         if ($request->ajax()) {
 @if(!$withoutBulk)
@@ -96,7 +74,7 @@ class {{ $controllerBaseName }} extends Controller
             return ['data' => $data];
         }
 
-        return view('frontend.{{ $modelDotNotation }}.index', ['data' => $data]);
+        return view('web.{{ $modelDotNotation }}.index', ['data' => $data]);
     }
 
     /**
@@ -110,13 +88,13 @@ class {{ $controllerBaseName }} extends Controller
         $this->authorize('{{ $modelDotNotation }}.create');
 
 @if (count($relations) && count($relations['belongsToMany']))
-        return view('frontend.{{ $modelDotNotation }}.create',[
+        return view('web.{{ $modelDotNotation }}.create',[
 @foreach($relations['belongsToMany'] as $belongsToMany)
             '{{ $belongsToMany['related_table'] }}' => {{ $belongsToMany['related_model_name'] }}::all(),
 @endforeach
         ]);
 @else
-        return view('frontend.{{ $modelDotNotation }}.create');
+        return view('web.{{ $modelDotNotation }}.create');
 @endif
     }
 
@@ -142,8 +120,8 @@ class {{ $controllerBaseName }} extends Controller
 @endif()
 
         // Store the {{ $modelBaseName }}
-        ${{ $modelVariableName }} = {{ $modelBaseName }}::create($sanitized);
-
+        ${{ $modelVariableName }} = new {{ $modelBaseName }}($sanitized);
+        ${{ $modelVariableName }}->saveOrFail();
 @if (count($relations))
 @if (count($relations['belongsToMany']))
 @foreach($relations['belongsToMany'] as $belongsToMany)
@@ -154,7 +132,7 @@ class {{ $controllerBaseName }} extends Controller
 @endif
 @endif
         if ($request->ajax()) {
-            return ['redirect' => url('{{ $resource }}'), 'message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('{{ $resource }}'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect(url('/{{ $resource }}'));
@@ -171,32 +149,32 @@ class {{ $controllerBaseName }} extends Controller
     {
         $this->authorize('{{ $modelDotNotation }}.show', ${{ $modelVariableName }});
 
-        @if(in_array('created_by_admin_user_id', $columnsToQuery) || in_array('updated_by_admin_user_id', $columnsToQuery))
-            @if(in_array('created_by_admin_user_id', $columnsToQuery) && in_array('updated_by_admin_user_id', $columnsToQuery))
+@if(in_array('created_by_admin_user_id', $columnsToQuery) || in_array('updated_by_admin_user_id', $columnsToQuery))
+    @if(in_array('created_by_admin_user_id', $columnsToQuery) && in_array('updated_by_admin_user_id', $columnsToQuery))
                 ${{ $modelVariableName }}->load(['createdByAdminUser', 'updatedByAdminUser']);
-            @elseif(in_array('created_by_admin_user_id', $columnsToQuery))
+    @elseif(in_array('created_by_admin_user_id', $columnsToQuery))
                 ${{ $modelVariableName }}->load('createdByAdminUser');
-            @elseif(in_array('updated_by_admin_user_id', $columnsToQuery))
+    @elseif(in_array('updated_by_admin_user_id', $columnsToQuery))
                 ${{ $modelVariableName }}->load('updatedByAdminUser');
-            @endif
-        @endif()
+    @endif
+@endif()
 
-        @if (count($relations))
-            @if (count($relations['belongsToMany']))
-                @foreach($relations['belongsToMany'] as $belongsToMany)
+@if (count($relations))
+    @if (count($relations['belongsToMany']))
+        @foreach($relations['belongsToMany'] as $belongsToMany)
                     ${{ $modelVariableName }}->load('{{ $belongsToMany['related_table'] }}');
-                @endforeach
-            @endif
-        @endif
-        return view('frontend.{{ $modelDotNotation }}.show', [
+        @endforeach
+    @endif
+@endif
+        return view('web.{{ $modelDotNotation }}.show', [
         '{{ $modelVariableName }}' => ${{ $modelVariableName }},
-        @if (count($relations))
-            @if (count($relations['belongsToMany']))
-                @foreach($relations['belongsToMany'] as $belongsToMany)
+@if (count($relations))
+    @if (count($relations['belongsToMany']))
+        @foreach($relations['belongsToMany'] as $belongsToMany)
                     '{{ $belongsToMany['related_table'] }}' => {{ $belongsToMany['related_model_name'] }}::all(),
-                @endforeach
-            @endif
-        @endif
+        @endforeach
+    @endif
+@endif
         ]);
     }
 
@@ -229,7 +207,7 @@ class {{ $controllerBaseName }} extends Controller
 
 @endif
 @endif
-        return view('frontend.{{ $modelDotNotation }}.edit', [
+        return view('web.{{ $modelDotNotation }}.edit', [
             '{{ $modelVariableName }}' => ${{ $modelVariableName }},
 @if (count($relations))
 @if (count($relations['belongsToMany']))
@@ -273,7 +251,7 @@ class {{ $controllerBaseName }} extends Controller
         if ($request->ajax()) {
             return [
                 'redirect' => url('{{ $resource }}'),
-                'message' => trans('strathmore/admin-ui::admin.operation.succeeded'),
+                'message' => trans('savannabits/admin-ui::admin.operation.succeeded'),
 @if($containsPublishedAtColumn)
                 'object' => ${{ $modelVariableName }}
 @endif
@@ -297,7 +275,7 @@ class {{ $controllerBaseName }} extends Controller
         ${{ $modelVariableName }}->delete();
 
         if ($request->ajax()) {
-            return response(['message' => trans('strathmore/admin-ui::admin.operation.succeeded')]);
+            return response(['message' => trans('savannabits/admin-ui::admin.operation.succeeded')]);
         }
 
         return redirect()->back();
@@ -338,7 +316,7 @@ class {{ $controllerBaseName }} extends Controller
         });
 @endif
 
-        return response(['message' => trans('strathmore/admin-ui::admin.operation.succeeded')]);
+        return response(['message' => trans('savannabits/admin-ui::admin.operation.succeeded')]);
     }
 @endif
 @if($export)

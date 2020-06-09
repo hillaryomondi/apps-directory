@@ -4,22 +4,22 @@ return [
 
     /*
      * Language lines will be fetched by these loaders. You can put any class here that implements
-     * the Strathmore\AdminTranslations\TranslationLoaders\TranslationLoader-interface.
+     * the Savannabits\AdminTranslations\TranslationLoaders\TranslationLoader-interface.
      */
     'translation_loaders' => [
-        Strathmore\AdminTranslations\TranslationLoaders\Db::class,
+        Savannabits\AdminTranslations\TranslationLoaders\Db::class,
     ],
 
     /*
      * This is the model used by the Db Translation loader. You can put any model here
-     * that extends Strathmore\AdminTranslations\Translation.
+     * that extends Savannabits\AdminTranslations\Translation.
      */
-    'model' => Strathmore\AdminTranslations\Translation::class,
+    'model' => Savannabits\AdminTranslations\Translation::class,
 
     /*
      * This is the translation manager which overrides the default Laravel `translation.loader`
      */
-    'translation_manager' => Strathmore\AdminTranslations\TranslationLoaderManager::class,
+    'translation_manager' => Savannabits\AdminTranslations\TranslationLoaderManager::class,
 
     /*
      * This option controls if package routes are used or not
@@ -31,10 +31,10 @@ return [
         resource_path('views'),
         // here you can add your own directories
         // base_path('routes'), // uncomment if you have translations in your routes i.e. you have localized URLs
-        base_path('vendor/strathmore/admin-auth/src'),
-        base_path('vendor/strathmore/admin-auth/resources'),
-        base_path('vendor/strathmore/admin-ui/resources'),
-        base_path('vendor/strathmore/admin-translations/resources'),
+        base_path('vendor/savannabits/admin-auth/src'),
+        base_path('vendor/savannabits/admin-auth/resources'),
+        base_path('vendor/savannabits/admin-ui/resources'),
+        base_path('vendor/savannabits/admin-translations/resources'),
     ],
 
 ];

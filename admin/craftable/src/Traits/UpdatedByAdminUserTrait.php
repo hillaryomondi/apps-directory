@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\Craftable\Traits;
+namespace Savannabits\Craftable\Traits;
 
-use Strathmore\AdminAuth\Models\AdminUser;
+use Savannabits\AdminAuth\Models\AdminUser;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 trait UpdatedByAdminUserTrait

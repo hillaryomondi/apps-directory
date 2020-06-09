@@ -1,7 +1,7 @@
 <?php
 
 Route::middleware(['web', 'admin'])->group(function () {
-    Route::namespace('Strathmore\AdminUI\Http\Controllers')->group(function () {
-        Route::post('/admin/wysiwyg-media','WysiwygMediaUploadController@upload')->name('strathmore/admin-ui::wysiwyg-upload');
+    Route::namespace('Savannabits\AdminUI\Http\Controllers')->group(function () {
+        Route::post('/admin/wysiwyg-media','WysiwygMediaUploadController@upload')->name('savannabits/admin-ui::wysiwyg-upload');
     });
 });

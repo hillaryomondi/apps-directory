@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\WebGenerator\Generate;
+namespace Savannabits\WebGenerator\Generate;
 
 use Symfony\Component\Console\Input\InputOption;
 
@@ -36,7 +36,7 @@ class BulkDestroyRequest extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('strathmore/web-generator::bulk-destroy-request', [
+        return view('savannabits/web-generator::bulk-destroy-request', [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'modelWithNamespaceFromDefault' => $this->modelWithNamespaceFromDefault,

@@ -1,4 +1,4 @@
-<?php namespace Strathmore\WebGenerator;
+<?php namespace Savannabits\WebGenerator;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -34,7 +34,7 @@ class WebGeneratorServiceProvider extends ServiceProvider
             Generate\Export::class,
         ]);
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'strathmore/web-generator');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'savannabits/web-generator');
     }
 
     /**

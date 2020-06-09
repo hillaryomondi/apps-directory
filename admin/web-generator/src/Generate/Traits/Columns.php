@@ -1,4 +1,4 @@
-<?php namespace Strathmore\WebGenerator\Generate\Traits;
+<?php namespace Savannabits\WebGenerator\Generate\Traits;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Schema;

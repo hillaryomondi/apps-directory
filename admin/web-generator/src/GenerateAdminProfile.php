@@ -1,6 +1,6 @@
-<?php namespace Strathmore\WebGenerator;
+<?php namespace Savannabits\WebGenerator;
 
-use Strathmore\WebGenerator\Generate\Traits\FileManipulations;
+use Savannabits\WebGenerator\Generate\Traits\FileManipulations;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Console\Input\InputArgument;

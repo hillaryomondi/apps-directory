@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Services;
+namespace Savannabits\AdvancedLogger\Services;
 
-use Strathmore\AdvancedLogger\Interpolations\RequestInterpolation;
-use Strathmore\AdvancedLogger\Interpolations\ResponseInterpolation;
-use Strathmore\AdvancedLogger\Loggers\RequestLogger;
+use Savannabits\AdvancedLogger\Interpolations\RequestInterpolation;
+use Savannabits\AdvancedLogger\Interpolations\ResponseInterpolation;
+use Savannabits\AdvancedLogger\Loggers\RequestLogger;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Arr;

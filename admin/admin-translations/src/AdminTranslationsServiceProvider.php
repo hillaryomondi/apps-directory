@@ -1,11 +1,11 @@
 <?php
 
-namespace Strathmore\AdminTranslations;
+namespace Savannabits\AdminTranslations;
 
-use Strathmore\AdminTranslations\Console\Commands\AdminTranslationsInstall;
-use Strathmore\AdminTranslations\Console\Commands\ScanAndSave;
-use Strathmore\AdminTranslations\Providers\TranslationServiceProvider;
-use Strathmore\AdminUI\AdminUIServiceProvider;
+use Savannabits\AdminTranslations\Console\Commands\AdminTranslationsInstall;
+use Savannabits\AdminTranslations\Console\Commands\ScanAndSave;
+use Savannabits\AdminTranslations\Providers\TranslationServiceProvider;
+use Savannabits\AdminUI\AdminUIServiceProvider;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -25,8 +25,8 @@ class AdminTranslationsServiceProvider extends ServiceProvider
             AdminTranslationsInstall::class,
         ]);
 
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'strathmore/admin-translations');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'strathmore/admin-translations');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'savannabits/admin-translations');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'savannabits/admin-translations');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([

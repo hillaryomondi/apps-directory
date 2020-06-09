@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'login_redirect' => env('APP_URL').'/admin',
+    'login_redirect' => '/admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -50,7 +50,7 @@ return [
     |
     */
 
-    'logout_redirect' => env('APP_URL').'/login',
+    'logout_redirect' => '/login',
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ return [
     |
     */
 
-    'password_reset_redirect' => env('APP_URL').'login',
+    'password_reset_redirect' => 'login',
 
     /*
     |--------------------------------------------------------------------------
@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'activation_redirect' => env('APP_URL').'/login',
+    'activation_redirect' => 'login',
 
     /*
     |

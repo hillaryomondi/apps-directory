@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminListing\Exceptions;
+namespace Savannabits\AdminListing\Exceptions;
 
 use Exception;
 

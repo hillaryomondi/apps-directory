@@ -1,16 +1,16 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Test\Feature\TestsFromSpatie\TranslationLoaders;
+namespace Savannabits\AdminTranslations\Test\Feature\TestsFromSpatie\TranslationLoaders;
 
-use Strathmore\AdminTranslations\Exceptions\InvalidConfiguration;
-use Strathmore\AdminTranslations\Test\TestCase;
-use Strathmore\AdminTranslations\Translation;
+use Savannabits\AdminTranslations\Exceptions\InvalidConfiguration;
+use Savannabits\AdminTranslations\Test\TestCase;
+use Savannabits\AdminTranslations\Translation;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Translation\Translator;
 
 class DbLanguageLineTest extends TestCase
 {
-    /** @var \Strathmore\AdminTranslations\Translation */
+    /** @var \Savannabits\AdminTranslations\Translation */
     protected $languageLine;
 
     /** @test */

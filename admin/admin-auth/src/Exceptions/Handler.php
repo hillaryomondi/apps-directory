@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Exceptions;
+namespace Savannabits\AdminAuth\Exceptions;
 
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ParentHandler;
@@ -19,7 +19,7 @@ class Handler extends ParentHandler
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         if (strpos($request->getRequestUri(), '/admin') === 0) {
-            $url = route('strathmore/admin-auth::admin/login');
+            $url = route('savannabits/admin-auth::admin/login');
         } else {
             $url = route('login');
         }

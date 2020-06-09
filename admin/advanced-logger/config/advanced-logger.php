@@ -15,7 +15,7 @@ return [
          */
 
         'handlers' => [
-            Strathmore\AdvancedLogger\Handlers\RequestLoggerHandler::class
+            Savannabits\AdvancedLogger\Handlers\RequestLoggerHandler::class
         ],
 
         /*

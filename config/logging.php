@@ -52,7 +52,7 @@ return [
             'path' => storage_path('logs/laravel.log'),
             'level' => 'debug',
             'days' => 90,
-            'tap' => [Strathmore\AdvancedLogger\LogCustomizers\HashLogCustomizer::class],
+            'tap' => [Savannabits\AdvancedLogger\LogCustomizers\HashLogCustomizer::class],
         ],
 
         'slack' => [

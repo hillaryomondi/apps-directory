@@ -2,8 +2,8 @@
 // @formatter:off
 
 /**
- * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 7.5.1 on 2020-05-04 11:22:07.
+ * A helper file for Laravel, to provide autocomplete information to your IDE
+ * Generated for Laravel 7.10.3 on 2020-05-12 12:35:03.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -2646,14 +2646,15 @@ namespace Illuminate\Support\Facades {
          * Compile a class component opening.
          *
          * @param string $component
+         * @param string $alias
          * @param string $data
          * @param string $hash
          * @return string 
          * @static 
          */ 
-        public static function compileClassComponentOpening($component, $data, $hash)
+        public static function compileClassComponentOpening($component, $alias, $data, $hash)
         {
-                        return \Illuminate\View\Compilers\BladeCompiler::compileClassComponentOpening($component, $data, $hash);
+                        return \Illuminate\View\Compilers\BladeCompiler::compileClassComponentOpening($component, $alias, $data, $hash);
         }
         
         /**
@@ -2678,6 +2679,19 @@ namespace Illuminate\Support\Facades {
         public static function sanitizeComponentAttribute($value)
         {
                         return \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($value);
+        }
+        
+        /**
+         * Compile Blade echos into valid PHP.
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */ 
+        public static function compileEchos($value)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->compileEchos($value);
         }
          
     }
@@ -2926,7 +2940,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Assert if a job was dispatched based on a truth-test callback.
          *
-         * @param string $command
+         * @param string|\Closure $command
          * @param callable|int|null $callback
          * @return void 
          * @static 
@@ -2954,7 +2968,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if a job was dispatched based on a truth-test callback.
          *
-         * @param string $command
+         * @param string|\Closure $command
          * @param callable|null $callback
          * @return void 
          * @static 
@@ -2968,7 +2982,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Assert if a job was dispatched after the response was sent based on a truth-test callback.
          *
-         * @param string $command
+         * @param string|\Closure $command
          * @param callable|int|null $callback
          * @return void 
          * @static 
@@ -2996,7 +3010,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if a job was dispatched based on a truth-test callback.
          *
-         * @param string $command
+         * @param string|\Closure $command
          * @param callable|null $callback
          * @return void 
          * @static 
@@ -3066,6 +3080,8 @@ namespace Illuminate\Support\Facades {
     /**
      * 
      *
+     * @method static \Illuminate\Contracts\Cache\Lock lock(string $name, int $seconds = 0, mixed $owner = null)
+     * @method static \Illuminate\Contracts\Cache\Lock restoreLock(string $name, string $owner)
      * @see \Illuminate\Cache\CacheManager
      * @see \Illuminate\Cache\Repository
      */ 
@@ -3955,7 +3971,7 @@ namespace Illuminate\Support\Facades {
          * @param string $key
          * @param mixed $default
          * @param string|null $path
-         * @return \Symfony\Component\HttpFoundation\Cookie 
+         * @return \Symfony\Component\HttpFoundation\Cookie|null 
          * @static 
          */ 
         public static function queued($key, $default = null, $path = null)
@@ -5423,7 +5439,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Assert if an event was dispatched based on a truth-test callback.
          *
-         * @param string $event
+         * @param string|\Closure $event
          * @param callable|int|null $callback
          * @return void 
          * @static 
@@ -5451,7 +5467,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if an event was dispatched based on a truth-test callback.
          *
-         * @param string $event
+         * @param string|\Closure $event
          * @param callable|null $callback
          * @return void 
          * @static 
@@ -6517,7 +6533,7 @@ namespace Illuminate\Support\Facades {
      *
      * @method static \Illuminate\Http\Client\PendingRequest asJson()
      * @method static \Illuminate\Http\Client\PendingRequest asForm()
-     * @method static \Illuminate\Http\Client\PendingRequest attach(string $name, string $contents, string|null $filename = null, array $headers)
+     * @method static \Illuminate\Http\Client\PendingRequest attach(string $name, string $contents, string|null $filename = null, array $headers = [])
      * @method static \Illuminate\Http\Client\PendingRequest asMultipart()
      * @method static \Illuminate\Http\Client\PendingRequest bodyFormat(string $format)
      * @method static \Illuminate\Http\Client\PendingRequest contentType(string $contentType)
@@ -6662,6 +6678,19 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Http\Client\Factory $instance */
                         $instance->assertNothingSent();
+        }
+        
+        /**
+         * Assert how many requests have been recorded.
+         *
+         * @param $count
+         * @return void 
+         * @static 
+         */ 
+        public static function assertSentCount($count)
+        {
+                        /** @var \Illuminate\Http\Client\Factory $instance */
+                        $instance->assertSentCount($count);
         }
         
         /**
@@ -7391,7 +7420,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Assert if a mailable was sent based on a truth-test callback.
          *
-         * @param string $mailable
+         * @param string|\Closure $mailable
          * @param callable|int|null $callback
          * @return void 
          * @static 
@@ -7431,7 +7460,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Assert if a mailable was queued based on a truth-test callback.
          *
-         * @param string $mailable
+         * @param string|\Closure $mailable
          * @param callable|int|null $callback
          * @return void 
          * @static 
@@ -7766,7 +7795,7 @@ namespace Illuminate\Support\Facades {
          * Assert if a notification was sent based on a truth-test callback.
          *
          * @param mixed $notifiable
-         * @param string $notification
+         * @param string|\Closure $notification
          * @param callable|null $callback
          * @return void 
          * @throws \Exception
@@ -7797,7 +7826,7 @@ namespace Illuminate\Support\Facades {
          * Determine if a notification was sent based on a truth-test callback.
          *
          * @param mixed $notifiable
-         * @param string $notification
+         * @param string|\Closure $notification
          * @param callable|null $callback
          * @return void 
          * @throws \Exception
@@ -8135,7 +8164,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Assert if a job was pushed based on a truth-test callback.
          *
-         * @param string $job
+         * @param string|\Closure $job
          * @param callable|int|null $callback
          * @return void 
          * @static 
@@ -8150,7 +8179,7 @@ namespace Illuminate\Support\Facades {
          * Assert if a job was pushed based on a truth-test callback.
          *
          * @param string $queue
-         * @param string $job
+         * @param string|\Closure $job
          * @param callable|null $callback
          * @return void 
          * @static 
@@ -8193,7 +8222,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if a job was pushed based on a truth-test callback.
          *
-         * @param string $job
+         * @param string|\Closure $job
          * @param callable|null $callback
          * @return void 
          * @static 
@@ -8399,6 +8428,61 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Release a reserved job back onto the queue.
+         *
+         * @param string $queue
+         * @param \Illuminate\Queue\Jobs\DatabaseJobRecord $job
+         * @param int $delay
+         * @return mixed 
+         * @static 
+         */ 
+        public static function release($queue, $job, $delay)
+        {
+                        /** @var \Illuminate\Queue\DatabaseQueue $instance */
+                        return $instance->release($queue, $job, $delay);
+        }
+        
+        /**
+         * Delete a reserved job from the queue.
+         *
+         * @param string $queue
+         * @param string $id
+         * @return void 
+         * @throws \Throwable
+         * @static 
+         */ 
+        public static function deleteReserved($queue, $id)
+        {
+                        /** @var \Illuminate\Queue\DatabaseQueue $instance */
+                        $instance->deleteReserved($queue, $id);
+        }
+        
+        /**
+         * Get the queue or return the default.
+         *
+         * @param string|null $queue
+         * @return string 
+         * @static 
+         */ 
+        public static function getQueue($queue)
+        {
+                        /** @var \Illuminate\Queue\DatabaseQueue $instance */
+                        return $instance->getQueue($queue);
+        }
+        
+        /**
+         * Get the underlying database instance.
+         *
+         * @return \Illuminate\Database\Connection 
+         * @static 
+         */ 
+        public static function getDatabase()
+        {
+                        /** @var \Illuminate\Queue\DatabaseQueue $instance */
+                        return $instance->getDatabase();
+        }
+        
+        /**
          * Get the retry delay for an object-based queue handler.
          *
          * @param mixed $job
@@ -8408,7 +8492,7 @@ namespace Illuminate\Support\Facades {
         public static function getJobRetryDelay($job)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-                        /** @var \Illuminate\Queue\SyncQueue $instance */
+                        /** @var \Illuminate\Queue\DatabaseQueue $instance */
                         return $instance->getJobRetryDelay($job);
         }
         
@@ -8422,7 +8506,7 @@ namespace Illuminate\Support\Facades {
         public static function getJobExpiration($job)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-                        /** @var \Illuminate\Queue\SyncQueue $instance */
+                        /** @var \Illuminate\Queue\DatabaseQueue $instance */
                         return $instance->getJobExpiration($job);
         }
         
@@ -8436,7 +8520,7 @@ namespace Illuminate\Support\Facades {
         public static function createPayloadUsing($callback)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-                        \Illuminate\Queue\SyncQueue::createPayloadUsing($callback);
+                        \Illuminate\Queue\DatabaseQueue::createPayloadUsing($callback);
         }
         
         /**
@@ -8449,7 +8533,7 @@ namespace Illuminate\Support\Facades {
         public static function setContainer($container)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-                        /** @var \Illuminate\Queue\SyncQueue $instance */
+                        /** @var \Illuminate\Queue\DatabaseQueue $instance */
                         $instance->setContainer($container);
         }
          
@@ -8609,6 +8693,40 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Routing\Redirector $instance */
                         return $instance->route($route, $parameters, $status, $headers);
+        }
+        
+        /**
+         * Create a new redirect response to a signed named route.
+         *
+         * @param string $route
+         * @param mixed $parameters
+         * @param \DateTimeInterface|\DateInterval|int|null $expiration
+         * @param int $status
+         * @param array $headers
+         * @return \Illuminate\Http\RedirectResponse 
+         * @static 
+         */ 
+        public static function signedRoute($route, $parameters = [], $expiration = null, $status = 302, $headers = [])
+        {
+                        /** @var \Illuminate\Routing\Redirector $instance */
+                        return $instance->signedRoute($route, $parameters, $expiration, $status, $headers);
+        }
+        
+        /**
+         * Create a new redirect response to a signed named route.
+         *
+         * @param string $route
+         * @param \DateTimeInterface|\DateInterval|int|null $expiration
+         * @param mixed $parameters
+         * @param int $status
+         * @param array $headers
+         * @return \Illuminate\Http\RedirectResponse 
+         * @static 
+         */ 
+        public static function temporarySignedRoute($route, $expiration, $parameters = [], $status = 302, $headers = [])
+        {
+                        /** @var \Illuminate\Routing\Redirector $instance */
+                        return $instance->temporarySignedRoute($route, $expiration, $parameters, $status, $headers);
         }
         
         /**
@@ -8949,7 +9067,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the client user agent.
          *
-         * @return string 
+         * @return string|null 
          * @static 
          */ 
         public static function userAgent()
@@ -11409,6 +11527,21 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Create a new Route object.
+         *
+         * @param array|string $methods
+         * @param string $uri
+         * @param mixed $action
+         * @return \Illuminate\Routing\Route 
+         * @static 
+         */ 
+        public static function newRoute($methods, $uri, $action)
+        {
+                        /** @var \Illuminate\Routing\Router $instance */
+                        return $instance->newRoute($methods, $uri, $action);
+        }
+        
+        /**
          * Return the response returned by the given route.
          *
          * @param string $name
@@ -12362,6 +12495,30 @@ namespace Illuminate\Support\Facades {
      * @see \Illuminate\Session\Store
      */ 
     class Session {
+        
+        /**
+         * Determine if requests for the same session should wait for each to finish before executing.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function shouldBlock()
+        {
+                        /** @var \Illuminate\Session\SessionManager $instance */
+                        return $instance->shouldBlock();
+        }
+        
+        /**
+         * Get the name of the cache store / driver that should be used to acquire session locks.
+         *
+         * @return string|null 
+         * @static 
+         */ 
+        public static function blockDriver()
+        {
+                        /** @var \Illuminate\Session\SessionManager $instance */
+                        return $instance->blockDriver();
+        }
         
         /**
          * Get the session configuration.
@@ -13340,7 +13497,8 @@ namespace Illuminate\Support\Facades {
          * @return bool 
          * @static 
          */ 
-        public static function prepend($path, $data, $separator = '')
+        public static function prepend($path, $data, $separator = '
+')
         {
                         /** @var \Illuminate\Filesystem\FilesystemAdapter $instance */
                         return $instance->prepend($path, $data, $separator);
@@ -13355,7 +13513,8 @@ namespace Illuminate\Support\Facades {
          * @return bool 
          * @static 
          */ 
-        public static function append($path, $data, $separator = '')
+        public static function append($path, $data, $separator = '
+')
         {
                         /** @var \Illuminate\Filesystem\FilesystemAdapter $instance */
                         return $instance->append($path, $data, $separator);
@@ -15186,6 +15345,478 @@ namespace Illuminate\Support {
  
 }
 
+namespace Barryvdh\Snappy\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class SnappyPdf {
+        
+        /**
+         * Get the Snappy instance.
+         *
+         * @return \Knp\Snappy\Pdf 
+         * @static 
+         */ 
+        public static function snappy()
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->snappy();
+        }
+        
+        /**
+         * Set temporary folder
+         *
+         * @param string $path
+         * @static 
+         */ 
+        public static function setTemporaryFolder($path)
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->setTemporaryFolder($path);
+        }
+        
+        /**
+         * Set the paper size (default A4)
+         *
+         * @param string $paper
+         * @param string $orientation
+         * @return \Barryvdh\Snappy\PdfWrapper 
+         * @static 
+         */ 
+        public static function setPaper($paper, $orientation = null)
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->setPaper($paper, $orientation);
+        }
+        
+        /**
+         * Set the orientation (default portrait)
+         *
+         * @param string $orientation
+         * @return \Barryvdh\Snappy\PdfWrapper 
+         * @static 
+         */ 
+        public static function setOrientation($orientation)
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->setOrientation($orientation);
+        }
+        
+        /**
+         * Show or hide warnings
+         *
+         * @param bool $warnings
+         * @return \Barryvdh\Snappy\PdfWrapper 
+         * @deprecated 
+         * @static 
+         */ 
+        public static function setWarnings($warnings)
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->setWarnings($warnings);
+        }
+        
+        /**
+         * 
+         *
+         * @param string $name
+         * @param mixed $value
+         * @return \Barryvdh\Snappy\PdfWrapper 
+         * @static 
+         */ 
+        public static function setOption($name, $value)
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->setOption($name, $value);
+        }
+        
+        /**
+         * 
+         *
+         * @param array $options
+         * @return \Barryvdh\Snappy\PdfWrapper 
+         * @static 
+         */ 
+        public static function setOptions($options)
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->setOptions($options);
+        }
+        
+        /**
+         * Load a HTML string
+         *
+         * @param Array|string|\Barryvdh\Snappy\Renderable $html
+         * @return \Barryvdh\Snappy\PdfWrapper 
+         * @static 
+         */ 
+        public static function loadHTML($html)
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->loadHTML($html);
+        }
+        
+        /**
+         * Load a HTML file
+         *
+         * @param string $file
+         * @return \Barryvdh\Snappy\PdfWrapper 
+         * @static 
+         */ 
+        public static function loadFile($file)
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->loadFile($file);
+        }
+        
+        /**
+         * Load a View and convert to HTML
+         *
+         * @param string $view
+         * @param array $data
+         * @param array $mergeData
+         * @return \Barryvdh\Snappy\PdfWrapper 
+         * @static 
+         */ 
+        public static function loadView($view, $data = [], $mergeData = [])
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->loadView($view, $data, $mergeData);
+        }
+        
+        /**
+         * Output the PDF as a string.
+         *
+         * @return string The rendered PDF as string
+         * @throws \InvalidArgumentException
+         * @static 
+         */ 
+        public static function output()
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->output();
+        }
+        
+        /**
+         * Save the PDF to a file
+         *
+         * @param $filename
+         * @return \Barryvdh\Snappy\PdfWrapper 
+         * @static 
+         */ 
+        public static function save($filename, $overwrite = false)
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->save($filename, $overwrite);
+        }
+        
+        /**
+         * Make the PDF downloadable by the user
+         *
+         * @param string $filename
+         * @return \Illuminate\Http\Response 
+         * @static 
+         */ 
+        public static function download($filename = 'document.pdf')
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->download($filename);
+        }
+        
+        /**
+         * Return a response with the PDF to show in the browser
+         *
+         * @param string $filename
+         * @return \Illuminate\Http\Response 
+         * @static 
+         */ 
+        public static function inline($filename = 'document.pdf')
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->inline($filename);
+        }
+        
+        /**
+         * Return a response with the PDF to show in the browser
+         *
+         * @param string $filename
+         * @return \Symfony\Component\HttpFoundation\StreamedResponse 
+         * @deprecated use inline() instead
+         * @static 
+         */ 
+        public static function stream($filename = 'document.pdf')
+        {
+                        /** @var \Barryvdh\Snappy\PdfWrapper $instance */
+                        return $instance->stream($filename);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function assertViewIs($value)
+        {
+                        /** @var \Barryvdh\Snappy\PdfFaker $instance */
+                        return $instance->assertViewIs($value);
+        }
+        
+        /**
+         * Assert that the response view has a given piece of bound data.
+         *
+         * @param string|array $key
+         * @param mixed $value
+         * @return \Barryvdh\Snappy\PdfFaker 
+         * @static 
+         */ 
+        public static function assertViewHas($key, $value = null)
+        {
+                        /** @var \Barryvdh\Snappy\PdfFaker $instance */
+                        return $instance->assertViewHas($key, $value);
+        }
+        
+        /**
+         * Assert that the response view has a given list of bound data.
+         *
+         * @param array $bindings
+         * @return \Barryvdh\Snappy\PdfFaker 
+         * @static 
+         */ 
+        public static function assertViewHasAll($bindings)
+        {
+                        /** @var \Barryvdh\Snappy\PdfFaker $instance */
+                        return $instance->assertViewHasAll($bindings);
+        }
+        
+        /**
+         * Assert that the response view is missing a piece of bound data.
+         *
+         * @param string $key
+         * @return \Barryvdh\Snappy\PdfFaker 
+         * @static 
+         */ 
+        public static function assertViewMissing($key)
+        {
+                        /** @var \Barryvdh\Snappy\PdfFaker $instance */
+                        return $instance->assertViewMissing($key);
+        }
+        
+        /**
+         * Assert that the given string is contained within the response.
+         *
+         * @param string $value
+         * @return \Barryvdh\Snappy\PdfFaker 
+         * @static 
+         */ 
+        public static function assertSee($value)
+        {
+                        /** @var \Barryvdh\Snappy\PdfFaker $instance */
+                        return $instance->assertSee($value);
+        }
+        
+        /**
+         * Assert that the given string is contained within the response text.
+         *
+         * @param string $value
+         * @return \Barryvdh\Snappy\PdfFaker 
+         * @static 
+         */ 
+        public static function assertSeeText($value)
+        {
+                        /** @var \Barryvdh\Snappy\PdfFaker $instance */
+                        return $instance->assertSeeText($value);
+        }
+        
+        /**
+         * Assert that the given string is not contained within the response.
+         *
+         * @param string $value
+         * @return \Barryvdh\Snappy\PdfFaker 
+         * @static 
+         */ 
+        public static function assertDontSee($value)
+        {
+                        /** @var \Barryvdh\Snappy\PdfFaker $instance */
+                        return $instance->assertDontSee($value);
+        }
+        
+        /**
+         * Assert that the given string is not contained within the response text.
+         *
+         * @param string $value
+         * @return \Barryvdh\Snappy\PdfFaker 
+         * @static 
+         */ 
+        public static function assertDontSeeText($value)
+        {
+                        /** @var \Barryvdh\Snappy\PdfFaker $instance */
+                        return $instance->assertDontSeeText($value);
+        }
+        
+        /**
+         * Assert that the given string is equal to the saved filename.
+         *
+         * @param string $value
+         * @return \Barryvdh\Snappy\PdfFaker 
+         * @static 
+         */ 
+        public static function assertFileNameIs($value)
+        {
+                        /** @var \Barryvdh\Snappy\PdfFaker $instance */
+                        return $instance->assertFileNameIs($value);
+        }
+         
+    }
+
+    /**
+     * 
+     *
+     */ 
+    class SnappyImage {
+        
+        /**
+         * Get the Snappy instance.
+         *
+         * @return \Knp\Snappy\Image 
+         * @static 
+         */ 
+        public static function snappy()
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->snappy();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setOption($name, $value)
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->setOption($name, $value);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setOptions($options)
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->setOptions($options);
+        }
+        
+        /**
+         * Load a HTML string
+         *
+         * @param string $string
+         * @return static 
+         * @static 
+         */ 
+        public static function loadHTML($string)
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->loadHTML($string);
+        }
+        
+        /**
+         * Load a HTML file
+         *
+         * @param string $file
+         * @return static 
+         * @static 
+         */ 
+        public static function loadFile($file)
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->loadFile($file);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function loadView($view, $data = [], $mergeData = [])
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->loadView($view, $data, $mergeData);
+        }
+        
+        /**
+         * Output the PDF as a string.
+         *
+         * @return string The rendered PDF as string
+         * @throws \InvalidArgumentException
+         * @static 
+         */ 
+        public static function output()
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->output();
+        }
+        
+        /**
+         * Save the image to a file
+         *
+         * @param $filename
+         * @return static 
+         * @static 
+         */ 
+        public static function save($filename, $overwrite = false)
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->save($filename, $overwrite);
+        }
+        
+        /**
+         * Make the image downloadable by the user
+         *
+         * @param string $filename
+         * @return \Symfony\Component\HttpFoundation\Response 
+         * @static 
+         */ 
+        public static function download($filename = 'image.jpg')
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->download($filename);
+        }
+        
+        /**
+         * Return a response with the image to show in the browser
+         *
+         * @param string $filename
+         * @return \Illuminate\Http\Response 
+         * @static 
+         */ 
+        public static function inline($filename = 'image.jpg')
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->inline($filename);
+        }
+        
+        /**
+         * Return a response with the image to show in the browser
+         *
+         * @deprecated Use inline() instead
+         * @param string $filename
+         * @return \Symfony\Component\HttpFoundation\Response 
+         * @static 
+         */ 
+        public static function stream($filename = 'image.jpg')
+        {
+                        /** @var \Barryvdh\Snappy\ImageWrapper $instance */
+                        return $instance->stream($filename);
+        }
+         
+    }
+ 
+}
+
 namespace Facade\Ignition\Facades { 
 
     /**
@@ -15668,7 +16299,7 @@ namespace Maatwebsite\Excel\Facades {
          * @param string $event
          * @static 
          */ 
-        public static function extend($concern, $handler, $event = 'Maatwebsite\Excel\Events\BeforeWriting')
+        public static function extend($concern, $handler, $event = 'Maatwebsite\\Excel\\Events\\BeforeWriting')
         {
                         return \Maatwebsite\Excel\Excel::extend($concern, $handler, $event);
         }
@@ -15934,12 +16565,12 @@ namespace Subfission\Cas\Facades {
  
 }
 
-namespace Strathmore\AdminListing\Facades { 
+namespace Savannabits\AdminListing\Facades { 
 
     /**
      * 
      *
-     * @see \Strathmore\AdminListing\AdminListing
+     * @see \Savannabits\AdminListing\AdminListing
      */ 
     class AdminListing {
         
@@ -15952,7 +16583,7 @@ namespace Strathmore\AdminListing\Facades {
          */ 
         public static function create($modelName)
         {
-                        return \Strathmore\AdminListing\AdminListing::create($modelName);
+                        return \Savannabits\AdminListing\AdminListing::create($modelName);
         }
         
         /**
@@ -15960,14 +16591,14 @@ namespace Strathmore\AdminListing\Facades {
          * 
          * Setting the model is required
          *
-         * @param \Strathmore\AdminListing\Model|string $model
+         * @param \Savannabits\AdminListing\Model|string $model
          * @throws NotAModelClassException
-         * @return \Strathmore\AdminListing\AdminListing 
+         * @return \Savannabits\AdminListing\AdminListing 
          * @static 
          */ 
         public static function setModel($model)
         {
-                        /** @var \Strathmore\AdminListing\AdminListing $instance */
+                        /** @var \Savannabits\AdminListing\AdminListing $instance */
                         return $instance->setModel($model);
         }
         
@@ -15993,12 +16624,12 @@ namespace Strathmore\AdminListing\Facades {
          * @param callable $modifyQuery
          * @param string $locale
          * @throws Exception
-         * @return \Strathmore\AdminListing\LengthAwarePaginator|\Strathmore\AdminListing\Collection The result is either LengthAwarePaginator (when pagination was attached) or simple Collection otherwise
+         * @return \Savannabits\AdminListing\LengthAwarePaginator|\Savannabits\AdminListing\Collection The result is either LengthAwarePaginator (when pagination was attached) or simple Collection otherwise
          * @static 
          */ 
         public static function processRequestAndGet($request, $columns = [], $searchIn = null, $modifyQuery = null, $locale = null)
         {
-                        /** @var \Strathmore\AdminListing\AdminListing $instance */
+                        /** @var \Savannabits\AdminListing\AdminListing $instance */
                         return $instance->processRequestAndGet($request, $columns, $searchIn, $modifyQuery, $locale);
         }
         
@@ -16009,12 +16640,12 @@ namespace Strathmore\AdminListing\Facades {
          *
          * @param $locale
          * @throws Exception
-         * @return \Strathmore\AdminListing\AdminListing 
+         * @return \Savannabits\AdminListing\AdminListing 
          * @static 
          */ 
         public static function setLocale($locale)
         {
-                        /** @var \Strathmore\AdminListing\AdminListing $instance */
+                        /** @var \Savannabits\AdminListing\AdminListing $instance */
                         return $instance->setLocale($locale);
         }
         
@@ -16026,12 +16657,12 @@ namespace Strathmore\AdminListing\Facades {
          *
          * @param $orderBy
          * @param string $orderDirection
-         * @return \Strathmore\AdminListing\AdminListing 
+         * @return \Savannabits\AdminListing\AdminListing 
          * @static 
          */ 
         public static function attachOrdering($orderBy, $orderDirection = 'asc')
         {
-                        /** @var \Strathmore\AdminListing\AdminListing $instance */
+                        /** @var \Savannabits\AdminListing\AdminListing $instance */
                         return $instance->attachOrdering($orderBy, $orderDirection);
         }
         
@@ -16040,12 +16671,12 @@ namespace Strathmore\AdminListing\Facades {
          *
          * @param string $search searched string
          * @param array $searchIn array of columns which should be searched in (only text, character varying or primary key are allowed)
-         * @return \Strathmore\AdminListing\AdminListing 
+         * @return \Savannabits\AdminListing\AdminListing 
          * @static 
          */ 
         public static function attachSearch($search, $searchIn)
         {
-                        /** @var \Strathmore\AdminListing\AdminListing $instance */
+                        /** @var \Savannabits\AdminListing\AdminListing $instance */
                         return $instance->attachSearch($search, $searchIn);
         }
         
@@ -16054,12 +16685,12 @@ namespace Strathmore\AdminListing\Facades {
          *
          * @param $currentPage
          * @param int $perPage
-         * @return \Strathmore\AdminListing\AdminListing 
+         * @return \Savannabits\AdminListing\AdminListing 
          * @static 
          */ 
         public static function attachPagination($currentPage, $perPage = 10)
         {
-                        /** @var \Strathmore\AdminListing\AdminListing $instance */
+                        /** @var \Savannabits\AdminListing\AdminListing $instance */
                         return $instance->attachPagination($currentPage, $perPage);
         }
         
@@ -16067,12 +16698,12 @@ namespace Strathmore\AdminListing\Facades {
          * Modify built query in any way
          *
          * @param callable $modifyQuery
-         * @return \Strathmore\AdminListing\AdminListing 
+         * @return \Savannabits\AdminListing\AdminListing 
          * @static 
          */ 
         public static function modifyQuery($modifyQuery)
         {
-                        /** @var \Strathmore\AdminListing\AdminListing $instance */
+                        /** @var \Savannabits\AdminListing\AdminListing $instance */
                         return $instance->modifyQuery($modifyQuery);
         }
         
@@ -16080,12 +16711,12 @@ namespace Strathmore\AdminListing\Facades {
          * Execute query and get data
          *
          * @param array $columns
-         * @return \Strathmore\AdminListing\LengthAwarePaginator|\Strathmore\AdminListing\Collection The result is either LengthAwarePaginator (when pagination was attached) or simple Collection otherwise
+         * @return \Savannabits\AdminListing\LengthAwarePaginator|\Savannabits\AdminListing\Collection The result is either LengthAwarePaginator (when pagination was attached) or simple Collection otherwise
          * @static 
          */ 
         public static function get($columns = [])
         {
-                        /** @var \Strathmore\AdminListing\AdminListing $instance */
+                        /** @var \Savannabits\AdminListing\AdminListing $instance */
                         return $instance->get($columns);
         }
          
@@ -16093,24 +16724,24 @@ namespace Strathmore\AdminListing\Facades {
  
 }
 
-namespace Strathmore\Translatable\Facades { 
+namespace Savannabits\Translatable\Facades { 
 
     /**
      * 
      *
-     * @see \Strathmore\Translatable\Translatable
+     * @see \Savannabits\Translatable\Translatable
      */ 
     class Translatable {
         
         /**
          * Attempt to get all locales.
          *
-         * @return \Strathmore\Translatable\Collection 
+         * @return \Savannabits\Translatable\Collection 
          * @static 
          */ 
         public static function getLocales()
         {
-                        /** @var \Strathmore\Translatable\Translatable $instance */
+                        /** @var \Savannabits\Translatable\Translatable $instance */
                         return $instance->getLocales();
         }
          
@@ -16118,12 +16749,12 @@ namespace Strathmore\Translatable\Facades {
  
 }
 
-namespace Strathmore\AdminAuth\Activation\Facades { 
+namespace Savannabits\AdminAuth\Activation\Facades { 
 
     /**
      * 
      *
-     * @see \Strathmore\AdminAuth\Activation\Brokers\ActivationBrokerManager
+     * @see \Savannabits\AdminAuth\Activation\Brokers\ActivationBrokerManager
      */ 
     class Activation {
         
@@ -16131,12 +16762,12 @@ namespace Strathmore\AdminAuth\Activation\Facades {
          * Attempt to get the broker from the local cache.
          *
          * @param string $name
-         * @return \Strathmore\AdminAuth\Activation\Brokers\ActivationBrokerContract 
+         * @return \Savannabits\AdminAuth\Activation\Brokers\ActivationBrokerContract 
          * @static 
          */ 
         public static function broker($name = null)
         {
-                        /** @var \Strathmore\AdminAuth\Activation\Brokers\ActivationBrokerManager $instance */
+                        /** @var \Savannabits\AdminAuth\Activation\Brokers\ActivationBrokerManager $instance */
                         return $instance->broker($name);
         }
         
@@ -16148,7 +16779,7 @@ namespace Strathmore\AdminAuth\Activation\Facades {
          */ 
         public static function getDefaultDriver()
         {
-                        /** @var \Strathmore\AdminAuth\Activation\Brokers\ActivationBrokerManager $instance */
+                        /** @var \Savannabits\AdminAuth\Activation\Brokers\ActivationBrokerManager $instance */
                         return $instance->getDefaultDriver();
         }
         
@@ -16161,7 +16792,7 @@ namespace Strathmore\AdminAuth\Activation\Facades {
          */ 
         public static function setDefaultDriver($name)
         {
-                        /** @var \Strathmore\AdminAuth\Activation\Brokers\ActivationBrokerManager $instance */
+                        /** @var \Savannabits\AdminAuth\Activation\Brokers\ActivationBrokerManager $instance */
                         $instance->setDefaultDriver($name);
         }
          
@@ -18338,7 +18969,7 @@ namespace  {
             /**
              * Add an "order by" clause to the query.
              *
-             * @param \Closure|\Illuminate\Database\Query\Builder|string $column
+             * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Query\Expression|string $column
              * @param string $direction
              * @return \Illuminate\Database\Query\Builder 
              * @throws \InvalidArgumentException
@@ -19090,6 +19721,10 @@ namespace  {
 
     class View extends \Illuminate\Support\Facades\View {}
 
+    class PDF extends \Barryvdh\Snappy\Facades\SnappyPdf {}
+
+    class SnappyImage extends \Barryvdh\Snappy\Facades\SnappyImage {}
+
     class Flare extends \Facade\Ignition\Facades\Flare {}
 
     class Image extends \Intervention\Image\Facades\Image {}
@@ -19098,11 +19733,11 @@ namespace  {
 
     class Cas extends \Subfission\Cas\Facades\Cas {}
 
-    class AdminListing extends \Strathmore\AdminListing\Facades\AdminListing {}
+    class AdminListing extends \Savannabits\AdminListing\Facades\AdminListing {}
 
-    class Translatable extends \Strathmore\Translatable\Facades\Translatable {}
+    class Translatable extends \Savannabits\Translatable\Facades\Translatable {}
 
-    class Activation extends \Strathmore\AdminAuth\Activation\Facades\Activation {}
+    class Activation extends \Savannabits\AdminAuth\Activation\Facades\Activation {}
  
 }
 

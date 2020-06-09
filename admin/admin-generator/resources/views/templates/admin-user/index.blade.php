@@ -1,4 +1,4 @@
-{{'@'}}extends('strathmore/admin-ui::admin.layout.default')
+{{'@'}}extends('savannabits/admin-ui::admin.layout.default')
 
 {{'@'}}section('title', trans('admin.{{ $modelLangFormat }}.actions.index'))
 
@@ -25,9 +25,9 @@
                             <div class="row justify-content-md-between">
                                 <div class="col col-lg-7 col-xl-5 form-group">
                                     <div class="input-group">
-                                        <input class="form-control" placeholder="@{{ trans('strathmore/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />
+                                        <input class="form-control" placeholder="@{{ trans('savannabits/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />
                                         <span class="input-group-append">
-                                            <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; @{{ trans('strathmore/admin-ui::admin.btn.search') }}</button>
+                                            <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; @{{ trans('savannabits/admin-ui::admin.btn.search') }}</button>
                                         </span>
                                     </div>
                                 </div>
@@ -80,10 +80,10 @@
                                                 <button class="btn btn-sm btn-warning" v-show="!item.activated" @click="resendActivation(item.resource_url + '/resend-activation')" title="Resend activation" role="button"><i class="fa fa-envelope-o"></i></button>
                                             </div>
                                             <div class="col-auto">
-                                                <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="@{{ trans('strathmore/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
+                                                <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="@{{ trans('savannabits/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
                                             </div>
                                             <form class="col" @submit.prevent="deleteItem(item.resource_url)">
-                                                <button type="submit" class="btn btn-sm btn-danger" title="@{{ trans('strathmore/admin-ui::admin.btn.delete') }}"><i class="fa fa-trash-o"></i></button>
+                                                <button type="submit" class="btn btn-sm btn-danger" title="@{{ trans('savannabits/admin-ui::admin.btn.delete') }}"><i class="fa fa-trash-o"></i></button>
                                             </form>
                                         </div>
                                     </td>
@@ -93,7 +93,7 @@
 
                         <div class="row" v-if="pagination.state.total > 0">
                             <div class="col-sm">
-                                <span class="pagination-caption">@{{ trans('strathmore/admin-ui::admin.pagination.overview') }}</span>
+                                <span class="pagination-caption">@{{ trans('savannabits/admin-ui::admin.pagination.overview') }}</span>
                             </div>
                             <div class="col-sm-auto">
                                 <pagination></pagination>
@@ -102,9 +102,9 @@
 
 	                    <div class="no-items-found" v-if="!collection.length > 0">
 		                    <i class="icon-magnifier"></i>
-                            <h3>@{{ trans('strathmore/admin-ui::admin.index.no_items') }}</h3>
-                            <p>@{{ trans('strathmore/admin-ui::admin.index.try_changing_items') }}</p>
-                            <a class="btn btn-primary btn-spinner" href="{{'{{'}} url('admin/{{ $resource }}/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; @{{ trans('strathmore/admin-ui::admin.btn.new') }} {{ $modelBaseName }}</a>
+                            <h3>@{{ trans('savannabits/admin-ui::admin.index.no_items') }}</h3>
+                            <p>@{{ trans('savannabits/admin-ui::admin.index.try_changing_items') }}</p>
+                            <a class="btn btn-primary btn-spinner" href="{{'{{'}} url('admin/{{ $resource }}/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; @{{ trans('savannabits/admin-ui::admin.btn.new') }} {{ $modelBaseName }}</a>
 	                    </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
 use Symfony\Component\Console\Input\InputOption;
 
@@ -68,7 +68,7 @@ class Lang extends FileAppender {
     }
 
     protected function buildClass() {
-        return view('strathmore/admin-generator::'.$this->view, [
+        return view('savannabits/admin-generator::'.$this->view, [
             'modelLangFormat' => $this->modelLangFormat,
             'modelBaseName' => $this->modelBaseName,
             'modelPlural' => $this->modelPlural,

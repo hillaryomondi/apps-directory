@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Http\Controllers;
+namespace Savannabits\AdminAuth\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

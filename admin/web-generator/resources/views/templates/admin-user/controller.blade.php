@@ -25,11 +25,11 @@ use {{ $belongsToMany['related_model'] }};
 @endforeach
 @endif
 @endif
-@if($activation)use Strathmore\AdminAuth\Activation\Facades\Activation;
+@if($activation)use Savannabits\AdminAuth\Activation\Facades\Activation;
 @endif
-@if($activation)use Strathmore\AdminAuth\Services\ActivationService;
+@if($activation)use Savannabits\AdminAuth\Services\ActivationService;
 @endif
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -90,7 +90,7 @@ class {{ $controllerBaseName }} extends Controller
             return ['data' => $data, 'activation' => Config::get('admin-auth.activation_enabled')];
         }
 
-        return view('frontend.{{ $modelDotNotation }}.index', ['data' => $data, 'activation' => Config::get('admin-auth.activation_enabled')]);
+        return view('web.{{ $modelDotNotation }}.index', ['data' => $data, 'activation' => Config::get('admin-auth.activation_enabled')]);
     }
 
     /**
@@ -104,7 +104,7 @@ class {{ $controllerBaseName }} extends Controller
         $this->authorize('{{ $modelDotNotation }}.create');
 
 @if (count($relations))
-        return view('frontend.{{ $modelDotNotation }}.create', [
+        return view('web.{{ $modelDotNotation }}.create', [
             'activation' => Config::get('admin-auth.activation_enabled'),
 @if (count($relations['belongsToMany']))
 @foreach($relations['belongsToMany'] as $belongsToMany)
@@ -117,7 +117,7 @@ class {{ $controllerBaseName }} extends Controller
 @endif
         ]);
 @else
-        return view('frontend.{{ $modelDotNotation }}.create');
+        return view('web.{{ $modelDotNotation }}.create');
 @endif
     }
 
@@ -145,7 +145,7 @@ class {{ $controllerBaseName }} extends Controller
 @endif
 @endif
         if ($request->ajax()) {
-            return ['redirect' => url('{{ $resource }}'), 'message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('{{ $resource }}'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/{{ $resource }}');
@@ -184,7 +184,7 @@ class {{ $controllerBaseName }} extends Controller
 
 @endif
 @endif
-        return view('frontend.{{ $modelDotNotation }}.edit', [
+        return view('web.{{ $modelDotNotation }}.edit', [
             '{{ $modelVariableName }}' => ${{ $modelVariableName }},
             'activation' => Config::get('admin-auth.activation_enabled'),
 @if (count($relations))
@@ -228,7 +228,7 @@ class {{ $controllerBaseName }} extends Controller
 @endif
 
         if ($request->ajax()) {
-            return ['redirect' => url('{{ $resource }}'), 'message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('{{ $resource }}'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/{{ $resource }}');
@@ -247,7 +247,7 @@ class {{ $controllerBaseName }} extends Controller
         ${{ $modelVariableName }}->delete();
 
         if ($request->ajax()) {
-            return response(['message' => trans('strathmore/admin-ui::admin.operation.succeeded')]);
+            return response(['message' => trans('savannabits/admin-ui::admin.operation.succeeded')]);
         }
 
         return redirect()->back();
@@ -268,20 +268,20 @@ class {{ $controllerBaseName }} extends Controller
             $response = $activationService->handle(${{ $modelVariableName }});
             if ($response == Activation::ACTIVATION_LINK_SENT) {
                 if ($request->ajax()) {
-                    return ['message' => trans('strathmore/admin-ui::admin.operation.succeeded')];
+                    return ['message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
                 }
 
                 return redirect()->back();
             } else {
                 if ($request->ajax()) {
-                    abort(409, trans('strathmore/admin-ui::admin.operation.failed'));
+                    abort(409, trans('savannabits/admin-ui::admin.operation.failed'));
                 }
 
                 return redirect()->back();
             }
         } else {
             if ($request->ajax()) {
-                abort(400, trans('strathmore/admin-ui::admin.operation.not_allowed'));
+                abort(400, trans('savannabits/admin-ui::admin.operation.not_allowed'));
             }
 
             return redirect()->back();

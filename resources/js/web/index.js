@@ -1,14 +1,6 @@
-import './article';
-import './recipe';
-import './recipe-item';
-import './purchase-order';
-import './purchase-order-item';
-import './lpo';
-import './grn';
-import './grn-item';
-import './menu';
-import './menu-item';
-import './department';
-import './bug';
-import './su-application';
-import './screenshot';
+//IMPORT COMPONENTS HERE
+
+import './user';
+import './role';
+import './permission';
+import './service-endpoint';

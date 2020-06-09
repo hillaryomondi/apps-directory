@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\Translatable;
+namespace Savannabits\Translatable;
 
-use Strathmore\Translatable\Facades\Translatable;
+use Savannabits\Translatable\Facades\Translatable;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Collection;
 

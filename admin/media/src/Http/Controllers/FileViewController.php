@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\Media\Http\Controllers;
+namespace Savannabits\Media\Http\Controllers;
 
-use Strathmore\Media\HasMedia\HasMediaCollectionsTrait;
+use Savannabits\Media\HasMedia\HasMediaCollectionsTrait;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;

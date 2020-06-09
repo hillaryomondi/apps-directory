@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate\Traits;
+<?php namespace Savannabits\AdminGenerator\Generate\Traits;
 
 use Illuminate\Support\Facades\File;
 

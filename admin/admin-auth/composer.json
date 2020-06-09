@@ -1,6 +1,6 @@
 {
-    "name": "strathmore/admin-auth",
-    "description": "Authentication interface for strathmore/admin-ui",
+    "name": "savannabits/admin-auth",
+    "description": "Authentication interface for savannabits/admin-ui",
     "keywords": [
         "auth",
         "authentication",
@@ -11,19 +11,19 @@
         "laravel"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",
-            "email": "smaosa@strathmore.edu",
+            "email": "smaosa@savannabits.edu",
             "homepage": "https://www.savannabits.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^7.2.5",
-        "strathmore/admin-ui": "^4.0",
-        "strathmore/media": "^4.0",
+        "savannabits/admin-ui": "^7.0",
+        "savannabits/media": "^7.0",
         "illuminate/support": "^6.0|^7.0",
         "spatie/laravel-permission": "^3.0"
     },
@@ -35,18 +35,18 @@
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "Strathmore\\AdminAuth\\": "src/"
+            "Savannabits\\AdminAuth\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Strathmore\\AdminAuth\\Tests\\": "tests/"
+            "Savannabits\\AdminAuth\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Strathmore\\AdminAuth\\AdminAuthServiceProvider"
+                "Savannabits\\AdminAuth\\AdminAuthServiceProvider"
             ]
         },
         "branch-alias": {

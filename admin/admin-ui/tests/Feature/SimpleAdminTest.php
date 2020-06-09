@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminUI\Tests\Feature;
+namespace Savannabits\AdminUI\Tests\Feature;
 
-use Strathmore\AdminUI\Tests\TestCase;
+use Savannabits\AdminUI\Tests\TestCase;
 
 class SimpleAdminTest extends TestCase
 {

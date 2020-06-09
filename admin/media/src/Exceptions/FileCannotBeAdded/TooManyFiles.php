@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Media\Exceptions\FileCannotBeAdded;
+namespace Savannabits\Media\Exceptions\FileCannotBeAdded;
 
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded;
 
@@ -13,7 +13,7 @@ class TooManyFiles extends FileCannotBeAdded
      */
     public static function create(int $maxFileCount = null, string $collectionName = null): TooManyFiles
     {
-        return new static(trans('strathmore/media::media.exceptions.too_many_files',
+        return new static(trans('savannabits/media::media.exceptions.too_many_files',
             ['collectionName' => $collectionName, 'maxFileCount' => $maxFileCount]));
     }
 }

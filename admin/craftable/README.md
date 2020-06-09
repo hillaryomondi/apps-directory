@@ -68,9 +68,9 @@ Craftable uses Laravel so you should check out its requirements too. It is compa
 
 ### New Craftable project ###
 
-If you want to start on fresh Laravel, you can use our `strathmore/craftable-installer` that do all the tricks for you. Let's install it globally:
+If you want to start on fresh Laravel, you can use our `savannabits/craftable-installer` that do all the tricks for you. Let's install it globally:
 ```bash
-composer global require "strathmore/craftable-installer"
+composer global require "savannabits/craftable-installer"
 ```
 
 Create an empty database of your choice (PostgreSQL or MySQL).
@@ -95,8 +95,8 @@ Command is going to generate and **print the password for the default administra
 Or alternatively, you can use your existing Laravel application. Start with requiring these two main packages:
 
 ```bash
-composer require strathmore/craftable
-composer require --dev strathmore/admin-generator
+composer require savannabits/craftable
+composer require --dev savannabits/admin-generator
 ```
 
 To install this package use:
@@ -115,7 +115,7 @@ Once installed, navigate your browser to `/admin/login`. You should be able to s
 ![Admin login form](https://docs.getcraftable.com/assets/login-form.png "Admin login form")
 
 Use these credentials to log in:
-- E-mail: `administrator@strathmore.sk`
+- E-mail: `administrator@savannabits.sk`
 - Password: use password from you clipboard (it was printed in the end of the `craftable:install` command)
 
 After authorization you should be able to see a default homepage and two menu items:

@@ -1,6 +1,6 @@
-<?php namespace Strathmore\AdminUI;
+<?php namespace Savannabits\AdminUI;
 
-use Strathmore\AdminUI\Console\Commands\AdminUIInstall;
+use Savannabits\AdminUI\Console\Commands\AdminUIInstall;
 use Illuminate\Support\ServiceProvider;
 
 class AdminUIServiceProvider extends ServiceProvider
@@ -16,8 +16,8 @@ class AdminUIServiceProvider extends ServiceProvider
             AdminUIInstall::class,
         ]);
 
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'strathmore/admin-ui');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'strathmore/admin-ui');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'savannabits/admin-ui');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'savannabits/admin-ui');
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
         if ($this->app->runningInConsole()) {

@@ -15,23 +15,18 @@ URL::forceRootUrl(config('app.url'));
 |
 */
 
-Route::get("search", "Api\SuApplicationController@search")->name('search');
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::group(['as' =>'departments', 'prefix' => 'departments', 'middleware' => []], function (){
-    //
-    Route::get("", "Api\DepartmentController@index")->name('index');
+Route::group(['middleware' => "auth:sanctum,api", "namespace" =>"Api", "as" =>"api."], function () {
+    /**
+     * ROLE
+     */
+    Route::group(['as' => "roles.","prefix" => "roles"], function () {
+        Route::get("", "RoleController@index")->name("index");
+        Route::get("{role}", "RoleController@get")->name('get');
+        Route::get("{role}/permissions","RoleController@permissions")->name('permissions');
+        Route::post("{role}/permissions/toggle", "RoleController@togglePermission")->name("permissions.toggle");
+        Route::post("{role}/permissions/toggle-all", "RoleController@toggleAllPermissions")->name("permissions.toggle-all");
+    });
 });
-
-Route::group(['as' => 'bugs', 'prefix' => 'bugs', 'middleware' => []], function (){
-    Route::get("", "Api\BugController@index")->name('index');
-});
-
-Route::group(['as' => 'su-applications', 'prefix' => 'su-applications', 'middleware' => []], function (){
-    Route::get("", "Api\SuApplicationController@index")->name('index');
-});
-
-

@@ -73,7 +73,7 @@ return [
     'providers' => [
         'admin_users' => [
             'driver' => 'eloquent',
-            'model' => Strathmore\AdminAuth\Models\AdminUser::class,
+            'model' => Savannabits\AdminAuth\Models\AdminUser::class,
         ],
         
         'users' => [

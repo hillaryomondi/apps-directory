@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
 use Symfony\Component\Console\Input\InputOption;
 
@@ -34,7 +34,7 @@ class DestroyRequest extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('strathmore/admin-generator::destroy-request', [
+        return view('savannabits/admin-generator::destroy-request', [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'modelWithNamespaceFromDefault' => $this->modelWithNamespaceFromDefault,

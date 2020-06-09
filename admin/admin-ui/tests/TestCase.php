@@ -1,17 +1,17 @@
 <?php
 
-namespace Strathmore\AdminUI\Tests;
+namespace Savannabits\AdminUI\Tests;
 
-use Strathmore\AdminUI\AdminUIServiceProvider;
+use Savannabits\AdminUI\AdminUIServiceProvider;
 use Illuminate\Support\Facades\File;
 use Orchestra\Testbench\BrowserKit\TestCase as OrchestraBrowser;
-use Strathmore\AdminTranslations\Test\Exceptions\Handler;
+use Savannabits\AdminTranslations\Test\Exceptions\Handler;
 use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 
 abstract class TestCase extends OrchestraBrowser
 {
-    /** @var \Strathmore\AdminTranslations\Translation */
+    /** @var \Savannabits\AdminTranslations\Translation */
     protected $languageLine;
 
     public function setUp(): void

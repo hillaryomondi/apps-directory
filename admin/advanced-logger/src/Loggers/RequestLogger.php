@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Loggers;
+namespace Savannabits\AdvancedLogger\Loggers;
 
 use Psr\Log\LoggerInterface;
 use RuntimeException;

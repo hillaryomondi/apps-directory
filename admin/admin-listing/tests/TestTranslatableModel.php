@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminListing\Tests;
+namespace Savannabits\AdminListing\Tests;
 
-use Strathmore\Translatable\Traits\HasTranslations;
+use Savannabits\Translatable\Traits\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
 
 class TestTranslatableModel extends Model

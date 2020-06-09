@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Test\Feature;
+namespace Savannabits\AdvancedLogger\Test\Feature;
 
-use Strathmore\AdvancedLogger\Test\TestCase;
+use Savannabits\AdvancedLogger\Test\TestCase;
 
 class RequestLoggerTest extends TestCase
 {

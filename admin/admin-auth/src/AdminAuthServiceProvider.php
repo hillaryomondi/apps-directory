@@ -1,14 +1,14 @@
 <?php
 
-namespace Strathmore\AdminAuth;
+namespace Savannabits\AdminAuth;
 
-use Strathmore\AdminAuth\Activation\Providers\ActivationServiceProvider;
-use Strathmore\AdminAuth\Console\Commands\AdminAuthInstall;
-use Strathmore\AdminAuth\Exceptions\Handler;
-use Strathmore\AdminAuth\Http\Middleware\ApplyUserLocale;
-use Strathmore\AdminAuth\Http\Middleware\CanAdmin;
-use Strathmore\AdminAuth\Http\Middleware\RedirectIfAuthenticated;
-use Strathmore\AdminAuth\Providers\EventServiceProvider;
+use Savannabits\AdminAuth\Activation\Providers\ActivationServiceProvider;
+use Savannabits\AdminAuth\Console\Commands\AdminAuthInstall;
+use Savannabits\AdminAuth\Exceptions\Handler;
+use Savannabits\AdminAuth\Http\Middleware\ApplyUserLocale;
+use Savannabits\AdminAuth\Http\Middleware\CanAdmin;
+use Savannabits\AdminAuth\Http\Middleware\RedirectIfAuthenticated;
+use Savannabits\AdminAuth\Providers\EventServiceProvider;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
@@ -27,8 +27,8 @@ class AdminAuthServiceProvider extends ServiceProvider
             AdminAuthInstall::class,
         ]);
 
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'strathmore/admin-auth');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'strathmore/admin-auth');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'savannabits/admin-auth');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'savannabits/admin-auth');
 
         $this->app->register(ActivationServiceProvider::class);
         $this->app->register(EventServiceProvider::class);
@@ -92,13 +92,13 @@ class AdminAuthServiceProvider extends ServiceProvider
 
         //This is just because laravel does not provide it by default, however expect in AuthenticationException that it exists
         if (!Route::has('login')) {
-            Route::middleware(['web'])->namespace('Strathmore\AdminAuth\Http\Controllers')->group(function () {
+            Route::middleware(['web'])->namespace('Savannabits\AdminAuth\Http\Controllers')->group(function () {
                 Route::get('/login', 'MissingRoutesController@redirect')->name('login');
             });
         }
         //This is just because in welcome.blade.php someone was lazy to check if also register route exists and ask only for login
         if (!Route::has('register')) {
-            Route::middleware(['web'])->namespace('Strathmore\AdminAuth\Http\Controllers')->group(function () {
+            Route::middleware(['web'])->namespace('Savannabits\AdminAuth\Http\Controllers')->group(function () {
                 Route::get('/register', 'MissingRoutesController@redirect')->name('register');
             });
         }

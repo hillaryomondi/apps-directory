@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminAuth\Activation\Providers;
+namespace Savannabits\AdminAuth\Activation\Providers;
 
-use Strathmore\AdminAuth\Activation\Brokers\ActivationBrokerManager;
-use Strathmore\AdminAuth\Activation\Facades\Activation;
+use Savannabits\AdminAuth\Activation\Brokers\ActivationBrokerManager;
+use Savannabits\AdminAuth\Activation\Facades\Activation;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 

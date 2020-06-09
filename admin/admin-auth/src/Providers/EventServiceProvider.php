@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminAuth\Providers;
+namespace Savannabits\AdminAuth\Providers;
 
-use Strathmore\AdminAuth\Listeners\ActivationListener;
+use Savannabits\AdminAuth\Listeners\ActivationListener;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider

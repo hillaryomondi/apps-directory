@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Feature\AdminUser\Password;
+namespace Savannabits\AdminAuth\Tests\Feature\AdminUser\Password;
 
-use Strathmore\AdminAuth\Notifications\ResetPassword;
-use Strathmore\AdminAuth\Tests\BracketsTestCase;
-use Strathmore\AdminAuth\Tests\Models\TestBracketsUserModel;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
+use Savannabits\AdminAuth\Tests\BracketsTestCase;
+use Savannabits\AdminAuth\Tests\Models\TestBracketsUserModel;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Notification;
 
@@ -19,7 +19,7 @@ class ForgotPasswordTest extends BracketsTestCase
             'password' => bcrypt('testpass123'),
         ]);
 
-        $this->assertDatabaseHas('test_strathmore_user_models', [
+        $this->assertDatabaseHas('test_savannabits_user_models', [
             'email' => 'john@example.com',
         ]);
 

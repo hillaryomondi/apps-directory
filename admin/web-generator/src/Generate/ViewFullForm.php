@@ -1,4 +1,4 @@
-<?php namespace Strathmore\WebGenerator\Generate;
+<?php namespace Savannabits\WebGenerator\Generate;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -84,7 +84,7 @@ class ViewFullForm extends ViewGenerator {
             }
         }
 
-        $viewPath = resource_path('views/frontend/'.$this->fileName.'.blade.php');
+        $viewPath = resource_path('views/web/'.$this->fileName.'.blade.php');
         if ($this->alreadyExists($viewPath) && !$force) {
             $this->error('File '.$viewPath.' already exists!');
         } else {
@@ -140,7 +140,7 @@ class ViewFullForm extends ViewGenerator {
 
     protected function buildForm() {
 
-        return view('strathmore/web-generator::'.$this->view, [
+        return view('savannabits/web-generator::'.$this->view, [
             'modelBaseName' => $this->modelBaseName,
             'modelVariableName' => $this->modelVariableName,
             'route' => $this->route,
@@ -163,7 +163,7 @@ class ViewFullForm extends ViewGenerator {
     }
 
     protected function buildFormJs() {
-        return view('strathmore/web-generator::'.$this->viewJs, [
+        return view('savannabits/web-generator::'.$this->viewJs, [
             'modelJSName' => $this->formJsRelativePath,
 
             'columns' => $this->getVisibleColumns($this->tableName, $this->modelVariableName),

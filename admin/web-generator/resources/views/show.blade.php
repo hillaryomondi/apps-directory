@@ -1,4 +1,4 @@
-{{'@'}}extends('frontend.layout.base.layout.default')
+{{'@'}}extends('web.layout.base.layout.default')
 
 {{'@'}}section('title', trans("Show ${{ $modelVariableName }}->{{$modelTitle}}"))
 
@@ -31,7 +31,7 @@
                     <div class="card-footer">
                         <button type="button" class="btn btn-primary">
                             <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
-                            @{{ trans('strathmore/admin-ui::admin.btn.save') }}
+                            @{{ trans('savannabits/admin-ui::admin.btn.save') }}
                         </button>
                     </div>
                 </div>

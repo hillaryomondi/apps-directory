@@ -15,10 +15,10 @@ namespace {{ $modelNameSpace }};
     }
 @endphp
 
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Activation\Traits\CanActivate;
-use Strathmore\AdminAuth\Notifications\ResetPassword;
-@if($translatable->count() > 0)use Strathmore\Translatable\Traits\HasTranslations;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Activation\Traits\CanActivate;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
+@if($translatable->count() > 0)use Savannabits\Translatable\Traits\HasTranslations;
 @endif
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 @if($hasSoftDelete)use Illuminate\Database\Eloquent\SoftDeletes;

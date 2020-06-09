@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\WebGenerator\Tests\Feature\Views;
+namespace Savannabits\WebGenerator\Tests\Feature\Views;
 
-use Strathmore\WebGenerator\Tests\TestCase;
+use Savannabits\WebGenerator\Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -29,7 +29,7 @@ class IndexTest extends TestCase
         $this->assertFileExists($indexPath);
         $this->assertFileExists($listingJsPath);
         $this->assertFileExists($indexJsPath);
-        $this->assertStringStartsWith('@extends(\'frontend.layout.base.layout.default\')', File::get($indexPath));
+        $this->assertStringStartsWith('@extends(\'web.layout.base.layout.default\')', File::get($indexPath));
         $this->assertStringStartsWith('import AppListing from \'../app-components/Listing/AppListing\';
 
 Vue.component(\'category-listing\', {
@@ -60,7 +60,7 @@ Vue.component(\'category-listing\', {
         $this->assertFileExists($indexPath);
         $this->assertFileExists($listingJsPath);
         $this->assertFileExists($indexJsPath);
-        $this->assertStringStartsWith('@extends(\'frontend.layout.base.layout.default\')', File::get($indexPath));
+        $this->assertStringStartsWith('@extends(\'web.layout.base.layout.default\')', File::get($indexPath));
         $this->assertStringStartsWith('import AppListing from \'../app-components/Listing/AppListing\';
 
 Vue.component(\'billing-my-article-listing\', {

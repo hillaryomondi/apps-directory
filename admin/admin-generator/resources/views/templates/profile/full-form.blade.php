@@ -1,4 +1,4 @@
-{{'@'}}extends('strathmore/admin-ui::admin.layout.default')
+{{'@'}}extends('savannabits/admin-ui::admin.layout.default')
 
 {{'@'}}section('title', trans('admin.{{ $modelLangFormat }}.actions.edit_profile'))
 
@@ -29,14 +29,14 @@
         return in_array($column['name'], ['password', 'activated', 'forbidden']);
     });
 @endphp
-                        @include('strathmore/admin-generator::templates.profile.form')
+                        @include('savannabits/admin-generator::templates.profile.form')
 
                     </div>
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary" :disabled="submiting">
                             <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
-                            @{{ trans('strathmore/admin-ui::admin.btn.save') }}
+                            @{{ trans('savannabits/admin-ui::admin.btn.save') }}
                         </button>
                     </div>
 

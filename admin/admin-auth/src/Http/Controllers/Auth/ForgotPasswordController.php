@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminAuth\Http\Controllers\Auth;
+namespace Savannabits\AdminAuth\Http\Controllers\Auth;
 
-use Strathmore\AdminAuth\Http\Controllers\Controller;
+use Savannabits\AdminAuth\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\PasswordBroker as PasswordBrokerContract;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\JsonResponse;
@@ -59,7 +59,7 @@ class ForgotPasswordController extends Controller
      */
     public function showLinkRequestForm()
     {
-        return view('strathmore/admin-auth::admin.auth.passwords.email');
+        return view('savannabits/admin-auth::admin.auth.passwords.email');
     }
 
     /**
@@ -95,7 +95,7 @@ class ForgotPasswordController extends Controller
     {
         $message = trans($response);
         if ($response === Password::RESET_LINK_SENT) {
-            $message = trans('strathmore/admin-auth::admin.passwords.sent');
+            $message = trans('savannabits/admin-auth::admin.passwords.sent');
         }
         return back()->with('status', $message);
     }

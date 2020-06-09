@@ -76,6 +76,7 @@ class LoginController extends Controller
             \Log::info("sending login response");
             return $this->sendLoginResponse($request);
         } catch (\Throwable $exception) {
+            \Log::error($exception);
             $this->incrementLoginAttempts($request);
             cas()->logoutWithUrl(env('CAS_REDIRECT_PATH'));
             return $this->sendFailedLoginResponse($request);
