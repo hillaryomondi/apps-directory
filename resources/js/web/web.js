@@ -12,14 +12,12 @@ import VModal from 'vue-js-modal';
 import BootstrapVue, {BootstrapVueIcons} from "bootstrap-vue";
 import Vue from 'vue';
 import Loading from "vue-loading-overlay"
-import VueObserveVisibilityPlugin from "vue-observe-visibility";
 import 'vue-loading-overlay/dist/vue-loading.css';
 import './app-components/bootstrap';
 import './index';
 
 import 'craftable/dist/ui';
 import VueFormWizard from "vue-form-wizard";
-import VueTailwind from "vue-tailwind";
 Vue.component('multiselect', ()=>import(/*webpackChunkName: 'vue-multiselect'*/ "vue-multiselect"));
 Vue.component('typeahead', () => import(/*webpackChunkName: 'typeahead'*/ "vue-bootstrap-typeahead"));
 Vue.use(VeeValidate, {strict: true});
@@ -29,7 +27,6 @@ Vue.use(VueFormWizard,{
 })
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons);
-Vue.use(VueTailwind);
 Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
 Vue.use(VueQuillEditor);
 Vue.use(Notifications);
@@ -40,7 +37,6 @@ Vue.use(Loading,{
     color: 'green',
     loader: 'dots'
 });
-Vue.use(VueObserveVisibilityPlugin);
 new Vue({
     mixins: [Admin],
 });

@@ -15,7 +15,9 @@
   border-radius: 4px;
 }
 
-.vue-form-wizard .wizard-btn.disabled, .vue-form-wizard .wizard-btn[disabled], fieldset[disabled] .vue-form-wizard .wizard-btn {
+.vue-form-wizard .wizard-btn.disabled,
+.vue-form-wizard .wizard-btn[disabled],
+fieldset[disabled] .vue-form-wizard .wizard-btn {
   cursor: not-allowed;
   opacity: 0.65;
   filter: alpha(opacity=65);
@@ -47,7 +49,8 @@
   padding: 10px 15px;
 }
 
-.vue-form-wizard .wizard-nav > li > a:hover, .vue-form-wizard .wizard-nav > li > a:focus {
+.vue-form-wizard .wizard-nav > li > a:hover,
+.vue-form-wizard .wizard-nav > li > a:focus {
   text-decoration: none;
   background-color: #eeeeee;
 }
@@ -56,7 +59,8 @@
   color: #777777;
 }
 
-.vue-form-wizard .wizard-nav > li.disabled > a:hover, .vue-form-wizard .wizard-nav > li.disabled > a:focus {
+.vue-form-wizard .wizard-nav > li.disabled > a:hover,
+.vue-form-wizard .wizard-nav > li.disabled > a:focus {
   color: #777777;
   text-decoration: none;
   background-color: transparent;
@@ -87,7 +91,8 @@
   min-width: 140px;
 }
 
-.vue-form-wizard .wizard-btn:hover, .vue-form-wizard .wizard-btn:focus,
+.vue-form-wizard .wizard-btn:hover,
+.vue-form-wizard .wizard-btn:focus,
 .vue-form-wizard .navbar .navbar-nav > li > a.wizard-btn:hover,
 .vue-form-wizard .navbar .navbar-nav > li > a.wizard-btn:focus {
   outline: 0 !important;
@@ -101,7 +106,8 @@
   flex-wrap: wrap;
 }
 
-.vue-form-wizard .wizard-nav-pills li, .vue-form-wizard .wizard-nav-pills a {
+.vue-form-wizard .wizard-nav-pills li,
+.vue-form-wizard .wizard-nav-pills a {
   flex: 1;
   align-items: center;
   flex-wrap: wrap;
@@ -122,7 +128,8 @@
   top: 3px;
 }
 
-.vue-form-wizard .wizard-nav-pills > li > a:hover, .vue-form-wizard .wizard-nav-pills > li > a:focus {
+.vue-form-wizard .wizard-nav-pills > li > a:hover,
+.vue-form-wizard .wizard-nav-pills > li > a:focus {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.2);
   outline: 0 !important;
@@ -277,7 +284,8 @@
   border-radius: 40%;
 }
 
-.vue-form-wizard .wizard-icon-circle .wizard-icon-container.square_shape, .vue-form-wizard .wizard-icon-circle .wizard-icon-container.tab_shape {
+.vue-form-wizard .wizard-icon-circle .wizard-icon-container.square_shape,
+.vue-form-wizard .wizard-icon-circle .wizard-icon-container.tab_shape {
   border-radius: 0;
 }
 
@@ -351,7 +359,7 @@
   }
 
   .vue-form-wizard .wizard-card-footer .wizard-footer-left,
-.vue-form-wizard .wizard-card-footer .wizard-footer-right {
+  .vue-form-wizard .wizard-card-footer .wizard-footer-right {
     float: none;
     flex: 1;
     display: flex;
@@ -379,3 +387,4 @@
 .vue-form-wizard.vertical .wizard-card-footer {
   padding-top: 30px;
 }
+

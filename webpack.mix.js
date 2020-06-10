@@ -1,6 +1,4 @@
 const mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss')
-require('laravel-mix-tailwind');
 require('laravel-mix-merge-manifest')
 /*
  |--------------------------------------------------------------------------
@@ -44,7 +42,6 @@ mix
         'vue-cookie',
         'moment',
         'craftable',
-        'vue-tailwind',
     ]);
 mix
     .js('resources/js/app.js', 'public/js')

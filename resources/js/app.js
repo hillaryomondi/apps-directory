@@ -16,14 +16,8 @@ require('./bootstrap');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-import VueTailwind from 'vue-tailwind'
-Vue.use(VueTailwind);
 import "bootstrap-vue/dist/bootstrap-vue.css"
 Vue.use(BootstrapVue)
-Vue.component('example-component', () => import(
-    /* webpackChunkName: `example-component` */
-    "./components/ExampleComponent")
-);
 import "./frontend-components"
 const app = new Vue({
     el: '#app',
