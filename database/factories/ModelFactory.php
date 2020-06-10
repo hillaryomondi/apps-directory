@@ -75,3 +75,48 @@ $factory->define(App\ServiceEndpoint::class, static function (Faker\Generator $f
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Department::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'name' => $faker->firstName,
+        'display_name' => $faker->sentence,
+        'description' => $faker->text(),
+        'enabled' => $faker->boolean(),
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\SuApplication::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'name' => $faker->firstName,
+        'description' => $faker->text(),
+        'enabled' => $faker->boolean(),
+        'department_id' => $faker->sentence,
+        'tags' => $faker->text(),
+        'url' => $faker->sentence,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Ticket::class, static function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'reference_number' => $faker->sentence,
+        'title' => $faker->sentence,
+        'description' => $faker->text(),
+        'resolved' => $faker->boolean(),
+        'reporter_name' => $faker->sentence,
+        'reporter_email' => $faker->sentence,
+        'created_by' => $faker->sentence,
+        'su_application_id' => $faker->sentence,
+        
+        
+    ];
+});

@@ -49167,6 +49167,22 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/js/web/department/index.js":
+/*!**********************************************!*\
+  !*** ./resources/js/web/department/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+Vue.component('department-listing', function () {
+  return __webpack_require__.e(/*! import() | department-listing */ "department-listing").then(__webpack_require__.bind(null, /*! ./Listing */ "./resources/js/web/department/Listing.js"));
+});
+Vue.component('department-form', function () {
+  return __webpack_require__.e(/*! import() | department-form */ "department-form").then(__webpack_require__.bind(null, /*! ./Form */ "./resources/js/web/department/Form.js"));
+});
+
+/***/ }),
+
 /***/ "./resources/js/web/index.js":
 /*!***********************************!*\
   !*** ./resources/js/web/index.js ***!
@@ -49183,7 +49199,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _permission__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./permission */ "./resources/js/web/permission/index.js");
 /* harmony import */ var _service_endpoint__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./service-endpoint */ "./resources/js/web/service-endpoint/index.js");
 /* harmony import */ var _service_endpoint__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_service_endpoint__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _department__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./department */ "./resources/js/web/department/index.js");
+/* harmony import */ var _department__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_department__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _su_application__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./su-application */ "./resources/js/web/su-application/index.js");
+/* harmony import */ var _su_application__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_su_application__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _ticket__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ticket */ "./resources/js/web/ticket/index.js");
+/* harmony import */ var _ticket__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_ticket__WEBPACK_IMPORTED_MODULE_6__);
 //IMPORT COMPONENTS HERE
+
+
+
 
 
 
@@ -49280,6 +49305,38 @@ Vue.component('service-endpoint-listing', function () {
 });
 Vue.component('service-endpoint-form', function () {
   return __webpack_require__.e(/*! import() | service-endpoint-form */ "service-endpoint-form").then(__webpack_require__.bind(null, /*! ./Form */ "./resources/js/web/service-endpoint/Form.js"));
+});
+
+/***/ }),
+
+/***/ "./resources/js/web/su-application/index.js":
+/*!**************************************************!*\
+  !*** ./resources/js/web/su-application/index.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+Vue.component('su-application-listing', function () {
+  return __webpack_require__.e(/*! import() | su-application-listing */ "su-application-listing").then(__webpack_require__.bind(null, /*! ./Listing */ "./resources/js/web/su-application/Listing.js"));
+});
+Vue.component('su-application-form', function () {
+  return __webpack_require__.e(/*! import() | su-application-form */ "su-application-form").then(__webpack_require__.bind(null, /*! ./Form */ "./resources/js/web/su-application/Form.js"));
+});
+
+/***/ }),
+
+/***/ "./resources/js/web/ticket/index.js":
+/*!******************************************!*\
+  !*** ./resources/js/web/ticket/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+Vue.component('ticket-listing', function () {
+  return __webpack_require__.e(/*! import() | ticket-listing */ "ticket-listing").then(__webpack_require__.bind(null, /*! ./Listing */ "./resources/js/web/ticket/Listing.js"));
+});
+Vue.component('ticket-form', function () {
+  return __webpack_require__.e(/*! import() | ticket-form */ "ticket-form").then(__webpack_require__.bind(null, /*! ./Form */ "./resources/js/web/ticket/Form.js"));
 });
 
 /***/ }),

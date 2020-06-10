@@ -134,3 +134,54 @@ Route::middleware(['auth:' . config('auth.defaults.guard')])->group(static funct
         });
     });
 });
+
+
+/* Auto-generated web routes */
+Route::middleware(['auth:' . config('auth.defaults.guard')])->group(static function () {
+    Route::prefix('')->namespace('Web')->name('web/')->group(static function() {
+        Route::prefix('departments')->name('departments/')->group(static function() {
+            Route::get('/',                                             'DepartmentsController@index')->name('index');
+            Route::get('/create',                                       'DepartmentsController@create')->name('create');
+            Route::post('/',                                            'DepartmentsController@store')->name('store');
+            Route::get('/{department}/edit',                            'DepartmentsController@edit')->name('edit');
+            Route::get('/{department}/show',                            'DepartmentsController@show')->name('show');
+            Route::post('/bulk-destroy',                                'DepartmentsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{department}',                                'DepartmentsController@update')->name('update');
+            Route::delete('/{department}',                              'DepartmentsController@destroy')->name('destroy');
+        });
+    });
+});
+
+
+/* Auto-generated web routes */
+Route::middleware(['auth:' . config('auth.defaults.guard')])->group(static function () {
+    Route::prefix('')->namespace('Web')->name('web/')->group(static function() {
+        Route::prefix('su-applications')->name('su-applications/')->group(static function() {
+            Route::get('/',                                             'SuApplicationsController@index')->name('index');
+            Route::get('/create',                                       'SuApplicationsController@create')->name('create');
+            Route::post('/',                                            'SuApplicationsController@store')->name('store');
+            Route::get('/{suApplication}/edit',                         'SuApplicationsController@edit')->name('edit');
+            Route::get('/{suApplication}/show',                         'SuApplicationsController@show')->name('show');
+            Route::post('/bulk-destroy',                                'SuApplicationsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{suApplication}',                             'SuApplicationsController@update')->name('update');
+            Route::delete('/{suApplication}',                           'SuApplicationsController@destroy')->name('destroy');
+        });
+    });
+});
+
+
+/* Auto-generated web routes */
+Route::middleware(['auth:' . config('auth.defaults.guard')])->group(static function () {
+    Route::prefix('')->namespace('Web')->name('web/')->group(static function() {
+        Route::prefix('tickets')->name('tickets/')->group(static function() {
+            Route::get('/',                                             'TicketsController@index')->name('index');
+            Route::get('/create',                                       'TicketsController@create')->name('create');
+            Route::post('/',                                            'TicketsController@store')->name('store');
+            Route::get('/{ticket}/edit',                                'TicketsController@edit')->name('edit');
+            Route::get('/{ticket}/show',                                'TicketsController@show')->name('show');
+            Route::post('/bulk-destroy',                                'TicketsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{ticket}',                                    'TicketsController@update')->name('update');
+            Route::delete('/{ticket}',                                  'TicketsController@destroy')->name('destroy');
+        });
+    });
+});

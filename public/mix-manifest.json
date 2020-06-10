@@ -18,5 +18,11 @@
     "/js/home-component.js": "/js/home-component.js",
     "/js/service-endpoint-form.js": "/js/service-endpoint-form.js",
     "/js/service-endpoint-listing.js": "/js/service-endpoint-listing.js",
-    "/js/search-component.js": "/js/search-component.js"
+    "/js/search-component.js": "/js/search-component.js",
+    "/js/department-form.js": "/js/department-form.js",
+    "/js/department-listing.js": "/js/department-listing.js",
+    "/js/su-application-form.js": "/js/su-application-form.js",
+    "/js/su-application-listing.js": "/js/su-application-listing.js",
+    "/js/ticket-form.js": "/js/ticket-form.js",
+    "/js/ticket-listing.js": "/js/ticket-listing.js"
 }

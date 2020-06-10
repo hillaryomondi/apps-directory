@@ -117,7 +117,73 @@ return [
         ],
     ],
 
+    'department' => [
+        'title' => 'Departments',
+
+        'actions' => [
+            'index' => 'Departments',
+            'create' => 'New Department',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'name' => 'Name',
+            'display_name' => 'Display name',
+            'description' => 'Description',
+            'enabled' => 'Enabled',
+            
+        ],
+    ],
+
+    'su-application' => [
+        'title' => 'Su Applications',
+
+        'actions' => [
+            'index' => 'Su Applications',
+            'create' => 'New Su Application',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'name' => 'Name',
+            'description' => 'Description',
+            'enabled' => 'Enabled',
+            'department_id' => 'Department',
+            'tags' => 'Tags',
+            'url' => 'Url',
+            
+        ],
+    ],
+
+    'ticket' => [
+        'title' => 'Tickets',
+
+        'actions' => [
+            'index' => 'Tickets',
+            'create' => 'New Ticket',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'reference_number' => 'Reference number',
+            'title' => 'Title',
+            'description' => 'Description',
+            'resolved' => 'Resolved',
+            'reporter_name' => 'Reporter name',
+            'reporter_email' => 'Reporter email',
+            'created_by' => 'Created by',
+            'su_application_id' => 'Su application',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
+
+
+
 
 
 
