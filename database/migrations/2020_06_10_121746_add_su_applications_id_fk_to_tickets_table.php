@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSuApplicationsIdFkToBugsTable extends Migration
+class AddSuApplicationsIdFkToTicketsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddSuApplicationsIdFkToBugsTable extends Migration
      */
     public function up()
     {
-        Schema::table('bugs', function (Blueprint $table) {
+        Schema::table('tickets', function (Blueprint $table) {
           $table->foreignId('su_application_id')->constrained('su_applications')->onDelete('restrict');
         });
     }
@@ -25,7 +25,7 @@ class AddSuApplicationsIdFkToBugsTable extends Migration
      */
     public function down()
     {
-        Schema::table('bugs', function (Blueprint $table) {
+        Schema::table('tickets', function (Blueprint $table) {
             //
         });
     }

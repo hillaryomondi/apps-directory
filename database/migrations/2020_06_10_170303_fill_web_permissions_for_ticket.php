@@ -5,7 +5,7 @@ use Illuminate\Config\Repository;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
 
-class FillWebPermissionsForBug extends Migration
+class FillWebPermissionsForTicket extends Migration
 {
     /**
      * @var Repository|mixed
@@ -21,20 +21,20 @@ class FillWebPermissionsForBug extends Migration
     protected $roles;
 
     /**
-     * FillWebPermissionsForBug constructor.
+     * FillWebPermissionsForticket constructor.
      */
     public function __construct()
     {
         $this->guardName = config('auth.defaults.guard');
 
         $permissions = collect([
-            'bug',
-            'bug.index',
-            'bug.create',
-            'bug.show',
-            'bug.edit',
-            'bug.delete',
-            'bug.bulk-delete',
+            'ticket',
+            'ticket.index',
+            'ticket.create',
+            'ticket.show',
+            'ticket.edit',
+            'ticket.delete',
+            'ticket.bulk-delete',
         ]);
 
         //Add New permissions
