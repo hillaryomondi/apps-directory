@@ -30,3 +30,20 @@ Route::group(['middleware' => "auth:sanctum,api", "namespace" =>"Api", "as" =>"a
         Route::post("{role}/permissions/toggle-all", "RoleController@toggleAllPermissions")->name("permissions.toggle-all");
     });
 });
+
+Route::get("search", "Api\SuApplicationController@search")->name('search');
+
+
+Route::group(['as' =>'departments.', 'prefix' => 'departments', 'middleware' => []], function (){
+    //
+    Route::get("", "Api\DepartmentController@index")->name('index');
+});
+
+Route::group(['as' => 'tickets.', 'prefix' => 'tickets', 'middleware' => []], function (){
+    Route::get("", "Api\TicketController@index")->name('index');
+});
+
+Route::group(['as' => 'su-applications.', 'prefix' => 'su-applications', 'middleware' => []], function (){
+    Route::get("", "Api\SuApplicationController@index")->name('index');
+});
+

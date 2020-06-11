@@ -30,7 +30,7 @@ Vue.component('search-component', {
         },
         fetchAppResults(query) {
             let vm = this;
-            Axios.get(`/search`, {
+            Axios.get(`/api/search`, {
                 params: {
                     search: query
                 },
