@@ -6,13 +6,19 @@
         <h3 class="text-primary"><a target="_blank" :href="item.url">@{{ item.name }} > <small>@{{ item.formatted_url }}</small></a></h3>
             <div v-html="item.description"></div>
             <div>
-                <b-button variant="danger">
-                    report a bug
+                <b-button @click="launchTicketModal($event, item)" variant="danger">
+                    report an issue
                 </b-button>
                 <b-button variant="primary">
                     view details
                 </b-button>
             </div>
         </b-card>
+        <b-modal v-if="currentApplication" :title="`New Ticket for ${currentApplication.name}`" ref="ticketModal" id="ticket-modal">
+            REPORTING AN ISSUE
+        </b-modal>
+        <b-modal>
+
+        </b-modal>
     </b-card>
 </div>

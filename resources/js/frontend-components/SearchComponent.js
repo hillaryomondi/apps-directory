@@ -8,6 +8,13 @@ Vue.component('search-component', {
             searchResultsObject: {
                 data: []
             },
+            ticket: {
+                "title": null,
+                "description": null,
+                "reporter_name": null,
+                "reporter_email": null,
+            },
+            currentApplication: null,
             searched: false //initially false before we search.
         }
     },
@@ -44,6 +51,23 @@ Vue.component('search-component', {
                 //If an error occured we set searched = false;
                 vm.searched = false;
             });
+        },
+
+        submitTicket() {
+            console.log(this.ticket);
+        },
+        launchTicketModal(e, item) {
+            let vm = this;
+            this.currentApplication = {...item};
+            vm.ticket = {
+                "title": null,
+                "description": null,
+                "reporter_name": null,
+                "reporter_email": null,
+            };
+            vm.$nextTick(function() {
+                vm.$refs.ticketModal.show();
+            })
         }
     },
 });

@@ -15,6 +15,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -25,6 +31,13 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
       searchResultsObject: {
         data: []
       },
+      ticket: {
+        "title": null,
+        "description": null,
+        "reporter_name": null,
+        "reporter_email": null
+      },
+      currentApplication: null,
       searched: false //initially false before we search.
 
     };
@@ -61,6 +74,22 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
         console.log(err); //If an error occured we set searched = false;
 
         vm.searched = false;
+      });
+    },
+    submitTicket: function submitTicket() {
+      console.log(this.ticket);
+    },
+    launchTicketModal: function launchTicketModal(e, item) {
+      var vm = this;
+      this.currentApplication = _objectSpread({}, item);
+      vm.ticket = {
+        "title": null,
+        "description": null,
+        "reporter_name": null,
+        "reporter_email": null
+      };
+      vm.$nextTick(function () {
+        vm.$refs.ticketModal.show();
       });
     }
   }
