@@ -49,7 +49,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
     },
     fetchAppResults: function fetchAppResults(query) {
       var vm = this;
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/search", {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/search", {
         params: {
           search: query
         }
