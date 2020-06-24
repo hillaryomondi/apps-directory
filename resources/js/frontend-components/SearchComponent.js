@@ -68,6 +68,13 @@ Vue.component('search-component', {
             vm.$nextTick(function() {
                 vm.$refs.ticketModal.show();
             })
+        },
+        viewDetail(e , item){
+            let vm = this;
+            this.currentApplication =   {...item};
+            vm.$nextTick(function() {
+                vm.$refs.detailModal.show()
+            })
         }
     },
 });

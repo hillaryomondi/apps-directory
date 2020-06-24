@@ -91,6 +91,13 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
       vm.$nextTick(function () {
         vm.$refs.ticketModal.show();
       });
+    },
+    viewDetail: function viewDetail(e, item) {
+      var vm = this;
+      this.currentApplication = _objectSpread({}, item);
+      vm.$nextTick(function () {
+        vm.$refs.detailModal.show();
+      });
     }
   }
 });
