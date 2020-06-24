@@ -32,10 +32,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
         data: []
       },
       ticket: {
-        "title": null,
-        "description": null,
-        "reporter_name": null,
-        "reporter_email": null
+        title: null,
+        description: null,
+        reporter_name: null,
+        reporter_email: null
       },
       currentApplication: null,
       searched: false //initially false before we search.
@@ -77,7 +77,17 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
       });
     },
     submitTicket: function submitTicket() {
-      console.log(this.ticket);
+      console.log(this.ticket); //TODO: Replace this with:
+      // 1. Call the API using axios POST /api/su-applications/${this.currentApplication.id}/create-ticket
+      // DATA: this.ticket
+      //Then
+      // if response successful,
+      //              display a notification that the ticket has been created and queued for resolution.
+      //              Close The ticket Modal.
+      //              Reset the ticket Data
+      // else (if response error)
+      //          Display the error notification,
+      //          Do not close the modal
     },
     launchTicketModal: function launchTicketModal(e, item) {
       var vm = this;
@@ -92,7 +102,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
         vm.$refs.ticketModal.show();
       });
     },
-    viewDetail: function viewDetail(e, item) {
+    viewDetails: function viewDetails(e, item) {
       var vm = this;
       this.currentApplication = _objectSpread({}, item);
       vm.$nextTick(function () {

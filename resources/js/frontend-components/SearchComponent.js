@@ -9,10 +9,10 @@ Vue.component('search-component', {
                 data: []
             },
             ticket: {
-                "title": null,
-                "description": null,
-                "reporter_name": null,
-                "reporter_email": null,
+                title: null,
+                description: null,
+                reporter_name: null,
+                reporter_email: null,
             },
             currentApplication: null,
             searched: false //initially false before we search.
@@ -55,6 +55,18 @@ Vue.component('search-component', {
 
         submitTicket() {
             console.log(this.ticket);
+            //TODO: Replace this with:
+
+            // 1. Call the API using axios POST /api/su-applications/${this.currentApplication.id}/create-ticket
+            // DATA: this.ticket
+            //Then
+            // if response successful,
+            //              display a notification that the ticket has been created and queued for resolution.
+            //              Close The ticket Modal.
+            //              Reset the ticket Data
+            // else (if response error)
+            //          Display the error notification,
+            //          Do not close the modal
         },
         launchTicketModal(e, item) {
             let vm = this;
@@ -69,7 +81,7 @@ Vue.component('search-component', {
                 vm.$refs.ticketModal.show();
             })
         },
-        viewDetail(e , item){
+        viewDetails(e, item){
             let vm = this;
             this.currentApplication =   {...item};
             vm.$nextTick(function() {

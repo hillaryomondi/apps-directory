@@ -9,20 +9,41 @@
                 <b-button @click="launchTicketModal($event, item)" variant="danger">
                     report an issue
                 </b-button>
-                <b-button @click="viewDetailModal($event , item)" variant= "primary">
+                <b-button @click="viewDetails($event , item)" variant= "primary">
                     View details
                 </b-button>
             </div>
         </b-card>
-        <b-modal v-if="currentApplication" :title="`New Ticket for ${currentApplication.name}`" ref="ticketModal" id="ticket-modal">
-            <div>
-                <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
-                <b-form-input v-model="text" aria-placeholder="Enter your email"></b-form-input>
-                <b-form-textarea id="textarea" v-model="text" aria-placeholder="Enter something..."rows="4"max-rows="8"><b-form-textarea>
-            </div>
+        <b-modal @ok="submitTicket" v-if="currentApplication" :title="`New Ticket for ${currentApplication.name}`" ref="ticketModal" id="ticket-modal">
+            <template v-slot:default="{ok, cancel}">
+                <b-form @submit.prevent="ok">
+                    @auth
+                        <h4>{{auth()->user()->name}}</h4>
+                    @else
+                        <b-form-group label="Your Name">
+                            <b-form-input type="text" v-model="ticket.reporter_name" placeholder="Enter your name"></b-form-input>
+                        </b-form-group>
+                        <b-form-group label="Your Email">
+                            <b-form-input type="text" v-model="ticket.reporter_email" placeholder="Enter your email"></b-form-input>
+                        </b-form-group>
+                    @endauth
+                    <b-form-group label="Ticket Title">
+                        <b-form-input type="text" placeholder="What is this about?" v-model="ticket.title"></b-form-input>
+                    </b-form-group>
+                    <b-form-group label="Description">
+                        <b-form-textarea id="textarea" v-model="ticket.description" placeholder="Tell us more about the problem you experienced." rows="4" max-rows="8"></b-form-textarea>
+                    </b-form-group>
+                    <b-button class="d-none" type="submit"></b-button>
+                </b-form>
+            </template>
         </b-modal>
         <b-modal v-if="currentApplication" :title="`Details for ${currentApplication.name}`" ref="detailModal" id="detail-modal">
-
+            {{--TODO: Populate the app details here (Only the ones necessary or relevant) --}}
+            <b-form-group label-cols="4" label="App Name">
+                <span class="form-control">
+                    @{{ currentApplication.name }}
+                </span>
+            </b-form-group>
         </b-modal>
     </b-card>
 </div>
