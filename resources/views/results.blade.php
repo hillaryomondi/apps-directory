@@ -15,7 +15,62 @@
             </div>
         </b-card>
         <b-modal v-if="currentApplication" :title="`New Ticket for ${currentApplication.name}`" ref="ticketModal" id="ticket-modal">
+
             REPORTING AN ISSUE
+            <div>
+                <b-form>
+                    <div>
+                        <div>
+                            <b-form-group
+                                id="fieldset-horizontal"
+                                label="Reporter Email"
+                                label-for="input-horizontal"
+                            >
+                                <b-form-input id="input-horizontal"></b-form-input>
+                            </b-form-group>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <b-form-group
+                                id="fieldset-horizontal"
+                                label="Reporter Name"
+                                label-for="input-horizontal"
+                            >
+                                <b-form-input id="input-horizontal"></b-form-input>
+                            </b-form-group>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <b-form-group
+                                id="fieldset-horizontal"
+                                label="Title"
+                                label-for="input-horizontal"
+                            >
+                                <b-form-input id="input-horizontal"></b-form-input>
+                            </b-form-group>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <b-form-group
+                                id="fieldset-horizontal"
+                                label="Description"
+                                label-for="input-horizontal"
+                            >
+                                <b-form-input id="input-horizontal"></b-form-input>
+                            </b-form-group>
+                        </div>
+                    </div>
+
+                    <b-button variant="primary">Submit</b-button>
+                </b-form>
+            </div>
+
         </b-modal>
         <b-modal>
 

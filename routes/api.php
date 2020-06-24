@@ -45,12 +45,7 @@ Route::group(['as' => 'tickets.', 'prefix' => 'tickets', 'middleware' => []], fu
 //sample: https://baseurl/api/su-applications/2/create-ticket
 Route::group(['as' => 'su-applications.', 'prefix' => 'su-applications', 'middleware' => []], function (){
     Route::get("", "Api\SuApplicationController@index")->name('index');
-    /**
-     * TODO: Route to get a single APPLICATION
-     * Fetch the app with the following relationships:
-     * - department,
-     * -
-     */
+    Route::get('{suApplication}', "Api\SuApplicationController@show")->name('show');
     Route::post("{suApplication}/create-ticket", "Api\TicketController@store")->name("create-ticket");
 });
 
