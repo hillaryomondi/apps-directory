@@ -18,23 +18,25 @@
             >
                 <div>
                     <div v-if="!searched" class="s130 bg-su-blue">
-                        {{--@if (Route::has('login'))
-                            <div class="top-right links">
-                                @auth
-                                    <a href="{{ url('/home') }}">Home</a>
-                                @else
-                                    <a href="{{ route('login') }}">Login</a>
-
-                                    --}}{{--@if (Route::has('register'))
-                                        <a href="{{ route('register') }}">Register</a>
-                                    @endif--}}{{--
-                                @endauth
-                            </div>
-                        @endif--}}
                         <form>
                             <div class="d-flex align-items-end justify-content-center mb-4">
                                 <img src="{{asset('images/su-logo-white.png')}}" width="250">
                                 <h3 class="text-value-lg font-weight-bolder mb-4 pb-1 text-su-gold">apps directory</h3>
+                                <b-navbar>
+                                    <b-navbar-nav class="ml-auto">
+                                        <div class="top-right links">
+                                            @auth
+                                                <a href="{{ url('/home') }}">Home</a>
+                                            @else
+                                                <a href="{{ route('login') }}">Login</a>
+
+                                                @if (Route::has('register'))
+                                                    <a href="{{ route('register') }}">Register</a>
+                                                @endif
+                                            @endauth
+                                        </div>
+                                    </b-navbar-nav>
+                                </b-navbar>
                             </div>
                             <div class="inner-form">
                                 <div class="input-field first-wrap">
@@ -74,6 +76,9 @@
                               <b-form-input size="lg" style="background: #d9f1e3" v-model="search_query" @input="debounceInput" autofocus class="mr-sm-2 rounded-pill" placeholder="What are you looking for?"></b-form-input>
                               {{-- <b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Search</b-button> --}}
                             </b-nav-form>
+                            <b-navbar-nav class="ml-auto">
+                                <a class="btn btn-danger rounded-pill" href="{{route('login')}}">Sign in</a>
+                            </b-navbar-nav>
                           </b-navbar>
                         {{-- Search Results  --}}
                         @include('results')
