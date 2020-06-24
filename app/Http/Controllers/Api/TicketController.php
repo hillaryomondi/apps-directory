@@ -10,7 +10,7 @@ use App\Ticket;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
-use Validator;
+
 
 class TicketController extends Controller
 {

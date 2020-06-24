@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Department;
 use App\Http\Requests\Web\SuApplication\IndexSuApplication;
 use App\SuApplication;
 use App\Helpers\SavbitsHelper;
@@ -24,6 +25,23 @@ class SuApplicationController extends Controller
             return jsonRes(false, $exception->getMessage(), [], 500);
 
         }
+    }
+    public function show(SuApplication $suApplication, Request $request){
+        try{
+
+
+            $suApplication->load('department');
+            return jsonRes( $suApplication, 200);
+
+            //$suApplication->department()->associate($department);
+
+
+        }
+        catch (\Throwable $exception){
+            \Log::error($exception);
+            return jsonRes(false, $exception->getMessage(), [], 500);
+        }
+
     }
     public function search(Request $request) {
         try {
