@@ -30,6 +30,7 @@ services:
       - ${DOCKER_DB_EXPOSED_PORT}:3306
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+      - db-data:/var/lib/mysql
     networks:
       - default
 
@@ -49,3 +50,7 @@ networks:
   default:
     external:
       name: ${DOCKER_NETWORK_NAME}
+volumes:
+  db-data:
+    external:
+      name: ${DOCKER_DB_VOLUME}
