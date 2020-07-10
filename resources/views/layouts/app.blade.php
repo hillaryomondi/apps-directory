@@ -33,10 +33,10 @@
                             <span class="text-gray-300 text-sm pr-4">{{ Auth::user()->name }}</span>
 
                             <a href="{{ route('logout') }}"
-                               class="no-underline hover:underline text-gray-300 text-sm p-3"
+                               class="no-underline hover:underline text-white-300 text-sm p-3"
                                onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="visible">
                                 {{ csrf_field() }}
                             </form>
                         @endguest

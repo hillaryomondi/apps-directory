@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -18,6 +20,26 @@
             >
                 <div>
                     <div v-if="!searched" class="s130 bg-su-blue">
+
+                        <div class="float-right">
+                            @auth
+                                <h4>{{auth()->user()->name}}</h4>
+                                <a href="{{ route('logout') }}"
+                                   class="no-underline hover:underline text-white-300 text-sm p-3"
+                                   onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="visible">
+                                    {{ csrf_field() }}
+                                </form>
+                            @else
+                        <b-navbar-nav class="ml-auto">
+
+                            <a class="btn btn-danger rounded-pill" href="{{route('login')}}">Sign in</a>
+
+                        </b-navbar-nav>
+                            <@endauth
+
+                        </div>
                         <form>
                             <div class="d-flex align-items-end justify-content-center mb-4">
                                 <img src="{{asset('images/su-logo-white.png')}}" width="250">
@@ -26,7 +48,7 @@
                                     <b-navbar-nav class="ml-auto">
                                         <div class="top-right links">
                                             @auth
-                                                <a href="{{ url('/home') }}">Home</a>
+                                                <a href="{{ url('/welcome') }}">Home</a>
                                             @else
                                                 <a href="{{ route('login') }}">Login</a>
 
@@ -76,9 +98,21 @@
                               <b-form-input size="lg" style="background: #d9f1e3" v-model="search_query" @input="debounceInput" autofocus class="mr-sm-2 rounded-pill" placeholder="What are you looking for?"></b-form-input>
                               {{-- <b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Search</b-button> --}}
                             </b-nav-form>
+                            @auth
+                                <h4>{{auth()->user()->name}}</h4>
+                                <a href="{{ route('logout') }}"
+                                   class="no-underline hover:underline text-white-300 text-sm p-3"
+                                   onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                                    {{ csrf_field() }}
+                                </form>
+                            @else
                             <b-navbar-nav class="ml-auto">
                                 <a class="btn btn-danger rounded-pill" href="{{route('login')}}">Sign in</a>
+
                             </b-navbar-nav>
+                            @endauth
                           </b-navbar>
                         {{-- Search Results  --}}
                         @include('results')
@@ -93,3 +127,4 @@
         <script src="{{asset('search-23/js/extention/choices.js')}}"></script>
     </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
+

@@ -7,7 +7,7 @@
             <div v-html="item.description"></div>
             <div>
                 <b-button @click="launchTicketModal($event, item)" variant="danger">
-                    report an issue
+                    Report an issue
                 </b-button>
                 <b-button @click="viewDetails($event , item)" variant= "primary">
                     View details
@@ -43,6 +43,13 @@
                 <span class="form-control">
                     @{{ currentApplication.name }}
                 </span>
+            </b-form-group>
+            <b-form-group label-cols="4" label="App Description">
+
+                <span class="form-control">
+                    @{{ currentApplication.description }}
+                </span>
+
             </b-form-group>
         </b-modal>
     </b-card>

@@ -53,9 +53,22 @@ Vue.component('search-component', {
             });
         },
 
+
+
         submitTicket() {
             console.log(this.ticket);
-            //TODO: Replace this with:
+            axios.post('/api/su-applications/${this.currentApplication.id}/create-ticket',{
+                ticket: this.ticket
+            })
+
+                .then(function (response){
+                console.log(response);
+            })
+                .catch(function (error){
+                console.log(error);
+            });
+
+
 
             // 1. Call the API using axios POST /api/su-applications/${this.currentApplication.id}/create-ticket
             // DATA: this.ticket

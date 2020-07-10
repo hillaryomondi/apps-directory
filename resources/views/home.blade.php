@@ -9,7 +9,6 @@
                     {{ session('status') }}
                 </div>
             @endif
-
             <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 
                 <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
@@ -39,7 +38,7 @@
                                 Proceed to the furthest end of the road
                                 Move a few steps to the left.
                                 Follow the road that you see ahead.
-                                I will be there waitin to receive you.
+                                I will be there waiting to receive you.
                             </t-alert>
                         </t-modal>
                     </div>

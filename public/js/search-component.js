@@ -77,8 +77,14 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
       });
     },
     submitTicket: function submitTicket() {
-      console.log(this.ticket); //TODO: Replace this with:
-      // 1. Call the API using axios POST /api/su-applications/${this.currentApplication.id}/create-ticket
+      console.log(this.ticket);
+      axios.post('/api/su-applications/${this.currentApplication.id}/create-ticket', {
+        ticket: this.ticket
+      }).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log(error);
+      }); // 1. Call the API using axios POST /api/su-applications/${this.currentApplication.id}/create-ticket
       // DATA: this.ticket
       //Then
       // if response successful,
