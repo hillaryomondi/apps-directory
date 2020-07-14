@@ -57,11 +57,13 @@ Vue.component('search-component', {
 
         submitTicket() {
             console.log(this.ticket);
-            axios.post('/api/su-applications/${this.currentApplication.id}/create-ticket',{
-                ticket: this.ticket
-            })
-
-                .then(function (response){
+            axios.post('./api/su-applications/`${this.currentApplication.name}/create-ticket`',{
+                //ticket: this.ticket
+                title: "",
+                description: "",
+                reporter_name: "",
+                reporter_email: "",
+            }).then(function (response){
                 console.log(response);
             })
                 .catch(function (error){

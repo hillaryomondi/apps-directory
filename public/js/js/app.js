@@ -4831,7 +4831,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', functio
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/apps-directory/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

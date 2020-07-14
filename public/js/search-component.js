@@ -78,8 +78,12 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
     },
     submitTicket: function submitTicket() {
       console.log(this.ticket);
-      axios.post('/api/su-applications/${this.currentApplication.id}/create-ticket', {
-        ticket: this.ticket
+      axios.post('./api/su-applications/`${this.currentApplication.name}/create-ticket`', {
+        //ticket: this.ticket
+        title: "",
+        description: "",
+        reporter_name: "",
+        reporter_email: ""
       }).then(function (response) {
         console.log(response);
       })["catch"](function (error) {

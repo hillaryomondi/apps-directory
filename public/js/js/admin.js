@@ -49861,7 +49861,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/resources/js/admin/admin.js */"./resources/js/admin/admin.js");
+module.exports = __webpack_require__(/*! /var/www/apps-directory/resources/js/admin/admin.js */"./resources/js/admin/admin.js");
 
 
 /***/ })

@@ -37,7 +37,7 @@
                 </b-form>
             </template>
         </b-modal>
-        <b-modal v-if="currentApplication" :title="`Details for ${currentApplication.name}`" ref="detailModal" id="detail-modal">
+        <b-modal v-if="currentApplication" :title="`Details for ${currentApplication.name}`" ref="detailModal" id="detail-modal" >
             {{--TODO: Populate the app details here (Only the ones necessary or relevant) --}}
             <b-form-group label-cols="4" label="App Name">
                 <span class="form-control">
@@ -46,9 +46,8 @@
             </b-form-group>
             <b-form-group label-cols="4" label="App Description">
 
-                <span class="form-control">
-                    @{{ currentApplication.description }}
-                </span>
+                <textarea id="textarea-plaintext" readonly class="form-control">@{{currentApplication.description}}
+                </textarea>
 
             </b-form-group>
         </b-modal>
