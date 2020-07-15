@@ -52,36 +52,17 @@ Vue.component('search-component', {
                 vm.searched = false;
             });
         },
-
-
-
         submitTicket() {
-            console.log(this.ticket);
-            axios.post('./api/su-applications/`${this.currentApplication.name}/create-ticket`',{
-                //ticket: this.ticket
-                title: "",
-                description: "",
-                reporter_name: "",
-                reporter_email: "",
-            }).then(function (response){
-                console.log(response);
-            })
-                .catch(function (error){
-                console.log(error);
-            });
+            const vm = this;
+            Axios
+                .post(`/api/su-applications/${vm.currentApplication.id}/create-ticket`, vm.ticket)
+                .then(res => {
 
-
-
-            // 1. Call the API using axios POST /api/su-applications/${this.currentApplication.id}/create-ticket
-            // DATA: this.ticket
-            //Then
-            // if response successful,
-            //              display a notification that the ticket has been created and queued for resolution.
-            //              Close The ticket Modal.
-            //              Reset the ticket Data
-            // else (if response error)
-            //          Display the error notification,
-            //          Do not close the modal
+                alert ("Your ticket has been submitted successfully and an email will be sent to the support team to resolve it.")
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         },
         launchTicketModal(e, item) {
             let vm = this;

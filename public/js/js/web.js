@@ -49144,7 +49144,7 @@ window.axios = axios__WEBPACK_IMPORTED_MODULE_0___default.a;
 window.moment = moment__WEBPACK_IMPORTED_MODULE_4___default.a;
 window.apiPrefix = process.env.MIX_API_PREFIX || "api";
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.baseURL = "".concat("https://hillary.strathmore.edu/sad");
+window.axios.defaults.baseURL = "".concat("https://cera.strathmore.edu/sad");
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -49457,7 +49457,7 @@ new vue__WEBPACK_IMPORTED_MODULE_10___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/apps-directory/resources/js/web/web.js */"./resources/js/web/web.js");
+module.exports = __webpack_require__(/*! /var/www/resources/js/web/web.js */"./resources/js/web/web.js");
 
 
 /***/ })

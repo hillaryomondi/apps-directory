@@ -77,27 +77,12 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('search-component', {
       });
     },
     submitTicket: function submitTicket() {
-      console.log(this.ticket);
-      axios.post('./api/su-applications/`${this.currentApplication.name}/create-ticket`', {
-        //ticket: this.ticket
-        title: "",
-        description: "",
-        reporter_name: "",
-        reporter_email: ""
-      }).then(function (response) {
-        console.log(response);
+      var vm = this;
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/su-applications/".concat(vm.currentApplication.id, "/create-ticket"), vm.ticket).then(function (res) {
+        alert("Your ticket has been submitted successfully and an email will be sent to the support team to resolve it.");
       })["catch"](function (error) {
         console.log(error);
-      }); // 1. Call the API using axios POST /api/su-applications/${this.currentApplication.id}/create-ticket
-      // DATA: this.ticket
-      //Then
-      // if response successful,
-      //              display a notification that the ticket has been created and queued for resolution.
-      //              Close The ticket Modal.
-      //              Reset the ticket Data
-      // else (if response error)
-      //          Display the error notification,
-      //          Do not close the modal
+      });
     },
     launchTicketModal: function launchTicketModal(e, item) {
       var vm = this;

@@ -30,8 +30,8 @@ class TicketController extends Controller
             $this->validate($request,[
                 'title' => 'required|string',
                 'description' => 'string',
-                'reporter_name' => 'sometimes|string',
-                'reporter_email' => 'sometimes|email',
+                'reporter_name' => 'nullable|string',
+                'reporter_email' => 'nullable|email',
             ]);
 
             if (\Auth::check()) {
