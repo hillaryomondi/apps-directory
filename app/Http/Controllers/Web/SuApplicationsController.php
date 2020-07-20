@@ -72,10 +72,22 @@ class SuApplicationsController extends Controller
     {
         // Sanitize input
         $sanitized = $request->getSanitized();
-
         // Store the SuApplication
         $suApplication = new SuApplication($sanitized);
+
+        // RED DOCUMENTATION ON RELATIONSHIPS!!!!!!!!!!!!!!
+        $suApplication->department()->associate($sanitized["department"]["id"]);
         $suApplication->saveOrFail();
+
+
+
+        if ($suApplication->private) {
+            // TODO: populate list of roles that can access it
+
+            // [1,3,5]
+            $roleIds = collect($sanitized['roles'])->pluck('id');
+            $suApplication->roles()->sync($roleIds);
+        }
         if ($request->ajax()) {
             return ['redirect' => url('su-applications'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
@@ -111,7 +123,7 @@ class SuApplicationsController extends Controller
     {
         $this->authorize('su-application.edit', $suApplication);
 
-
+        $suApplication->load(['roles']);
         return view('web.su-application.edit', [
             'suApplication' => $suApplication,
         ]);
@@ -131,6 +143,16 @@ class SuApplicationsController extends Controller
 
         // Update changed values SuApplication
         $suApplication->update($sanitized);
+        if (collect($sanitized)->get('department')) {
+            $suApplication->department()->associate($sanitized["department"]["id"]);
+            $suApplication->saveOrFail();
+        }
+        if ($suApplication->private) {
+
+            // [1,3]
+            $roleIds = collect($sanitized['roles'])->pluck('id');
+            $suApplication->roles()->sync($roleIds);
+        }
 
         if ($request->ajax()) {
             return [

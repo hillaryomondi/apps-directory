@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Exports\Roles\RolesExport;
 use App\Http\Controllers\Controller;
 use App\Permission;
 use App\Role;
@@ -112,5 +111,9 @@ class RoleController extends Controller
         } catch (\Throwable $exception) {
             return jsonRes(false, $exception->getMessage(),[],400);
         }
+    }
+    public function index(Request $request) {
+        $data = Role::all();
+        return jsonRes(true, "List of all roles", $data, 200);
     }
 }

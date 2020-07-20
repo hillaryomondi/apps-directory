@@ -24,5 +24,7 @@
     "/js/su-application-form.js": "/js/su-application-form.js",
     "/js/su-application-listing.js": "/js/su-application-listing.js",
     "/js/ticket-form.js": "/js/ticket-form.js",
-    "/js/ticket-listing.js": "/js/ticket-listing.js"
+    "/js/ticket-listing.js": "/js/ticket-listing.js",
+    "/js/flatpickr-datetime.js": "/js/flatpickr-datetime.js",
+    "/js/typeahead.js": "/js/typeahead.js"
 }

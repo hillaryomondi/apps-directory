@@ -4,13 +4,14 @@ namespace App\Http\Controllers\Api;
 
 use App\Department;
 use App\Http\Requests\Web\SuApplication\IndexSuApplication;
+use App\Role;
 use App\SuApplication;
 use App\Helpers\SavbitsHelper;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
-use Matrix\Builder;
 
 class SuApplicationController extends Controller
 {
@@ -47,7 +48,25 @@ class SuApplicationController extends Controller
         try {
             $results = SavbitsHelper::listing(SuApplication::class, $request)->customQuery(function($q) {
                 /**@var SuApplication|Builder $q*/
-                $q->with(['department']);
+                $q
+                    //where the app is not private
+                        // Or where->(app is private)->where(app has roles-> {where role->id is in [Auth::user()->roles()->pluck('id')]})
+                    ->where("private", "=", false)
+                    ->orWhere(function($builder) {
+                        /**@var SuApplication|Builder $builder*/
+                        $builder->where('private', "=", true)
+                            ->whereHas('roles', function($builder1) {
+                                /**@var Role|Builder $builder1*/
+                                if (\Auth::check()) {
+                                    $userRoles = \Auth::user()->roles->pluck('id');
+                                } else {
+                                    $userRoles = [];
+                                }
+                                $builder1->whereIn("id",$userRoles);
+                            });
+                    })
+                    ->with(['department']);
+
 
             })->process();
             return jsonRes(true, "Search Results", $results);

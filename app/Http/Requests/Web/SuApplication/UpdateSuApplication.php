@@ -29,10 +29,11 @@ class UpdateSuApplication extends FormRequest
             'name' => ['sometimes', Rule::unique('su_applications', 'name')->ignore($this->suApplication->getKey(), $this->suApplication->getKeyName()), 'string'],
             'description' => ['nullable', 'string'],
             'enabled' => ['sometimes', 'boolean'],
-            'department_id' => ['sometimes', 'integer'],
-            'tags' => ['required','array'],
+            'department' => ['required', 'array'], //I hope what is in frontend  departments
+            'tags' => ['sometimes','array'],
             'url' => ['sometimes', 'string'],
-
+            'private' => ['sometimes','boolean'],
+            'roles' => ['nullable', 'array']
         ];
     }
 

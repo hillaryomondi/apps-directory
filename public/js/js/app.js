@@ -323,6 +323,8 @@ var map = {
 	"./tg.js": "./node_modules/moment/locale/tg.js",
 	"./th": "./node_modules/moment/locale/th.js",
 	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tk": "./node_modules/moment/locale/tk.js",
+	"./tk.js": "./node_modules/moment/locale/tk.js",
 	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
 	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
 	"./tlh": "./node_modules/moment/locale/tlh.js",
@@ -4770,7 +4772,7 @@ window.axios = axios__WEBPACK_IMPORTED_MODULE_0___default.a;
 window.moment = moment__WEBPACK_IMPORTED_MODULE_4___default.a;
 window.apiPrefix = process.env.MIX_API_PREFIX || "api";
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.baseURL = "".concat("https://cera.strathmore.edu/sad");
+window.axios.defaults.baseURL = "".concat("https://hillary.strathmore.edu/sad");
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just

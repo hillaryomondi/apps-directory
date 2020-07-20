@@ -15,7 +15,7 @@ class SuApplication extends Model
         'department_id',
         'tags',
         'url',
-
+        'private',
     ];
 
     protected $searchable = [
@@ -45,6 +45,9 @@ class SuApplication extends Model
     }
     public function department(){
         return $this->belongsTo(Department::class,'department_id','id');
+    }
+    public function roles(){
+        return $this->belongsToMany(Role::class, 'application_role', 'su_application_id', 'role_id');
     }
     public function toSearchableArray()
     {

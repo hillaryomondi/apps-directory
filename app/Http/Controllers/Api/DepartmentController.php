@@ -14,8 +14,8 @@ class DepartmentController extends Controller
     //
     public function index(Request $request){
         try {
-            $data = SavbitsHelper::listing(Department::class, $request)->process();
-            return jsonRes(true, "All departments", $data, 200);
+            $data = Department::all();
+            return jsonRes(true, "List of all departments", $data, 200);
         }catch (\Throwable $exception){
             \log::error($exception);
             return jsonRes(false, $exception->getMessage(), [], 500);
