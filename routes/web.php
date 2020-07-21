@@ -185,3 +185,14 @@ Route::middleware(['auth:' . config('auth.defaults.guard')])->group(static funct
         });
     });
 });
+/*
+Route::get('/', function (){
+    /$details = [
+        'title'=>'Mail from Diana Mwaura',
+        'body'=>'Testing'
+    ];
+    \Mail::to('ceramwauracm@gmail.com')->send(new \App\Mail\Mail($details));
+    echo "Email has been successfully sent";
+
+});
+*/

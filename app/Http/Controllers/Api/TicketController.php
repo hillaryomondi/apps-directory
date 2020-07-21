@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Helpers\SavbitsHelper;
 use App\Http\Controllers\Controller;
+use App\Mail\ReportTicket;
 use App\SuApplication;
 use App\Ticket;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -64,6 +65,9 @@ class TicketController extends Controller
             $ticket->saveOrFail();
 
             // At this point, trigger an event that will automatically send an email to the ticketing system systems@strathmore.edu
+            \Mail::to(config("ticketing.email"))->cc(config("ticketing.cc"))->queue(new ReportTicket($ticket));
+
+
 
             return jsonRes(true, "Ticket saved successfully", $ticket,200);
         } catch (ValidationException $e) {

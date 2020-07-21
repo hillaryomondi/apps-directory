@@ -46,10 +46,7 @@
             </b-form-group>
             <b-form-group label-cols="4" label="App Description">
 
-                <div class="border p-2" v-html="currentApplication.description">
-
-
-                </div>
+                <div class="border p-2" v-html="currentApplication.description"> </div>
 
             </b-form-group>
         </b-modal>

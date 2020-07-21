@@ -67,6 +67,7 @@ Vue.component('search-component', {
         launchTicketModal(e, item) {
             let vm = this;
             this.currentApplication = {...item};
+
             vm.ticket = {
                 "title": null,
                 "description": null,
