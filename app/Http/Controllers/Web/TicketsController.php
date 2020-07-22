@@ -15,6 +15,7 @@ use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
@@ -35,6 +36,11 @@ class TicketsController extends Controller
         // create and AdminListing instance for a specific model and
         $data = SavbitsHelper::listing(Ticket::class, $request)->customQuery(function($q) {
             //TODO: Insert your query modification here
+            /**
+             * @var Builder $q
+             */
+            $q->with(['suApplication', 'creator']);
+            
         })->process();
 
         if ($request->ajax()) {

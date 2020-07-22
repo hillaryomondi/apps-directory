@@ -86,7 +86,7 @@
                                             </label>
                                         </td>
 
-                                        <td>@{{ item.department_id }}</td>
+                                        <td>@{{ item.department.name }}</td>
                                         <td>@{{ item.url }}</td>
 
                                         <td>

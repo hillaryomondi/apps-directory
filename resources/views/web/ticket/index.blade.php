@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="col-sm-auto form-group ">
                                         <select class="form-control" v-model="pagination.state.per_page">
-                                            
+
                                             <option value="10">10</option>
                                             <option value="25">25</option>
                                             <option value="100">100</option>
@@ -87,8 +87,8 @@
                                         <td>@{{ item.reporter_name }}</td>
                                         <td>@{{ item.reporter_email }}</td>
                                         <td>@{{ item.created_by }}</td>
-                                        <td>@{{ item.su_application_id }}</td>
-                                        
+                                        <td>@{{ item.su_application.name }}</td>
+
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">
