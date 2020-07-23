@@ -52,7 +52,7 @@
                                         <th is='sortable' :column="'id'">{{ trans('admin.su-application.columns.id') }}</th>
                                         <th is='sortable' :column="'name'">{{ trans('admin.su-application.columns.name') }}</th>
                                         <th is='sortable' :column="'enabled'">{{ trans('admin.su-application.columns.enabled') }}</th>
-                                        <th is='sortable' :column="'departments'">{{ trans('Departments') }}</th>
+                                        <th is='sortable' :column="'departments'">{{ trans('Department') }}</th>
                                         <th is='sortable' :column="'url'">{{ trans('admin.su-application.columns.url') }}</th>
 
                                         <th></th>
@@ -86,7 +86,7 @@
                                             </label>
                                         </td>
 
-                                        <td>@{{ item.department.name }}</td>
+                                        <td>@{{ item.department.display_name }}</td>
                                         <td>@{{ item.url }}</td>
 
                                         <td>

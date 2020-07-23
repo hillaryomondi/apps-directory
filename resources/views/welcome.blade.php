@@ -19,28 +19,11 @@
                 inline-template
             >
                 <div>
+                    <b-navbar v-cloak type="light" variant="primary" v-if="!searched">
+                        @include('layouts.partials.auth-nav')
+                    </b-navbar>
                     <div v-if="!searched" class="s130 bg-su-blue">
-
-                        <div class="float-right">
-                            @auth
-                                <h4>{{auth()->user()->name}}</h4>
-                                <a href="{{ route('logout') }}"
-                                   class="no-underline hover:underline text-white-300 text-sm p-3"
-                                   onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="visible">
-                                    {{ csrf_field() }}
-                                </form>
-                            @else
-                        <b-navbar-nav class="ml-auto">
-
-                            <a class="btn btn-danger rounded-pill" href="{{route('login')}}">Sign in</a>
-
-                        </b-navbar-nav>
-                            <@endauth
-
-                        </div>
-                        <form>
+                        <form @submit.prevent="fetchAppResults(search_query)">
                             <div class="d-flex align-items-end justify-content-center mb-4">
                                 <img src="{{asset('images/su-logo-white.png')}}" width="250">
                                 <h3 class="text-value-lg font-weight-bolder mb-4 pb-1 text-su-gold">apps directory</h3>
@@ -70,7 +53,7 @@
                                     <input autofocus id="search" v-model='search_query' @input="debounceInput" type="text" placeholder="What are you looking for?" />
                                 </div>
                                 <div class="input-field second-wrap">
-                                    <button class="btn-search" type="button">SEARCH</button>
+                                    <button class="btn-search" type="submit">SEARCH</button>
                                 </div>
                             </div>
                             <span class="info">ex. Cafeteria, Kuali, Payroll, Hrm, People and Culture, ICTS etc</span>
@@ -90,29 +73,15 @@
                         </form>
                     </div>
                     <div v-else>
-                        <b-navbar type="light" variant="primary">
+                        <b-navbar v-cloak type="light" variant="primary">
                             <b-navbar-brand href="">
                                 <img src="{{asset('images/su-logo-white.png')}}" width="200">
                             </b-navbar-brand>
-                            <b-nav-form>
+                            <b-nav-form @submit.prevent="fetchAppResults(search_query)">
                               <b-form-input size="lg" style="background: #d9f1e3" v-model="search_query" @input="debounceInput" autofocus class="mr-sm-2 rounded-pill" placeholder="What are you looking for?"></b-form-input>
                               {{-- <b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Search</b-button> --}}
                             </b-nav-form>
-                            @auth
-                                <h4>{{auth()->user()->name}}</h4>
-                                <a href="{{ route('logout') }}"
-                                   class="no-underline hover:underline text-white-300 text-sm p-3"
-                                   onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                    {{ csrf_field() }}
-                                </form>
-                            @else
-                            <b-navbar-nav class="ml-auto">
-                                <a class="btn btn-danger rounded-pill" href="{{route('login')}}">Sign in</a>
-
-                            </b-navbar-nav>
-                            @endauth
+                            @include('layouts.partials.auth-nav')
                           </b-navbar>
                         {{-- Search Results  --}}
                         @include('results')

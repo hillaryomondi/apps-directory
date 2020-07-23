@@ -35,13 +35,27 @@ class SuApplication extends Model
         'tags' => "array"
     ];
 
-    protected $appends = ['resource_url'];
+    protected $appends = ['resource_url','formatted_url'];
 
     /* ************************ ACCESSOR ************************* */
 
     public function getResourceUrlAttribute()
     {
         return url('/su-applications/'.$this->getKey());
+    }
+    public function getFormattedUrlAttribute() {
+        $parts = parse_url($this->url);
+        if (!isset($parts['host'])) return "";
+        if (!isset($parts['path'])) {
+            $path = [];
+        } else {
+            $path = explode("/",$parts['path']);
+        }
+        if (sizeof($path)) {
+            array_splice($path,0,1);
+        }
+        $merged = array_merge([$parts["host"]],$path);
+        return implode(" > ",$merged);
     }
     public function department(){
         return $this->belongsTo(Department::class,'department_id','id');

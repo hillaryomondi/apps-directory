@@ -88,11 +88,11 @@ class SuApplicationsController extends Controller
 
 
         if ($suApplication->private) {
-            // TODO: populate list of roles that can access it
-
             // [1,3,5]
-            $roleIds = collect($sanitized['roles'])->pluck('id');
-            $suApplication->roles()->sync($roleIds);
+            if (isset($sanitized['roles'])) {
+                $roleIds = collect($sanitized['roles'])->pluck('id');
+                $suApplication->roles()->sync($roleIds);
+            }
         }
         if ($request->ajax()) {
             return ['redirect' => url('su-applications'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
@@ -129,7 +129,7 @@ class SuApplicationsController extends Controller
     {
         $this->authorize('su-application.edit', $suApplication);
 
-        $suApplication->load(['roles']);
+        $suApplication->load(['roles','department']);
         return view('web.su-application.edit', [
             'suApplication' => $suApplication,
         ]);
@@ -156,8 +156,10 @@ class SuApplicationsController extends Controller
         if ($suApplication->private) {
 
             // [1,3]
-            $roleIds = collect($sanitized['roles'])->pluck('id');
-            $suApplication->roles()->sync($roleIds);
+            if (isset($sanitized['roles'])) {
+                $roleIds = collect($sanitized['roles'])->pluck('id');
+                $suApplication->roles()->sync($roleIds);
+            }
         }
 
         if ($request->ajax()) {

@@ -25,6 +25,6 @@
     "/js/su-application-listing.js": "/js/su-application-listing.js",
     "/js/ticket-form.js": "/js/ticket-form.js",
     "/js/ticket-listing.js": "/js/ticket-listing.js",
-    "/js/flatpickr-datetime.js": "/js/flatpickr-datetime.js",
-    "/js/typeahead.js": "/js/typeahead.js"
+    "/js/flatpickr-datetime.js": "/js/flatpickr-datetime.js?id=ce998df6fc40f75fb952",
+    "/js/typeahead.js": "/js/typeahead.js?id=392c67fbd7059609d967"
 }
