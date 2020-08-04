@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Activation\Contracts;
+namespace Savannabits\AdminAuth\Activation\Contracts;
 
 use Closure;
 

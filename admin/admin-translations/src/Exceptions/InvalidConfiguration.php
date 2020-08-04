@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Exceptions;
+namespace Savannabits\AdminTranslations\Exceptions;
 
-use Strathmore\AdminTranslations\Translation;
+use Savannabits\AdminTranslations\Translation;
 use Exception;
 
 class InvalidConfiguration extends Exception

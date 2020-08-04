@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminListing\Console\Commands;
+namespace Savannabits\AdminListing\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -19,7 +19,7 @@ class AdminListingInstall extends Command
      *
      * @var string
      */
-    protected $description = 'Install a brackets/admin-listing package';
+    protected $description = 'Install a savannabits/admin-listing package';
 
     /**
      * Execute the console command.
@@ -30,7 +30,7 @@ class AdminListingInstall extends Command
     {
         $this->alterEncryptCookiesMiddleware();
 
-        $this->info('Package brackets/admin-listing installed');
+        $this->info('Package savannabits/admin-listing installed');
     }
 
     private function strReplaceInFile($fileName, $find, $replaceWith)

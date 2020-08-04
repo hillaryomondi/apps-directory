@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Tests\Feature\Users;
+namespace Savannabits\AdminGenerator\Tests\Feature\Users;
 
-use Strathmore\AdminGenerator\Tests\UserTestCase;
+use Savannabits\AdminGenerator\Tests\UserTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -34,7 +34,7 @@ use App\Http\Requests\Admin\User\StoreUser;
 use App\Http\Requests\Admin\User\UpdateUser;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -92,7 +92,7 @@ use App\Http\Requests\Admin\User\StoreUser;
 use App\Http\Requests\Admin\User\UpdateUser;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;

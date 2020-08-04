@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Listeners;
+namespace Savannabits\AdvancedLogger\Listeners;
 
-use Strathmore\AdvancedLogger\Jobs\RequestLogJob;
-use Strathmore\AdvancedLogger\Services\Benchmark;
+use Savannabits\AdvancedLogger\Jobs\RequestLogJob;
+use Savannabits\AdvancedLogger\Services\Benchmark;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Http\Events\RequestHandled;
 use Illuminate\Http\Request;

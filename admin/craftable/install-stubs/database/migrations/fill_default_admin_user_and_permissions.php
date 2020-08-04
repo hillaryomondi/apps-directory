@@ -1,6 +1,6 @@
 <?php
 
-use Strathmore\AdminAuth\Models\AdminUser;
+use Savannabits\AdminAuth\Models\AdminUser;
 use Carbon\Carbon;
 use Illuminate\Config\Repository;
 use Illuminate\Database\Migrations\Migration;

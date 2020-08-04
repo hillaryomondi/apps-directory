@@ -1,4 +1,4 @@
-<?php namespace Strathmore\WebGenerator\Generate;
+<?php namespace Savannabits\WebGenerator\Generate;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -87,7 +87,7 @@ class ViewForm extends ViewGenerator {
             $this->setBelongToManyRelation($belongsToMany);
         }
 
-        $viewPath = resource_path('views/frontend/'.$this->modelViewsDirectory.'/components/form-elements.blade.php');
+        $viewPath = resource_path('views/web/'.$this->modelViewsDirectory.'/components/form-elements.blade.php');
         if ($this->alreadyExists($viewPath) && !$force) {
             $this->error('File '.$viewPath.' already exists!');
         } else {
@@ -104,7 +104,7 @@ class ViewForm extends ViewGenerator {
         }
 
         if(in_array("published_at", array_column($this->getVisibleColumns($this->tableName, $this->modelVariableName)->toArray(), 'name'))){
-            $viewPath = resource_path('views/frontend/'.$this->modelViewsDirectory.'/components/form-elements-right.blade.php');
+            $viewPath = resource_path('views/web/'.$this->modelViewsDirectory.'/components/form-elements-right.blade.php');
             if ($this->alreadyExists($viewPath) && !$force) {
                 $this->error('File '.$viewPath.' already exists!');
             } else {
@@ -121,7 +121,7 @@ class ViewForm extends ViewGenerator {
             }
         }
 
-        $viewPath = resource_path('views/frontend/'.$this->modelViewsDirectory.'/create.blade.php');
+        $viewPath = resource_path('views/web/'.$this->modelViewsDirectory.'/create.blade.php');
         if ($this->alreadyExists($viewPath) && !$force) {
             $this->error('File '.$viewPath.' already exists!');
         } else {
@@ -138,7 +138,7 @@ class ViewForm extends ViewGenerator {
         }
 
 
-        $viewPath = resource_path('views/frontend/'.$this->modelViewsDirectory.'/edit.blade.php');
+        $viewPath = resource_path('views/web/'.$this->modelViewsDirectory.'/edit.blade.php');
         if ($this->alreadyExists($viewPath) && !$force) {
             $this->error('File '.$viewPath.' already exists!');
         } else {
@@ -154,7 +154,7 @@ class ViewForm extends ViewGenerator {
             $this->info('Generating '.$viewPath.' finished');
         }
 
-        $viewPath = resource_path('views/frontend/'.$this->modelViewsDirectory.'/show.blade.php');
+        $viewPath = resource_path('views/web/'.$this->modelViewsDirectory.'/show.blade.php');
         if ($this->alreadyExists($viewPath) && !$force) {
             $this->error('File '.$viewPath.' already exists!');
         } else {
@@ -189,7 +189,8 @@ class ViewForm extends ViewGenerator {
 		$indexJsPath = resource_path('js/web/'.$this->modelJSName.'/index.js');
 		$bootstrapJsPath = resource_path('js/web/index.js');
 
-		if ($this->appendIfNotAlreadyAppended($indexJsPath, "import './Form';".PHP_EOL)){
+        $content = "Vue.component('$this->modelJSName-form', () => import(/* webpackChunkName: '$this->modelJSName-form' */ './Form'));";
+		if ($this->appendIfNotAlreadyAppended($indexJsPath, $content.PHP_EOL)){
 			$this->info('Appending Form to '.$indexJsPath.' finished');
 		};
 		if ($this->appendIfNotAlreadyAppended($bootstrapJsPath, "import './".$this->modelJSName."';".PHP_EOL)){
@@ -203,7 +204,7 @@ class ViewForm extends ViewGenerator {
 
     protected function buildForm() {
 
-        return view('strathmore/web-generator::'.$this->form, [
+        return view('savannabits/web-generator::'.$this->form, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelPlural' => $this->modelPlural,
@@ -223,7 +224,7 @@ class ViewForm extends ViewGenerator {
 
     protected function buildFormRight() {
 
-        return view('strathmore/web-generator::'.$this->formRight, [
+        return view('savannabits/web-generator::'.$this->formRight, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelPlural' => $this->modelPlural,
@@ -244,7 +245,7 @@ class ViewForm extends ViewGenerator {
 
     protected function buildCreate() {
 
-        return view('strathmore/web-generator::'.$this->create, [
+        return view('savannabits/web-generator::'.$this->create, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelVariableName' => $this->modelVariableName,
@@ -265,7 +266,7 @@ class ViewForm extends ViewGenerator {
 
 
     protected function buildEdit() {
-        return view('strathmore/web-generator::'.$this->edit, [
+        return view('savannabits/web-generator::'.$this->edit, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelVariableName' => $this->modelVariableName,
@@ -288,7 +289,7 @@ class ViewForm extends ViewGenerator {
     }
 
     protected function buildShow() {
-        return view('strathmore/web-generator::'.$this->show, [
+        return view('savannabits/web-generator::'.$this->show, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelVariableName' => $this->modelVariableName,
@@ -311,7 +312,7 @@ class ViewForm extends ViewGenerator {
     }
 
     protected function buildFormJs() {
-        return view('strathmore/web-generator::'.$this->formJs, [
+        return view('savannabits/web-generator::'.$this->formJs, [
             'modelViewsDirectory' => $this->modelViewsDirectory,
             'modelJSName' => $this->modelJSName,
 

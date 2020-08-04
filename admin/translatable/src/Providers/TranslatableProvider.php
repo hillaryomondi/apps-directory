@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\Translatable\Providers;
+namespace Savannabits\Translatable\Providers;
 
-use Strathmore\Translatable\Translatable;
+use Savannabits\Translatable\Translatable;
 use Illuminate\Support\ServiceProvider;
 
 class TranslatableProvider extends ServiceProvider

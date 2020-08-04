@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Media;
+namespace Savannabits\Media;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;

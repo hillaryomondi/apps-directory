@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminAuth\Activation\Repositories;
+namespace Savannabits\AdminAuth\Activation\Repositories;
 
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Contracts\Hashing\Hasher as HasherContract;

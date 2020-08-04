@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdvancedLogger;
+namespace Savannabits\AdvancedLogger;
 
-use Strathmore\AdvancedLogger\Providers\EventServiceProvider;
-use Strathmore\AdvancedLogger\Services\Benchmark;
+use Savannabits\AdvancedLogger\Providers\EventServiceProvider;
+use Savannabits\AdvancedLogger\Services\Benchmark;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\ServiceProvider;
 

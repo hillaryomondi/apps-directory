@@ -1,5 +1,5 @@
 {
-    "name": "strathmore/media",
+    "name": "savannabits/media",
     "description": "Associate files with Eloquent models",
     "keywords": [
         "media",
@@ -9,11 +9,11 @@
         "laravel"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",
-            "email": "smaosa@strathmore.edu",
+            "email": "smaosa@savannabits.edu",
             "homepage": "https://www.savannabits.com",
             "role": "Developer"
         }
@@ -30,18 +30,18 @@
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "Strathmore\\Media\\": "src/"
+            "Savannabits\\Media\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Strathmore\\Media\\Test\\": "tests"
+            "Savannabits\\Media\\Test\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Strathmore\\Media\\MediaServiceProvider"
+                "Savannabits\\Media\\MediaServiceProvider"
             ]
         },
         "branch-alias": {

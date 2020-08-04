@@ -16,7 +16,7 @@ use App\Http\Requests\Admin\{{ $modelWithNamespaceFromDefault }}\Index{{ $modelB
 use App\Http\Requests\Admin\{{ $modelWithNamespaceFromDefault }}\Store{{ $modelBaseName }};
 use App\Http\Requests\Admin\{{ $modelWithNamespaceFromDefault }}\Update{{ $modelBaseName }};
 use {{ $modelFullName }};
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminListing\Facades\AdminListing;
 @if(!$withoutBulk && $hasSoftDelete)
 use Carbon\Carbon;
 @endif
@@ -154,7 +154,7 @@ class {{ $controllerBaseName }} extends Controller
 @endif
 @endif
         if ($request->ajax()) {
-            return ['redirect' => url('admin/{{ $resource }}'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('admin/{{ $resource }}'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/{{ $resource }}');
@@ -247,7 +247,7 @@ class {{ $controllerBaseName }} extends Controller
         if ($request->ajax()) {
             return [
                 'redirect' => url('admin/{{ $resource }}'),
-                'message' => trans('brackets/admin-ui::admin.operation.succeeded'),
+                'message' => trans('savannabits/admin-ui::admin.operation.succeeded'),
 @if($containsPublishedAtColumn)
                 'object' => ${{ $modelVariableName }}
 @endif
@@ -270,7 +270,7 @@ class {{ $controllerBaseName }} extends Controller
         ${{ $modelVariableName }}->delete();
 
         if ($request->ajax()) {
-            return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
+            return response(['message' => trans('savannabits/admin-ui::admin.operation.succeeded')]);
         }
 
         return redirect()->back();
@@ -310,7 +310,7 @@ class {{ $controllerBaseName }} extends Controller
         });
 @endif
 
-        return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
+        return response(['message' => trans('savannabits/admin-ui::admin.operation.succeeded')]);
     }
 @endif
 @if($export)

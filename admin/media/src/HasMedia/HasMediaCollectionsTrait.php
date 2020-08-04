@@ -1,5 +1,5 @@
 <?php
-namespace Strathmore\Media\HasMedia;
+namespace Savannabits\Media\HasMedia;
 
 use Illuminate\Support\Collection;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait as ParentHasMediaTrait;

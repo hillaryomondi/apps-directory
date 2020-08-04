@@ -5,7 +5,7 @@ Admin UI is an administration template for Laravel 5.5. It provides admin layout
 Example of an administration interface built with this package:
 ![Craftable administration area example](https://docs.getcraftable.com/assets/posts-crud.png "Craftable administration area example")
 
-This packages is part of [Craftable](https://github.com/BRACKETS-by-TRIAD/craftable) (`brackets/craftable`) - an administration starter kit for Laravel 5. You should definitely have a look :)
+This packages is part of [Craftable](https://github.com/BRACKETS-by-TRIAD/craftable) (`savannabits/craftable`) - an administration starter kit for Laravel 5. You should definitely have a look :)
 
 You can find full documentation at https://docs.getcraftable.com/#/admin-ui
 

@@ -1,7 +1,7 @@
-@extends('brackets/admin-ui::admin.layout.master')
+@extends('savannabits/admin-ui::admin.layout.master')
 
 @section('header')
-    @include('brackets/admin-ui::admin.partials.header')
+    @include('savannabits/admin-ui::admin.partials.header')
 @endsection
 
 @section('content')
@@ -29,7 +29,7 @@
 @endsection
 
 @section('footer')
-    @include('brackets/admin-ui::admin.partials.footer')
+    @include('savannabits/admin-ui::admin.partials.footer')
 @endsection
 
 @section('bottom-scripts')

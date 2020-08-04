@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\Media\Test;
+namespace Savannabits\Media\Test;
 
-use Strathmore\Media\HasMedia\HasMediaCollectionsTrait;
-use Strathmore\Media\HasMedia\HasMediaThumbsTrait;
-use Strathmore\Media\HasMedia\ProcessMediaTrait;
+use Savannabits\Media\HasMedia\HasMediaCollectionsTrait;
+use Savannabits\Media\HasMedia\HasMediaThumbsTrait;
+use Savannabits\Media\HasMedia\ProcessMediaTrait;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\Models\Media;

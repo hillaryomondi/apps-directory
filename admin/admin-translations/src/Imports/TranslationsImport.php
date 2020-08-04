@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Imports;
+namespace Savannabits\AdminTranslations\Imports;
 
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\Importable;

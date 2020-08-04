@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminListing\Tests;
+namespace Savannabits\AdminListing\Tests;
 
 use Illuminate\Database\Eloquent\Model;
 

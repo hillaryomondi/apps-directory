@@ -1,6 +1,6 @@
-<?php namespace Strathmore\AdminGenerator;
+<?php namespace Savannabits\AdminGenerator;
 
-use Strathmore\AdminGenerator\Generate\Traits\FileManipulations;
+use Savannabits\AdminGenerator\Generate\Traits\FileManipulations;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Console\Input\InputArgument;

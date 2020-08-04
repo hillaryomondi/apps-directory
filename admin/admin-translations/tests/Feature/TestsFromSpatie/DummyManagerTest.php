@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Test\Feature\TestsFromSpatie;
+namespace Savannabits\AdminTranslations\Test\Feature\TestsFromSpatie;
 
-use Strathmore\AdminTranslations\Test\Feature\TestsFromSpatie\TranslationManagers\DummyManager;
-use Strathmore\AdminTranslations\Test\TestCase;
+use Savannabits\AdminTranslations\Test\Feature\TestsFromSpatie\TranslationManagers\DummyManager;
+use Savannabits\AdminTranslations\Test\TestCase;
 
 class DummyManagerTest extends TestCase
 {

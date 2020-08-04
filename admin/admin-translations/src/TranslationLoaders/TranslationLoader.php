@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminTranslations\TranslationLoaders;
+namespace Savannabits\AdminTranslations\TranslationLoaders;
 
 interface TranslationLoader
 {

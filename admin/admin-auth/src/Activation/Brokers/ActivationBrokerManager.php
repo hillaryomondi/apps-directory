@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminAuth\Activation\Brokers;
+namespace Savannabits\AdminAuth\Activation\Brokers;
 
-use Strathmore\AdminAuth\Activation\Contracts\ActivationBroker as ActivationBrokerContract;
-use Strathmore\AdminAuth\Activation\Contracts\ActivationBrokerFactory as FactoryContract;
-use Strathmore\AdminAuth\Activation\Repositories\DatabaseTokenRepository;
+use Savannabits\AdminAuth\Activation\Contracts\ActivationBroker as ActivationBrokerContract;
+use Savannabits\AdminAuth\Activation\Contracts\ActivationBrokerFactory as FactoryContract;
+use Savannabits\AdminAuth\Activation\Repositories\DatabaseTokenRepository;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Str;
 use InvalidArgumentException;

@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator;
+<?php namespace Savannabits\AdminGenerator;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
@@ -167,7 +167,7 @@ class GenerateAdmin extends Command {
     }
 
     protected function shouldGeneratePermissionsMigration() {
-        if (class_exists('\Strathmore\Craftable\CraftableServiceProvider')) {
+        if (class_exists('\Savannabits\Craftable\CraftableServiceProvider')) {
             return true;
         }
 

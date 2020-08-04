@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminAuth\Services;
+namespace Savannabits\AdminAuth\Services;
 
-use Strathmore\AdminAuth\Activation\Contracts\ActivationBroker as ActivationBrokerContract;
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Activation\Facades\Activation;
+use Savannabits\AdminAuth\Activation\Contracts\ActivationBroker as ActivationBrokerContract;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Activation\Facades\Activation;
 use Illuminate\Support\Facades\Log;
 
 class ActivationService

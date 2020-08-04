@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Test\Feature\TestsFromSpatie\TranslationManagers;
+namespace Savannabits\AdminTranslations\Test\Feature\TestsFromSpatie\TranslationManagers;
 
-use Strathmore\AdminTranslations\TranslationLoaderManager;
+use Savannabits\AdminTranslations\TranslationLoaderManager;
 
 class DummyManager extends TranslationLoaderManager
 {

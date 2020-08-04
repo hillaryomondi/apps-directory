@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Http\Controllers;
+namespace Savannabits\AdminAuth\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
@@ -14,6 +14,6 @@ class MissingRoutesController extends Controller
      */
     public function redirect(): RedirectResponse
     {
-        return Redirect::route('brackets/admin-auth::admin/login');
+        return Redirect::route('savannabits/admin-auth::admin/login');
     }
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Test;
+namespace Savannabits\AdminTranslations\Test;
 
-use Strathmore\AdminAuth\AdminAuthServiceProvider;
-use Strathmore\AdminTranslations\AdminTranslationsServiceProvider;
-use Strathmore\AdminTranslations\Test\Exceptions\Handler;
-use Strathmore\AdminTranslations\Translation;
-use Strathmore\Translatable\TranslatableServiceProvider;
+use Savannabits\AdminAuth\AdminAuthServiceProvider;
+use Savannabits\AdminTranslations\AdminTranslationsServiceProvider;
+use Savannabits\AdminTranslations\Test\Exceptions\Handler;
+use Savannabits\AdminTranslations\Translation;
+use Savannabits\Translatable\TranslatableServiceProvider;
 use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -18,7 +18,7 @@ abstract class TestCase extends Orchestra
 {
     use RefreshDatabase;
 
-    /** @var \Strathmore\AdminTranslations\Translation */
+    /** @var \Savannabits\AdminTranslations\Translation */
     protected $languageLine;
 
     public function setUp(): void

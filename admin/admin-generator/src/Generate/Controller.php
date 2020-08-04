@@ -1,6 +1,6 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
-use Strathmore\AdminGenerator\Generate\Traits\FileManipulations;
+use Savannabits\AdminGenerator\Generate\Traits\FileManipulations;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use Symfony\Component\Console\Input\InputOption;
@@ -87,7 +87,7 @@ class Controller extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('brackets/admin-generator::'.$this->view, [
+        return view('savannabits/admin-generator::'.$this->view, [
             'controllerBaseName' => $this->classBaseName,
             'controllerNamespace' => $this->classNamespace,
             'modelBaseName' => $this->modelBaseName,

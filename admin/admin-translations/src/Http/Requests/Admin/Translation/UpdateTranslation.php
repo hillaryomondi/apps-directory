@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Http\Requests\Admin\Translation;
+namespace Savannabits\AdminTranslations\Http\Requests\Admin\Translation;
 
-use Strathmore\Translatable\TranslatableFormRequest;
+use Savannabits\Translatable\TranslatableFormRequest;
 use Illuminate\Support\Facades\Gate;
 
 class UpdateTranslation extends TranslatableFormRequest

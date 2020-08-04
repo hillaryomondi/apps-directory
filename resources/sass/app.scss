@@ -1,1 +1,26 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+.text-su-red {
+    color: $strathmore-red !important;
+}
+.text-su-blue {
+    color: $strathmore-blue !important;
+}
+.text-su-gold {
+    color: $strathmore-gold !important;
+}
+.bg-su-blue {
+    background: $strathmore-blue !important;
+}
+.bg-su-red {
+    background: $strathmore-red !important;
+}
+.bg-su-gold {
+    background: $strathmore-gold !important;
+}

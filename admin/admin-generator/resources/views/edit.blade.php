@@ -1,4 +1,4 @@
-{{'@'}}extends('brackets/admin-ui::admin.layout.default')
+{{'@'}}extends('savannabits/admin-ui::admin.layout.default')
 
 {{'@'}}section('title', trans('admin.{{ $modelLangFormat }}.actions.edit', ['name' => ${{ $modelVariableName }}->{{$modelTitle}}]))
 
@@ -55,19 +55,19 @@
 
                     @if($isUsedTwoColumnsLayout)<button type="submit" class="btn btn-primary fixed-cta-button button-save" :disabled="submiting">
                         <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-save'"></i>
-                        @{{ trans('brackets/admin-ui::admin.btn.save') }}
+                        @{{ trans('savannabits/admin-ui::admin.btn.save') }}
                     </button>
 
                     <button type="submit" style="display: none" class="btn btn-success fixed-cta-button button-saved" :disabled="submiting" :class="">
                         <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-check'"></i>
-                        <span>@{{ trans('brackets/admin-ui::admin.btn.saved') }}</span>
+                        <span>@{{ trans('savannabits/admin-ui::admin.btn.saved') }}</span>
                     </button>
                      @else
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary" :disabled="submiting">
                             <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
-                            @{{ trans('brackets/admin-ui::admin.btn.save') }}
+                            @{{ trans('savannabits/admin-ui::admin.btn.save') }}
                         </button>
                     </div>
                     @endif

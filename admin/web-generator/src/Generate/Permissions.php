@@ -1,4 +1,4 @@
-<?php namespace Strathmore\WebGenerator\Generate;
+<?php namespace Savannabits\WebGenerator\Generate;
 
 use Symfony\Component\Console\Input\InputOption;
 
@@ -82,7 +82,7 @@ class Permissions extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('strathmore/web-generator::permissions', [
+        return view('savannabits/web-generator::permissions', [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'className' => $this->generateClassNameFromTable($this->tableName),

@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Interpolations;
+namespace Savannabits\AdvancedLogger\Interpolations;
 
-use Strathmore\AdvancedLogger\Services\Benchmark;
+use Savannabits\AdvancedLogger\Services\Benchmark;
 use Illuminate\Support\Str;
 
 /**

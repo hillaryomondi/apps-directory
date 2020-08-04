@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminListing\Tests\Feature\AdminListing;
+namespace Savannabits\AdminListing\Tests\Feature\AdminListing;
 
-use Strathmore\AdminListing\AdminListing;
-use Strathmore\AdminListing\Exceptions\NotAModelClassException;
-use Strathmore\AdminListing\Tests\TestCase;
+use Savannabits\AdminListing\AdminListing;
+use Savannabits\AdminListing\Exceptions\NotAModelClassException;
+use Savannabits\AdminListing\Tests\TestCase;
 
 class ExceptionsTest extends TestCase
 {

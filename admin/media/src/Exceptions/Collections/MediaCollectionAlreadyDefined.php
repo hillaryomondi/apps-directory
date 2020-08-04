@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Media\Exceptions\Collections;
+namespace Savannabits\Media\Exceptions\Collections;
 
 use Exception;
 

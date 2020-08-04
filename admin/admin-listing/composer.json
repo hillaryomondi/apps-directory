@@ -1,5 +1,5 @@
 {
-    "name": "strathmore/admin-listing",
+    "name": "savannabits/admin-listing",
     "description": "Query-building helper for listing of Eloquent models",
     "keywords": [
         "listing",
@@ -10,7 +10,7 @@
         "laravel"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",
@@ -28,23 +28,23 @@
         "mockery/mockery": "0.9.*|^1.0",
         "phpunit/phpunit": "^8.5",
         "orchestra/testbench": "~4.0",
-        "strathmore/translatable": "^2.0"
+        "savannabits/translatable": "^7.0"
     },
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "Strathmore\\AdminListing\\": "src/"
+            "Savannabits\\AdminListing\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Strathmore\\AdminListing\\Tests\\": "tests/"
+            "Savannabits\\AdminListing\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Strathmore\\AdminListing\\AdminListingServiceProvider"
+                "Savannabits\\AdminListing\\AdminListingServiceProvider"
             ]
         },
         "branch-alias": {

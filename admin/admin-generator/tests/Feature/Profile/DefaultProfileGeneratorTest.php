@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Tests\Feature\Users;
+namespace Savannabits\AdminGenerator\Tests\Feature\Users;
 
-use Strathmore\AdminGenerator\Tests\UserTestCase;
+use Savannabits\AdminGenerator\Tests\UserTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -69,7 +69,7 @@ Route::middleware([\'auth:\' . config(\'admin-auth.defaults.guard\'), \'admin\']
     });
 });',
             File::get($filePathRoute));
-        $this->assertStringStartsWith('@extends(\'brackets/admin-ui::admin.layout.default\')
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')
 
 @section(\'title\', trans(\'admin.admin-user.actions.edit_profile\'))
 
@@ -83,7 +83,7 @@ Route::middleware([\'auth:\' . config(\'admin-auth.defaults.guard\'), \'admin\']
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';
 
 Vue.component(\'profile-edit-profile-form\'', File::get($formJsPathProfile));
-        $this->assertStringStartsWith('@extends(\'brackets/admin-ui::admin.layout.default\')
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')
 
 @section(\'title\', trans(\'admin.admin-user.actions.edit_password\'))
 

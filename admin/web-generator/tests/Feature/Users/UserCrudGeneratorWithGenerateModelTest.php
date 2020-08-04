@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\WebGenerator\Tests\Feature\Users;
+namespace Savannabits\WebGenerator\Tests\Feature\Users;
 
-use Strathmore\WebGenerator\Tests\UserTestCase;
+use Savannabits\WebGenerator\Tests\UserTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -26,9 +26,9 @@ class UserCrudGeneratorWithGenerateModelTest extends UserTestCase
 
 namespace App\Models;
 
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Activation\Traits\CanActivate;
-use Strathmore\AdminAuth\Notifications\ResetPassword;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Activation\Traits\CanActivate;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -55,9 +55,9 @@ class User extends Authenticatable implements CanActivateContract
 
 namespace App\Models\Auth;
 
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Activation\Traits\CanActivate;
-use Strathmore\AdminAuth\Notifications\ResetPassword;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Activation\Traits\CanActivate;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -84,9 +84,9 @@ class User extends Authenticatable implements CanActivateContract
 
 namespace App\Auth;
 
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Activation\Traits\CanActivate;
-use Strathmore\AdminAuth\Notifications\ResetPassword;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Activation\Traits\CanActivate;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Test;
+namespace Savannabits\AdvancedLogger\Test;
 
-use Strathmore\AdvancedLogger\AdvancedLoggerServiceProvider;
+use Savannabits\AdvancedLogger\AdvancedLoggerServiceProvider;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;

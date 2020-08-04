@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminListing;
+namespace Savannabits\AdminListing;
 
-use Strathmore\AdminListing\Exceptions\NotAModelClassException;
+use Savannabits\AdminListing\Exceptions\NotAModelClassException;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -16,7 +16,7 @@ class AdminListing
 {
 
     /**
-     * @var Model|Strathmore\Translatable\Traits\HasTranslations
+     * @var Model|Savannabits\Translatable\Traits\HasTranslations
      */
     protected $model;
 
@@ -116,8 +116,8 @@ class AdminListing
     private function init(): void
     {
 
-        // this class name is hard-coded because we don't want to have dependency on brackets/translatable package, if it's not completely necessary
-        if (in_array('Strathmore\Translatable\Traits\HasTranslations', class_uses($this->model), true)) {
+        // this class name is hard-coded because we don't want to have dependency on savannabits/translatable package, if it's not completely necessary
+        if (in_array('Savannabits\Translatable\Traits\HasTranslations', class_uses($this->model), true)) {
             $this->modelHasTranslations = true;
             $this->locale = $this->model->locale ?: app()->getLocale();
         }
@@ -374,7 +374,7 @@ class AdminListing
         if ($this->modelHasTranslations()) {
             // we need to set this default locale ad hoc
             $collection->each(function ($model) {
-                /** @var $model Strathmore\Translatable\Traits\HasTranslations */
+                /** @var $model Savannabits\Translatable\Traits\HasTranslations */
                 $model->setLocale($this->locale);
             });
         }

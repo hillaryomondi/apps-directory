@@ -1,11 +1,11 @@
 <?php
 
-namespace Strathmore\Translatable\Facades;
+namespace Savannabits\Translatable\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Strathmore\Translatable\Translatable
+ * @see \Savannabits\Translatable\Translatable
  */
 class Translatable extends Facade
 {

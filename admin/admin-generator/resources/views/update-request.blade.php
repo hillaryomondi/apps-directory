@@ -17,7 +17,7 @@ namespace App\Http\Requests\Admin\{{ $modelWithNamespaceFromDefault }};
 @if($containsPublishedAtColumn)
 use Carbon\Carbon;
 @endif
-@if($translatable->count() > 0)use Strathmore\Translatable\TranslatableFormRequest;
+@if($translatable->count() > 0)use Savannabits\Translatable\TranslatableFormRequest;
 @else
 use Illuminate\Foundation\Http\FormRequest;
 @endif

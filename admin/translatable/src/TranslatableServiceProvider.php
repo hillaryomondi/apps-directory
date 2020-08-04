@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\Translatable;
+namespace Savannabits\Translatable;
 
-use Strathmore\Translatable\Facades\Translatable;
-use Strathmore\Translatable\Providers\TranslatableProvider;
-use Strathmore\Translatable\Providers\ViewComposerProvider;
+use Savannabits\Translatable\Facades\Translatable;
+use Savannabits\Translatable\Providers\TranslatableProvider;
+use Savannabits\Translatable\Providers\ViewComposerProvider;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 

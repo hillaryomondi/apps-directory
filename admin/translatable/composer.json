@@ -1,5 +1,5 @@
 {
-    "name": "strathmore/translatable",
+    "name": "savannabits/translatable",
     "description": "Make your Eloquent models and other content translated into multiple languages",
     "keywords": [
         "translations",
@@ -35,18 +35,18 @@
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "Strathmore\\Translatable\\": "src/"
+            "Savannabits\\Translatable\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Strathmore\\Translatable\\Test\\": "tests"
+            "Savannabits\\Translatable\\Test\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Strathmore\\Translatable\\TranslatableServiceProvider"
+                "Savannabits\\Translatable\\TranslatableServiceProvider"
             ]
         },
         "branch-alias": {

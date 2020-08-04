@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\WebGenerator\Tests\Feature\Classes;
+namespace Savannabits\WebGenerator\Tests\Feature\Classes;
 
-use Strathmore\WebGenerator\Tests\TestCase;
+use Savannabits\WebGenerator\Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -33,7 +33,7 @@ use App\Http\Requests\Admin\Category\IndexCategory;
 use App\Http\Requests\Admin\Category\StoreCategory;
 use App\Http\Requests\Admin\Category\UpdateCategory;
 use App\Models\Category;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -71,7 +71,7 @@ use App\Http\Requests\Admin\Category\IndexCategory;
 use App\Http\Requests\Admin\Category\StoreCategory;
 use App\Http\Requests\Admin\Category\UpdateCategory;
 use App\Models\Category;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -109,7 +109,7 @@ use App\Http\Requests\Admin\Category\IndexCategory;
 use App\Http\Requests\Admin\Category\StoreCategory;
 use App\Http\Requests\Admin\Category\UpdateCategory;
 use App\Models\Category;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -149,7 +149,7 @@ use App\Http\Requests\Admin\Cat\IndexCat;
 use App\Http\Requests\Admin\Cat\StoreCat;
 use App\Http\Requests\Admin\Cat\UpdateCat;
 use App\Billing\Cat;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;

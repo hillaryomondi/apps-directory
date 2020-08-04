@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
 use Symfony\Component\Console\Input\InputOption;
 
@@ -82,7 +82,7 @@ class Permissions extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('brackets/admin-generator::permissions', [
+        return view('savannabits/admin-generator::permissions', [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'className' => $this->generateClassNameFromTable($this->tableName),

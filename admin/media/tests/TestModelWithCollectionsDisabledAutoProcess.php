@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Media\Test;
+namespace Savannabits\Media\Test;
 
 use Spatie\Image\Exceptions\InvalidManipulation;
 use Spatie\MediaLibrary\Models\Media;

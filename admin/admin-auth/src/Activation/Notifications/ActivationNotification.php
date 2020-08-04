@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Activation\Notifications;
+namespace Savannabits\AdminAuth\Activation\Notifications;
 
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
@@ -46,8 +46,8 @@ class ActivationNotification extends Notification
     {
         //TODO change to template?
         return (new MailMessage)
-            ->line(trans('brackets/admin-auth::activations.email.line'))
-            ->action(trans('brackets/admin-auth::activations.email.action'), route('brackets/admin-auth::admin/activation/activate', $this->token))
-            ->line(trans('brackets/admin-auth::activations.email.notRequested'));
+            ->line(trans('savannabits/admin-auth::activations.email.line'))
+            ->action(trans('savannabits/admin-auth::activations.email.action'), route('savannabits/admin-auth::admin/activation/activate', $this->token))
+            ->line(trans('savannabits/admin-auth::activations.email.notRequested'));
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Media\HasMedia;
+namespace Savannabits\Media\HasMedia;
 
 use Spatie\MediaLibrary\MediaCollection\MediaCollection as ParentMediaCollection;
 

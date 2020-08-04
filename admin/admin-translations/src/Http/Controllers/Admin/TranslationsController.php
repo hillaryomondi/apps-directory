@@ -1,15 +1,15 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Http\Controllers\Admin;
+namespace Savannabits\AdminTranslations\Http\Controllers\Admin;
 
-use Strathmore\AdminListing\AdminListing;
-use Strathmore\AdminTranslations\Exports\TranslationsExport;
-use Strathmore\AdminTranslations\Http\Requests\Admin\Translation\ImportTranslation;
-use Strathmore\AdminTranslations\Http\Requests\Admin\Translation\IndexTranslation;
-use Strathmore\AdminTranslations\Http\Requests\Admin\Translation\UpdateTranslation;
-use Strathmore\AdminTranslations\Http\Responses\TranslationsAdminListingResponse;
-use Strathmore\AdminTranslations\Service\Import\TranslationService;
-use Strathmore\AdminTranslations\Translation;
+use Savannabits\AdminListing\AdminListing;
+use Savannabits\AdminTranslations\Exports\TranslationsExport;
+use Savannabits\AdminTranslations\Http\Requests\Admin\Translation\ImportTranslation;
+use Savannabits\AdminTranslations\Http\Requests\Admin\Translation\IndexTranslation;
+use Savannabits\AdminTranslations\Http\Requests\Admin\Translation\UpdateTranslation;
+use Savannabits\AdminTranslations\Http\Responses\TranslationsAdminListingResponse;
+use Savannabits\AdminTranslations\Service\Import\TranslationService;
+use Savannabits\AdminTranslations\Translation;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Contracts\Support\Responsable;

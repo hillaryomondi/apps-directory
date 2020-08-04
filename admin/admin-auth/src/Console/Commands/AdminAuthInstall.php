@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Console\Commands;
+namespace Savannabits\AdminAuth\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
@@ -20,7 +20,7 @@ class AdminAuthInstall extends Command
      *
      * @var string
      */
-    protected $description = 'Install a brackets/admin-auth package';
+    protected $description = 'Install a savannabits/admin-auth package';
 
     /**
      * Execute the console command.
@@ -29,16 +29,16 @@ class AdminAuthInstall extends Command
      */
     public function handle()
     {
-        $this->info('Installing package brackets/admin-auth');
+        $this->info('Installing package savannabits/admin-auth');
 
         $this->call('admin-ui:install');
 
         $this->call('vendor:publish', [
-            '--provider' => "Strathmore\\AdminAuth\\AdminAuthServiceProvider",
+            '--provider' => "Savannabits\\AdminAuth\\AdminAuthServiceProvider",
         ]);
 
         $this->call('vendor:publish', [
-            '--provider' => "Strathmore\\AdminAuth\\Activation\\Providers\\ActivationServiceProvider",
+            '--provider' => "Savannabits\\AdminAuth\\Activation\\Providers\\ActivationServiceProvider",
         ]);
 
         $this->strReplaceInFile(
@@ -46,14 +46,14 @@ class AdminAuthInstall extends Command
             '|url\(\'admin\/logout\'\)|',
             '{{-- Do not delete me :) I\'m used for auto-generation menu items --}}',
             '{{-- Do not delete me :) I\'m used for auto-generation menu items --}}
-    <a href="{{ url(\'admin/logout\') }}" class="dropdown-item"><i class="fa fa-lock"></i> {{ trans(\'brackets/admin-auth::admin.profile_dropdown.logout\') }}</a>'
+    <a href="{{ url(\'admin/logout\') }}" class="dropdown-item"><i class="fa fa-lock"></i> {{ trans(\'savannabits/admin-auth::admin.profile_dropdown.logout\') }}</a>'
         );
 
         $this->appendAdminAuthToAuthConfig();
 
         $this->call('migrate');
 
-        $this->info('Package brackets/admin-auth installed');
+        $this->info('Package savannabits/admin-auth installed');
     }
 
     /**
@@ -111,7 +111,7 @@ class AdminAuthInstall extends Command
             '\'providers\' => [
         \'admin_users\' => [
             \'driver\' => \'eloquent\',
-            \'model\' => Strathmore\AdminAuth\Models\AdminUser::class,
+            \'model\' => Savannabits\AdminAuth\Models\AdminUser::class,
         ],
         '
         );
@@ -120,7 +120,7 @@ class AdminAuthInstall extends Command
         }
         $auth['providers']['admin_users'] = [
             'driver' => 'eloquent',
-            'model' => \Strathmore\AdminAuth\Models\AdminUser::class,
+            'model' => \Savannabits\AdminAuth\Models\AdminUser::class,
         ];
 
         $this->strReplaceInFile(

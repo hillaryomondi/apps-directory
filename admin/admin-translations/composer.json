@@ -1,16 +1,17 @@
 {
-    "name": "strathmore/admin-translations",
-    "description": "Translation manager for strathmore/admin-ui",
+    "name": "savannabits/admin-translations",
+    "description": "Translation manager for savannabits/admin-ui",
     "keywords": [
         "translations",
         "localizations",
         "manager",
         "admin",
         "cms",
-        "laravel"
+        "laravel",
+        "savannabits"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",
@@ -26,9 +27,9 @@
         "illuminate/database": "^6.0|^7.0",
         "illuminate/support": "^6.0|^7.0",
         "illuminate/console": "^6.0|^7.0",
-        "strathmore/admin-ui": "^4.0",
-        "strathmore/admin-listing": "^3.0",
-        "strathmore/translatable": "^2.0"
+        "savannabits/admin-ui": "^7.0",
+        "savannabits/admin-listing": "^7.0",
+        "savannabits/translatable": "^7.0"
     },
     "require-dev": {
         "orchestra/testbench": "~4.0",
@@ -39,18 +40,18 @@
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "Strathmore\\AdminTranslations\\": "src/"
+            "Savannabits\\AdminTranslations\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Strathmore\\AdminTranslations\\Test\\": "tests/"
+            "Savannabits\\AdminTranslations\\Test\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Strathmore\\AdminTranslations\\AdminTranslationsServiceProvider"
+                "Savannabits\\AdminTranslations\\AdminTranslationsServiceProvider"
             ]
         },
         "branch-alias": {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminListing\Tests\Feature\AdminListing;
+namespace Savannabits\AdminListing\Tests\Feature\AdminListing;
 
-use Strathmore\AdminListing\Tests\TestCase;
+use Savannabits\AdminListing\Tests\TestCase;
 
 class BasicStuffTest extends TestCase
 {

@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -178,7 +178,7 @@ class ViewForm extends ViewGenerator {
 
     protected function buildForm() {
 
-        return view('brackets/admin-generator::'.$this->form, [
+        return view('savannabits/admin-generator::'.$this->form, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelPlural' => $this->modelPlural,
@@ -198,7 +198,7 @@ class ViewForm extends ViewGenerator {
 
     protected function buildFormRight() {
 
-        return view('brackets/admin-generator::'.$this->formRight, [
+        return view('savannabits/admin-generator::'.$this->formRight, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelPlural' => $this->modelPlural,
@@ -219,7 +219,7 @@ class ViewForm extends ViewGenerator {
 
     protected function buildCreate() {
 
-        return view('brackets/admin-generator::'.$this->create, [
+        return view('savannabits/admin-generator::'.$this->create, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelVariableName' => $this->modelVariableName,
@@ -241,7 +241,7 @@ class ViewForm extends ViewGenerator {
 
     protected function buildEdit() {
 
-        return view('brackets/admin-generator::'.$this->edit, [
+        return view('savannabits/admin-generator::'.$this->edit, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelVariableName' => $this->modelVariableName,
@@ -264,7 +264,7 @@ class ViewForm extends ViewGenerator {
     }
 
     protected function buildFormJs() {
-        return view('brackets/admin-generator::'.$this->formJs, [
+        return view('savannabits/admin-generator::'.$this->formJs, [
             'modelViewsDirectory' => $this->modelViewsDirectory,
             'modelJSName' => $this->modelJSName,
 

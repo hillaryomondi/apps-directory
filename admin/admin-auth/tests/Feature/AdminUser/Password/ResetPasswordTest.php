@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Feature\AdminUser\Password;
+namespace Savannabits\AdminAuth\Tests\Feature\AdminUser\Password;
 
-use Strathmore\AdminAuth\Tests\BracketsTestCase;
-use Strathmore\AdminAuth\Tests\Models\TestBracketsUserModel;
+use Savannabits\AdminAuth\Tests\BracketsTestCase;
+use Savannabits\AdminAuth\Tests\Models\TestBracketsUserModel;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Hash;
@@ -27,7 +27,7 @@ class ResetPasswordTest extends BracketsTestCase
             'password' => bcrypt('testpass123'),
         ]);
 
-        $this->assertDatabaseHas('test_brackets_user_models', [
+        $this->assertDatabaseHas('test_savannabits_user_models', [
             'email' => 'john@example.com',
         ]);
 
@@ -48,7 +48,7 @@ class ResetPasswordTest extends BracketsTestCase
     /** @test */
     public function can_see_reset_password_form(): void
     {
-        $response = $this->get(route('brackets/admin-auth::admin/password/showResetForm', ['token' => $this->token]));
+        $response = $this->get(route('savannabits/admin-auth::admin/password/showResetForm', ['token' => $this->token]));
         $response->assertStatus(200);
     }
 
@@ -127,7 +127,7 @@ class ResetPasswordTest extends BracketsTestCase
             'password' => bcrypt('testpass123'),
         ]);
 
-        $this->assertDatabaseHas('test_brackets_user_models', [
+        $this->assertDatabaseHas('test_savannabits_user_models', [
             'email' => 'john2@example.com',
         ]);
 

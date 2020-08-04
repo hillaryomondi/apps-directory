@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Test\Feature\TestsFromSpatie;
+namespace Savannabits\AdminTranslations\Test\Feature\TestsFromSpatie;
 
-use Strathmore\AdminTranslations\TranslationLoaders\TranslationLoader;
+use Savannabits\AdminTranslations\TranslationLoaders\TranslationLoader;
 
 class DummyLoader implements TranslationLoader
 {

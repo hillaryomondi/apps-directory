@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminTranslations;
+namespace Savannabits\AdminTranslations;
 
-use Strathmore\AdminTranslations\TranslationLoaders\TranslationLoader;
+use Savannabits\AdminTranslations\TranslationLoaders\TranslationLoader;
 use Illuminate\Translation\FileLoader;
 
 class TranslationLoaderManager extends FileLoader

@@ -1,11 +1,11 @@
 <?php
 
-namespace Strathmore\AdminListing\Facades;
+namespace Savannabits\AdminListing\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Strathmore\AdminListing\AdminListing
+ * @see \Savannabits\AdminListing\AdminListing
  */
 class AdminListing extends Facade
 {

@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator;
+<?php namespace Savannabits\AdminGenerator;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -34,7 +34,7 @@ class AdminGeneratorServiceProvider extends ServiceProvider
             Generate\Export::class,
         ]);
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'brackets/admin-generator');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'savannabits/admin-generator');
     }
 
     /**

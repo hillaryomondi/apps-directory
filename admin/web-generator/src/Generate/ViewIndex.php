@@ -1,4 +1,4 @@
-<?php namespace Strathmore\WebGenerator\Generate;
+<?php namespace Savannabits\WebGenerator\Generate;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -67,7 +67,7 @@ class ViewIndex extends ViewGenerator {
             $this->viewJs = 'templates.'.$template.'.listing-js';
         }
 
-        $viewPath = resource_path('views/frontend/'.$this->modelViewsDirectory.'/index.blade.php');
+        $viewPath = resource_path('views/web/'.$this->modelViewsDirectory.'/index.blade.php');
         $listingJsPath = resource_path('js/web/'.$this->modelJSName.'/Listing.js');
         $indexJsPath = resource_path('js/web/'.$this->modelJSName.'/index.js');
         $bootstrapJsPath = resource_path('js/web/index.js');
@@ -102,8 +102,8 @@ class ViewIndex extends ViewGenerator {
             $this->info('Generating '.$listingJsPath.' finished');
         }
 
-
-		if ($this->appendIfNotAlreadyAppended($indexJsPath, "import './Listing';".PHP_EOL)){
+        $content = "Vue.component('$this->modelJSName-listing', () => import(/* webpackChunkName: '$this->modelJSName-listing'*/ './Listing'));";
+		if ($this->appendIfNotAlreadyAppended($indexJsPath, $content.PHP_EOL)){
 			$this->info('Appending Listing to '.$indexJsPath.' finished');
 		}
 		if ($this->appendIfNotAlreadyAppended($bootstrapJsPath, "import './". $this->modelJSName ."';".PHP_EOL)){
@@ -113,7 +113,7 @@ class ViewIndex extends ViewGenerator {
 
     protected function buildView() {
 
-        return view('strathmore/web-generator::'.$this->view, [
+        return view('savannabits/web-generator::'.$this->view, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelPlural' => $this->modelPlural,
@@ -155,7 +155,7 @@ class ViewIndex extends ViewGenerator {
     }
 
     protected function buildListingJs() {
-        return view('strathmore/web-generator::'.$this->viewJs, [
+        return view('savannabits/web-generator::'.$this->viewJs, [
             'modelViewsDirectory' => $this->modelViewsDirectory,
             'modelJSName' => $this->modelJSName,
         ])->render();

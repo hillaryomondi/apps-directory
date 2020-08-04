@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Tests\Feature\Views;
+namespace Savannabits\AdminGenerator\Tests\Feature\Views;
 
-use Strathmore\AdminGenerator\Tests\TestCase;
+use Savannabits\AdminGenerator\Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -25,7 +25,7 @@ class FullFormTest extends TestCase
 
         $this->assertFileExists($formPath);
         $this->assertFileExists($formJsPath);
-        $this->assertStringStartsWith('@extends(\'brackets/admin-ui::admin.layout.default\')', File::get($formPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($formPath));
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';
 
 Vue.component(\'category-form\', {
@@ -48,7 +48,7 @@ Vue.component(\'category-form\', {
 
         $this->assertFileExists($formPath);
         $this->assertFileExists($formJsPath);
-        $this->assertStringStartsWith('@extends(\'brackets/admin-ui::admin.layout.default\')', File::get($formPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($formPath));
         $this->assertStringContainsString(':action="\'{{ route(\'admin/profile/edit-password\', [\'category\' => $category]) }}\'"',
             File::get($formPath));
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';

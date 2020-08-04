@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -113,7 +113,7 @@ class ViewIndex extends ViewGenerator {
 
     protected function buildView() {
 
-        return view('brackets/admin-generator::'.$this->view, [
+        return view('savannabits/admin-generator::'.$this->view, [
             'modelBaseName' => $this->modelBaseName,
             'modelRouteAndViewName' => $this->modelRouteAndViewName,
             'modelPlural' => $this->modelPlural,
@@ -155,7 +155,7 @@ class ViewIndex extends ViewGenerator {
     }
 
     protected function buildListingJs() {
-        return view('brackets/admin-generator::'.$this->viewJs, [
+        return view('savannabits/admin-generator::'.$this->viewJs, [
             'modelViewsDirectory' => $this->modelViewsDirectory,
             'modelJSName' => $this->modelJSName,
         ])->render();

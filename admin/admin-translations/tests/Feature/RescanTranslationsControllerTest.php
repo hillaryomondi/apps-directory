@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Test\Feature;
+namespace Savannabits\AdminTranslations\Test\Feature;
 
-use Strathmore\AdminTranslations\Test\TestCase;
+use Savannabits\AdminTranslations\Test\TestCase;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Gate;
 

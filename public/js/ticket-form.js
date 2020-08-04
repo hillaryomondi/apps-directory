@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{L6c0:function(e,r,n){"use strict";n.r(r);var t=n("pXKy");r.default={mixins:[t.a],props:[],data:function(){return{form:{reference_number:"",title:"",description:"",resolved:!1,reporter_name:"",reporter_email:"",created_by:"",su_application_id:""}}},mounted:function(){},methods:{}}}}]);

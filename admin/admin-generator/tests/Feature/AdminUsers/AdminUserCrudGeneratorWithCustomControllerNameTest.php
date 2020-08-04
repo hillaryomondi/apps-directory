@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Tests\Feature\Users;
+namespace Savannabits\AdminGenerator\Tests\Feature\Users;
 
-use Strathmore\AdminGenerator\Tests\UserTestCase;
+use Savannabits\AdminGenerator\Tests\UserTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -33,11 +33,11 @@ use App\Http\Requests\Admin\AdminUser\ImpersonalLoginAdminUser;
 use App\Http\Requests\Admin\AdminUser\IndexAdminUser;
 use App\Http\Requests\Admin\AdminUser\StoreAdminUser;
 use App\Http\Requests\Admin\AdminUser\UpdateAdminUser;
-use Strathmore\AdminAuth\Models\AdminUser;
+use Savannabits\AdminAuth\Models\AdminUser;
 use Spatie\Permission\Models\Role;
-use Strathmore\AdminAuth\Activation\Facades\Activation;
-use Strathmore\AdminAuth\Services\ActivationService;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminAuth\Activation\Facades\Activation;
+use Savannabits\AdminAuth\Services\ActivationService;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -96,11 +96,11 @@ use App\Http\Requests\Admin\AdminUser\ImpersonalLoginAdminUser;
 use App\Http\Requests\Admin\AdminUser\IndexAdminUser;
 use App\Http\Requests\Admin\AdminUser\StoreAdminUser;
 use App\Http\Requests\Admin\AdminUser\UpdateAdminUser;
-use Strathmore\AdminAuth\Models\AdminUser;
+use Savannabits\AdminAuth\Models\AdminUser;
 use Spatie\Permission\Models\Role;
-use Strathmore\AdminAuth\Activation\Facades\Activation;
-use Strathmore\AdminAuth\Services\ActivationService;
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminAuth\Activation\Facades\Activation;
+use Savannabits\AdminAuth\Services\ActivationService;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\AuthorizationException;

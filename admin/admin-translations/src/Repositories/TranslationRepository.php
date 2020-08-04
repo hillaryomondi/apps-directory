@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Repositories;
+namespace Savannabits\AdminTranslations\Repositories;
 
-use Strathmore\AdminTranslations\Translation;
+use Savannabits\AdminTranslations\Translation;
 
 class TranslationRepository
 {

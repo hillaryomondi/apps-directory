@@ -1,11 +1,11 @@
-<header class="app-header navbar">
+<header class="app-header navbar pr-0 bg-primary">
     <button class="navbar-toggler sidebar-toggler d-lg-none" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon"></span>
     </button>
-	@if(View::exists('admin.layout.logo'))
-        @include('admin.layout.logo')
-	@endif
-    <ul class="nav navbar-nav ml-auto">
+    @if(View::exists('web.layout.logo'))
+        @include('web.layout.logo')
+    @endif
+    <ul class="nav navbar-nav ml-auto p-2 bg-info">
         <li class="nav-item dropdown">
             <a role="button" class="dropdown-toggle nav-link">
                 <span>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Craftable\Traits;
+namespace Savannabits\Craftable\Traits;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;

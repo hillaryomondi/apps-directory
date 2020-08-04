@@ -12,9 +12,9 @@
     }
 @endphp
 
-use Strathmore\AdminAuth\Activation\Traits\CanActivate;
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Notifications\ResetPassword;
+use Savannabits\AdminAuth\Activation\Traits\CanActivate;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
 @if($hasSoftDelete)use Illuminate\Database\Eloquent\SoftDeletes;
 @endif
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -22,7 +22,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 @if($hasRoles)use Spatie\Permission\Traits\HasRoles;
 @endif
-@if($translatable->count() > 0)use Strathmore\Translatable\Traits\HasTranslations;
+@if($translatable->count() > 0)use Savannabits\Translatable\Traits\HasTranslations;
 @endif
 
 class {{ $modelBaseName }} extends Authenticatable implements CanActivateContract

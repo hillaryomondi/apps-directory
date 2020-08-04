@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Exports;
+namespace Savannabits\AdminTranslations\Exports;
 
-use Strathmore\AdminTranslations\Translation;
+use Savannabits\AdminTranslations\Translation;
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\FromCollection;
@@ -35,10 +35,10 @@ class TranslationsExport implements FromCollection, WithMapping, WithHeadings
     public function headings(): array
     {
         $headings = [
-            trans('brackets/admin-translations::admin.fields.namespace'),
-            trans('brackets/admin-translations::admin.fields.group'),
-            trans('brackets/admin-translations::admin.fields.default'),
-            trans('brackets/admin-translations::admin.fields.created_at'),
+            trans('savannabits/admin-translations::admin.fields.namespace'),
+            trans('savannabits/admin-translations::admin.fields.group'),
+            trans('savannabits/admin-translations::admin.fields.default'),
+            trans('savannabits/admin-translations::admin.fields.created_at'),
         ];
 
         $this->exportLanguages->each(static function ($language) use (&$headings) {

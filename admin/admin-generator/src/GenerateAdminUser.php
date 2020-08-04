@@ -1,6 +1,6 @@
-<?php namespace Strathmore\AdminGenerator;
+<?php namespace Savannabits\AdminGenerator;
 
-use Strathmore\AdminGenerator\Generate\Traits\FileManipulations;
+use Savannabits\AdminGenerator\Generate\Traits\FileManipulations;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
@@ -50,7 +50,7 @@ class GenerateAdminUser extends Command {
 
         if(empty($modelOption)) {
             $modelOption = 'AdminUser';
-            $modelWithFullNamespace = 'Strathmore\AdminAuth\Models\AdminUser';
+            $modelWithFullNamespace = 'Savannabits\AdminAuth\Models\AdminUser';
         } else {
             $modelWithFullNamespace = null;
         }

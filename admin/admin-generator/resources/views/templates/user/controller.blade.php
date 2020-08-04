@@ -24,11 +24,11 @@ use {{ $belongsToMany['related_model'] }};
 @endforeach
 @endif
 @endif
-@if($activation)use Strathmore\AdminAuth\Activation\Facades\Activation;
+@if($activation)use Savannabits\AdminAuth\Activation\Facades\Activation;
 @endif
-@if($activation)use Strathmore\AdminAuth\Services\ActivationService;
+@if($activation)use Savannabits\AdminAuth\Services\ActivationService;
 @endif
-use Strathmore\AdminListing\Facades\AdminListing;
+use Savannabits\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -123,7 +123,7 @@ class {{ $controllerBaseName }} extends Controller
 @endif
 @endif
         if ($request->ajax()) {
-            return ['redirect' => url('admin/{{ $resource }}'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('admin/{{ $resource }}'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/{{ $resource }}');
@@ -202,7 +202,7 @@ class {{ $controllerBaseName }} extends Controller
 @endif
 
         if ($request->ajax()) {
-            return ['redirect' => url('admin/{{ $resource }}'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('admin/{{ $resource }}'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/{{ $resource }}');
@@ -221,7 +221,7 @@ class {{ $controllerBaseName }} extends Controller
         ${{ $modelVariableName }}->delete();
 
         if ($request->ajax()) {
-            return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
+            return response(['message' => trans('savannabits/admin-ui::admin.operation.succeeded')]);
         }
 
         return redirect()->back();
@@ -241,20 +241,20 @@ class {{ $controllerBaseName }} extends Controller
             $response = $activationService->handle(${{ $modelVariableName }});
             if($response == Activation::ACTIVATION_LINK_SENT) {
                 if ($request->ajax()) {
-                    return ['message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+                    return ['message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
                 }
 
                 return redirect()->back();
             } else {
                 if ($request->ajax()) {
-                    abort(409, trans('brackets/admin-ui::admin.operation.failed'));
+                    abort(409, trans('savannabits/admin-ui::admin.operation.failed'));
                 }
 
                 return redirect()->back();
             }
         } else {
             if ($request->ajax()) {
-                abort(400, trans('brackets/admin-ui::admin.operation.not_allowed'));
+                abort(400, trans('savannabits/admin-ui::admin.operation.not_allowed'));
             }
 
             return redirect()->back();

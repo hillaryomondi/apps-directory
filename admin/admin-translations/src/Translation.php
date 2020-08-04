@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminTranslations;
+namespace Savannabits\AdminTranslations;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -82,7 +82,7 @@ class Translation extends Model
      */
     public static function getCacheKey(string $namespace, string $group, string $locale): string
     {
-        return "brackets.admin-translations.{$namespace}.{$group}.{$locale}";
+        return "savannabits.admin-translations.{$namespace}.{$group}.{$locale}";
     }
 
     /**

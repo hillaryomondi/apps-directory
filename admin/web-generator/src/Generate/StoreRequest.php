@@ -1,4 +1,4 @@
-<?php namespace Strathmore\WebGenerator\Generate;
+<?php namespace Savannabits\WebGenerator\Generate;
 
 use Symfony\Component\Console\Input\InputOption;
 
@@ -52,7 +52,7 @@ class StoreRequest extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('strathmore/web-generator::'.$this->view, [
+        return view('savannabits/web-generator::'.$this->view, [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'modelWithNamespaceFromDefault' => $this->modelWithNamespaceFromDefault,

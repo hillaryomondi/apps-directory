@@ -8,7 +8,7 @@ This package has been inspired by package https://github.com/andersao/laravel-re
 
 ### Composer
 
-Run `composer require brackets/advamnced-logger` in your terminal.
+Run `composer require savannabits/advamnced-logger` in your terminal.
 
 ### Laravel
 
@@ -17,7 +17,7 @@ This package is for Laravel 5.5, 5.6 and 5.7, so it has auto discovery.
 To publish config file, run
 
 ```shell
-php artisan vendor:publish --provider="Strathmore\AdvancedLogger\AdvancedLoggerServiceProvider"
+php artisan vendor:publish --provider="Savannabits\AdvancedLogger\AdvancedLoggerServiceProvider"
 ```
 
 ## Configuration
@@ -29,7 +29,7 @@ All options are described in `config/advanced-logger.php`.
 If you would like to have request identifier in you standard log, to match log events with request you could add to `config/logging.php`
 
 ```php
-'tap' => [Strathmore\AdvancedLogger\LogCustomizers\HashLogCustomizer::class],
+'tap' => [Savannabits\AdvancedLogger\LogCustomizers\HashLogCustomizer::class],
 ```
 
 to `daily` channel. The resulted code should looks like
@@ -43,7 +43,7 @@ to `daily` channel. The resulted code should looks like
             'path' => storage_path('logs/laravel.log'),
             'level' => 'debug',
             'days' => 14,
-            'tap' => [Strathmore\AdvancedLogger\LogCustomizers\HashLogCustomizer::class],
+            'tap' => [Savannabits\AdvancedLogger\LogCustomizers\HashLogCustomizer::class],
         ],
 
         ...

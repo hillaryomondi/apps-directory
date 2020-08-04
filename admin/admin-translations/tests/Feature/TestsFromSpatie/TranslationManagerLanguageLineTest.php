@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Test\Feature\TestsFromSpatie;
+namespace Savannabits\AdminTranslations\Test\Feature\TestsFromSpatie;
 
-use Strathmore\AdminTranslations\Test\TestCase;
-use Strathmore\AdminTranslations\TranslationLoaders\Db;
+use Savannabits\AdminTranslations\Test\TestCase;
+use Savannabits\AdminTranslations\TranslationLoaders\Db;
 
 class TranslationManagerLanguageLineTest extends TestCase
 {

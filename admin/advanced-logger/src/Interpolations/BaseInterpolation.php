@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Interpolations;
+namespace Savannabits\AdvancedLogger\Interpolations;
 
-use Strathmore\AdvancedLogger\Contracts\InterpolationContract;
+use Savannabits\AdvancedLogger\Contracts\InterpolationContract;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 

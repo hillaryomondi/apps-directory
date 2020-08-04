@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Listeners;
+namespace Savannabits\AdvancedLogger\Listeners;
 
 use Illuminate\Events\Dispatcher;
 use Illuminate\Foundation\Http\Events\RequestHandled;

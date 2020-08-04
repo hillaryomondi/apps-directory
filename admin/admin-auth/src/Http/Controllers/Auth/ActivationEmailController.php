@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminAuth\Http\Controllers\Auth;
+namespace Savannabits\AdminAuth\Http\Controllers\Auth;
 
-use Strathmore\AdminAuth\Activation\Contracts\ActivationBroker as ActivationBrokerContract;
-use Strathmore\AdminAuth\Activation\Facades\Activation;
-use Strathmore\AdminAuth\Http\Controllers\Controller;
+use Savannabits\AdminAuth\Activation\Contracts\ActivationBroker as ActivationBrokerContract;
+use Savannabits\AdminAuth\Activation\Facades\Activation;
+use Savannabits\AdminAuth\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -57,7 +57,7 @@ class ActivationEmailController extends Controller
     public function showLinkRequestForm()
     {
         if (config('admin-auth.self_activation_form_enabled')) {
-            return view('brackets/admin-auth::admin.auth.activation.email');
+            return view('savannabits/admin-auth::admin.auth.activation.email');
         } else {
             abort(404);
         }
@@ -113,7 +113,7 @@ class ActivationEmailController extends Controller
      */
     protected function sendActivationLinkResponse(Request $request, $response)
     {
-        $message = trans('brackets/admin-auth::admin.activations.sent');
+        $message = trans('savannabits/admin-auth::admin.activations.sent');
         return back()->with('status', $message);
     }
 
@@ -129,7 +129,7 @@ class ActivationEmailController extends Controller
     {
         $message = trans($response);
         if ($response === Activation::ACTIVATION_DISABLED) {
-            $message = trans('brackets/admin-auth::admin.activations.disabled');
+            $message = trans('savannabits/admin-auth::admin.activations.disabled');
         }
         return back()->withErrors(
             ['email' => $message]

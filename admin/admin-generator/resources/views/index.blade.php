@@ -1,4 +1,4 @@
-{{'@'}}extends('brackets/admin-ui::admin.layout.default')
+{{'@'}}extends('savannabits/admin-ui::admin.layout.default')
 
 {{'@'}}section('title', trans('admin.{{ $modelLangFormat }}.actions.index'))
 
@@ -8,7 +8,7 @@
         :data="{{'{{'}} $data->toJson() }}"
         :url="'{{'{{'}} url('admin/{{ $resource }}') }}'"
 @if($containsPublishedAtColumn)
-        :trans="{{'{{'}} json_encode(trans('brackets/admin-ui::admin.dialogs')) }}"
+        :trans="{{'{{'}} json_encode(trans('savannabits/admin-ui::admin.dialogs')) }}"
 @endif
         inline-template>
 
@@ -28,9 +28,9 @@
                                 <div class="row justify-content-md-between">
                                     <div class="col col-lg-7 col-xl-5 form-group">
                                         <div class="input-group">
-                                            <input class="form-control" placeholder="@{{ trans('brackets/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />
+                                            <input class="form-control" placeholder="@{{ trans('savannabits/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />
                                             <span class="input-group-append">
-                                                <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; @{{ trans('brackets/admin-ui::admin.btn.search') }}</button>
+                                                <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; @{{ trans('savannabits/admin-ui::admin.btn.search') }}</button>
                                             </span>
                                         </div>
                                     </div>
@@ -69,11 +69,11 @@
 @if(!$withoutBulk)
                                     <tr v-show="(clickedBulkItemsCount > 0) || isClickedAll">
                                         <td class="bg-bulk-info d-table-cell text-center" colspan="{{count($columns) + 2 }}">
-                                            <span class="align-middle font-weight-light text-dark">@{{ trans('brackets/admin-ui::admin.listing.selected_items') }} {{'@{{'}} clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/{{ $resource }}')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> @{{ trans('brackets/admin-ui::admin.listing.check_all_items') }} {{'@{{'}} pagination.state.total }}</a> <span class="text-primary">|</span> <a
-                                                        href="#" class="text-primary" @click="onBulkItemsClickedAllUncheck()">@{{ trans('brackets/admin-ui::admin.listing.uncheck_all_items') }}</a>  </span>
+                                            <span class="align-middle font-weight-light text-dark">@{{ trans('savannabits/admin-ui::admin.listing.selected_items') }} {{'@{{'}} clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/{{ $resource }}')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> @{{ trans('savannabits/admin-ui::admin.listing.check_all_items') }} {{'@{{'}} pagination.state.total }}</a> <span class="text-primary">|</span> <a
+                                                        href="#" class="text-primary" @click="onBulkItemsClickedAllUncheck()">@{{ trans('savannabits/admin-ui::admin.listing.uncheck_all_items') }}</a>  </span>
 
                                             <span class="pull-right pr-2">
-                                                <button class="btn btn-sm btn-danger pr-3 pl-3" @click="bulkDelete('{{url("/admin/$resource/bulk-destroy")}}')">@{{ trans('brackets/admin-ui::admin.btn.delete') }}</button>
+                                                <button class="btn btn-sm btn-danger pr-3 pl-3" @click="bulkDelete('{{url("/admin/$resource/bulk-destroy")}}')">@{{ trans('savannabits/admin-ui::admin.btn.delete') }}</button>
                                             </span>
 
                                         </td>
@@ -117,19 +117,19 @@
                                                 <span v-if="item.published_at > now">
                                                 <small>{{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.will_be_published') }}</small><br />
                                                 {{'@{{'}} item.published_at | datetime('DD.MM.YYYY, HH:mm') }}
-                                                <span class="cursor-pointer" @click="publishLater(item.resource_url, collection[index], 'publishLaterDialog')" title="@{{ trans('brackets/admin-ui::admin.operation.publish_later') }}" role="button"><i class="fa fa-calendar"></i></span>
+                                                <span class="cursor-pointer" @click="publishLater(item.resource_url, collection[index], 'publishLaterDialog')" title="@{{ trans('savannabits/admin-ui::admin.operation.publish_later') }}" role="button"><i class="fa fa-calendar"></i></span>
                                             </span>
                                             <div v-if="!item.published_at">
-                                                <span class="btn btn-sm btn-info text-white mb-1" @click="publishLater(item.resource_url, collection[index], 'publishLaterDialog')" title="@{{ trans('brackets/admin-ui::admin.operation.publish_later') }}" role="button"><i class="fa fa-calendar"></i>&nbsp;&nbsp;@{{ trans('brackets/admin-ui::admin.operation.publish_later') }}</span>
+                                                <span class="btn btn-sm btn-info text-white mb-1" @click="publishLater(item.resource_url, collection[index], 'publishLaterDialog')" title="@{{ trans('savannabits/admin-ui::admin.operation.publish_later') }}" role="button"><i class="fa fa-calendar"></i>&nbsp;&nbsp;@{{ trans('savannabits/admin-ui::admin.operation.publish_later') }}</span>
                                             </div>
                                             <div v-if="!item.published_at || item.published_at > now">
                                                 <form class="d-inline" @submit.prevent="publishNow(item.resource_url, collection[index], 'publishNowDialog')">
-                                                    <button type="submit" class="btn btn-sm btn-success text-white" title="@{{ trans('brackets/admin-ui::admin.operation.publish_now') }}"><i class="fa fa-send"></i>&nbsp;&nbsp;@{{ trans('brackets/admin-ui::admin.operation.publish_now') }}</button>
+                                                    <button type="submit" class="btn btn-sm btn-success text-white" title="@{{ trans('savannabits/admin-ui::admin.operation.publish_now') }}"><i class="fa fa-send"></i>&nbsp;&nbsp;@{{ trans('savannabits/admin-ui::admin.operation.publish_now') }}</button>
                                                 </form>
                                             </div>
                                             <div v-if="item.published_at && item.published_at < now">
                                                 <form class="d-inline" @submit.prevent="unpublishNow(item.resource_url, collection[index])">
-                                                    <button type="submit" class="btn btn-sm btn-danger" title="@{{ trans('brackets/admin-ui::admin.operation.unpublish_now') }}"><i class="fa fa-send"></i>&nbsp;&nbsp;@{{ trans('brackets/admin-ui::admin.operation.unpublish_now') }}</button>
+                                                    <button type="submit" class="btn btn-sm btn-danger" title="@{{ trans('savannabits/admin-ui::admin.operation.unpublish_now') }}"><i class="fa fa-send"></i>&nbsp;&nbsp;@{{ trans('savannabits/admin-ui::admin.operation.unpublish_now') }}</button>
                                                 </form>
                                             </div>
                                         </td>
@@ -140,10 +140,10 @@
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">
-                                                    <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="@{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
+                                                    <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="@{{ trans('savannabits/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
                                                 </div>
                                                 <form class="col" @submit.prevent="deleteItem(item.resource_url)">
-                                                    <button type="submit" class="btn btn-sm btn-danger" title="@{{ trans('brackets/admin-ui::admin.btn.delete') }}"><i class="fa fa-trash-o"></i></button>
+                                                    <button type="submit" class="btn btn-sm btn-danger" title="@{{ trans('savannabits/admin-ui::admin.btn.delete') }}"><i class="fa fa-trash-o"></i></button>
                                                 </form>
                                             </div>
                                         </td>
@@ -153,7 +153,7 @@
 
                             <div class="row" v-if="pagination.state.total > 0">
                                 <div class="col-sm">
-                                    <span class="pagination-caption">@{{ trans('brackets/admin-ui::admin.pagination.overview') }}</span>
+                                    <span class="pagination-caption">@{{ trans('savannabits/admin-ui::admin.pagination.overview') }}</span>
                                 </div>
                                 <div class="col-sm-auto">
                                     <pagination></pagination>
@@ -162,8 +162,8 @@
 
                             <div class="no-items-found" v-if="!collection.length > 0">
                                 <i class="icon-magnifier"></i>
-                                <h3>@{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>
-                                <p>@{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>
+                                <h3>@{{ trans('savannabits/admin-ui::admin.index.no_items') }}</h3>
+                                <p>@{{ trans('savannabits/admin-ui::admin.index.try_changing_items') }}</p>
                                 <a class="btn btn-primary btn-spinner" href="{{'{{'}} url('admin/{{ $resource }}/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.create') }}</a>
                             </div>
                         </div>

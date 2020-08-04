@@ -1,6 +1,6 @@
 {
-    "name": "strathmore/web-generator",
-    "description": "Laravel 7 CRUD generator for strathmore/craftable",
+    "name": "savannabits/web-generator",
+    "description": "Laravel 7 CRUD generator for savannabits/craftable",
     "keywords": [
         "generator",
         "make",
@@ -8,10 +8,12 @@
         "admin",
         "cms",
         "laravel",
-        "craftable"
+        "craftable",
+        "savannaits",
+        "strathmore"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",
@@ -35,18 +37,18 @@
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "Strathmore\\WebGenerator\\": "src/"
+            "Savannabits\\WebGenerator\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Strathmore\\WebGenerator\\Tests\\": "tests/"
+            "Savannabits\\WebGenerator\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Strathmore\\WebGenerator\\WebGeneratorServiceProvider"
+                "Savannabits\\WebGenerator\\WebGeneratorServiceProvider"
             ]
         },
         "branch-alias": {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Feature\AdminUser\Auth;
+namespace Savannabits\AdminAuth\Tests\Feature\AdminUser\Auth;
 
-use Strathmore\AdminAuth\Tests\BracketsTestCase;
-use Strathmore\AdminAuth\Tests\Models\TestBracketsUserModel;
+use Savannabits\AdminAuth\Tests\BracketsTestCase;
+use Savannabits\AdminAuth\Tests\Models\TestBracketsUserModel;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +21,7 @@ class LoginBracketsTest extends BracketsTestCase
             'forbidden' => $forbidden,
         ]);
 
-        $this->assertDatabaseHas('test_brackets_user_models', [
+        $this->assertDatabaseHas('test_savannabits_user_models', [
             'email' => 'john@example.com',
             'activated' => $activated,
             'forbidden' => $forbidden,
@@ -109,7 +109,7 @@ class LoginBracketsTest extends BracketsTestCase
         ]);
         TestBracketsUserModel::reguard();
 
-        $this->assertDatabaseHas('test_brackets_user_models', [
+        $this->assertDatabaseHas('test_savannabits_user_models', [
             'email' => 'john@example.com',
             'activated' => true,
             'forbidden' => false,

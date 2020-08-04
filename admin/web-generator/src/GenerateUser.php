@@ -1,6 +1,6 @@
-<?php namespace Strathmore\WebGenerator;
+<?php namespace Savannabits\WebGenerator;
 
-use Strathmore\WebGenerator\Generate\Traits\FileManipulations;
+use Savannabits\WebGenerator\Generate\Traits\FileManipulations;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
@@ -78,7 +78,7 @@ class GenerateUser extends Command {
 
         // we need to replace this before controller generation happens
         $this->strReplaceInFile(
-            resource_path('views/frontend/layout/sidebar.blade.php'),
+            resource_path('views/web/layout/sidebar.blade.php'),
             '|url\(\'\/users\'\)|',
             '{{-- Do not delete me :) I\'m also used for auto-generation menu items --}}',
             '<li class="nav-item"><a class="nav-link" href="{{ url(\'users\') }}"><i class="nav-icon icon-user"></i> {{ __(\'Manage users\') }}</a></li>

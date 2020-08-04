@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Contracts;
+namespace Savannabits\AdvancedLogger\Contracts;
 
 /**
  * Interface InterpolationContract

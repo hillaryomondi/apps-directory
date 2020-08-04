@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Http\Controllers;
+namespace Savannabits\AdminAuth\Http\Controllers;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Inspiring;
@@ -15,7 +15,7 @@ class AdminHomepageController extends Controller
      */
     public function index()
     {
-        return view('brackets/admin-auth::admin.homepage.index', [
+        return view('savannabits/admin-auth::admin.homepage.index', [
             'inspiration' => Inspiring::quote()
         ]);
     }

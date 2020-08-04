@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{dOTg:function(a,e,n){"use strict";n.r(e);var i=n("pXKy");e.default={mixins:[i.a],data:function(){return{form:{name:"",email:"",email_verified_at:"",password:"",first_name:"",middle_name:"",last_name:"",dob:"",gender:"",username:"",guid:"",domain:""}}}}}}]);

@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Service\Import;
+namespace Savannabits\AdminTranslations\Service\Import;
 
-use Strathmore\AdminTranslations\Imports\TranslationsImport;
-use Strathmore\AdminTranslations\Repositories\TranslationRepository;
-use Strathmore\AdminTranslations\Translation;
+use Savannabits\AdminTranslations\Imports\TranslationsImport;
+use Savannabits\AdminTranslations\Repositories\TranslationRepository;
+use Savannabits\AdminTranslations\Translation;
 use Exception;
 use Illuminate\Support\Collection;
 

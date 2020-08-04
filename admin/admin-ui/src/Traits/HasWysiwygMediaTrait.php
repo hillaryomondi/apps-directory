@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminUI\Traits;
+namespace Savannabits\AdminUI\Traits;
 
-use Strathmore\AdminUI\WysiwygMedia;
+use Savannabits\AdminUI\WysiwygMedia;
 
 trait HasWysiwygMediaTrait {
 
@@ -28,6 +28,6 @@ trait HasWysiwygMediaTrait {
 
     public function wysiwygMedia()
     {
-        return $this->morphMany('Strathmore\AdminUI\WysiwygMedia', 'wysiwygable');
+        return $this->morphMany('Savannabits\AdminUI\WysiwygMedia', 'wysiwygable');
     }
 }

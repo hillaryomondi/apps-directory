@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\Translatable\ViewComposers;
+namespace Savannabits\Translatable\ViewComposers;
 
-use Strathmore\Translatable\Facades\Translatable;
+use Savannabits\Translatable\Facades\Translatable;
 use Illuminate\Contracts\View\View;
 
 class TranslatableComposer

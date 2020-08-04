@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests;
+namespace Savannabits\AdminAuth\Tests;
 
 abstract class BracketsTestCase extends TestCase
 {

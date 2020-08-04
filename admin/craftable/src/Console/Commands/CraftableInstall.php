@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\Craftable\Console\Commands;
+namespace Savannabits\Craftable\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -21,7 +21,7 @@ class CraftableInstall extends Command
      *
      * @var string
      */
-    protected $description = 'Install a Craftable (brackets/craftable) instance';
+    protected $description = 'Install a Craftable (savannabits/craftable) instance';
 
     /**
      * Password for generated default admin
@@ -105,17 +105,17 @@ class CraftableInstall extends Command
             '--tag' => 'migrations'
         ]);
         $this->call('vendor:publish', [
-            '--provider' => "Strathmore\\Media\\MediaServiceProvider",
+            '--provider' => "Savannabits\\Media\\MediaServiceProvider",
         ]);
 
         //Advanced logger
         $this->call('vendor:publish', [
-            '--provider' => "Strathmore\\AdvancedLogger\\AdvancedLoggerServiceProvider",
+            '--provider' => "Savannabits\\AdvancedLogger\\AdvancedLoggerServiceProvider",
         ]);
 
         //Craftable
         $this->call('vendor:publish', [
-            '--provider' => "Strathmore\\Craftable\\CraftableServiceProvider",
+            '--provider' => "Savannabits\\Craftable\\CraftableServiceProvider",
         ]);
     }
 
@@ -177,16 +177,16 @@ class CraftableInstall extends Command
             '// here you can add your own directories',
             '// here you can add your own directories
         // base_path(\'routes\'), // uncomment if you have translations in your routes i.e. you have localized URLs
-        base_path(\'vendor/brackets/admin-auth/src\'),
-        base_path(\'vendor/brackets/admin-auth/resources\'),
-        base_path(\'vendor/brackets/admin-ui/resources\'),
-        base_path(\'vendor/brackets/admin-translations/resources\'),'
+        base_path(\'vendor/savannabits/admin-auth/src\'),
+        base_path(\'vendor/savannabits/admin-auth/resources\'),
+        base_path(\'vendor/savannabits/admin-ui/resources\'),
+        base_path(\'vendor/savannabits/admin-translations/resources\'),'
         );
 
         $this->call('admin-translations:scan-and-save', [
             'paths' => array_merge(
                 config('admin-translations.scanned_directories'),
-                ['vendor/brackets/admin-auth/src', 'vendor/brackets/admin-auth/resources']
+                ['vendor/savannabits/admin-auth/src', 'vendor/savannabits/admin-auth/resources']
             ),
         ]);
     }
@@ -203,7 +203,7 @@ class CraftableInstall extends Command
                 config_path('logging.php'),
                 '\'days\' => 14,',
                 '\'days\' => 90,
-            \'tap\' => [Strathmore\AdvancedLogger\LogCustomizers\HashLogCustomizer::class],'
+            \'tap\' => [Savannabits\AdvancedLogger\LogCustomizers\HashLogCustomizer::class],'
             );
         }
     }

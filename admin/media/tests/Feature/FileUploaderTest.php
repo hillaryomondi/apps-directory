@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\Media\Test\Feature;
+namespace Savannabits\Media\Test\Feature;
 
-use Strathmore\Media\Test\TestCase;
+use Savannabits\Media\Test\TestCase;
 use Illuminate\Http\UploadedFile;
 
 class FileUploaderTest extends TestCase

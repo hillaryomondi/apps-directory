@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Test\Unit\Scanner;
+namespace Savannabits\AdminTranslations\Test\Unit\Scanner;
 
-use Strathmore\AdminTranslations\Test\TestCase;
-use Strathmore\AdminTranslations\TranslationsScanner;
+use Savannabits\AdminTranslations\Test\TestCase;
+use Savannabits\AdminTranslations\TranslationsScanner;
 
 class TranslationsScannerTest extends TestCase
 {
@@ -21,7 +21,7 @@ class TranslationsScannerTest extends TestCase
                 "good.key2",
                 "good.key6 with a space",
                 "admin::auth.key7",
-                "brackets/admin-ui::auth.key8",
+                "savannabits/admin-ui::auth.key8",
             ]),
             collect([
                 "Good key 3",

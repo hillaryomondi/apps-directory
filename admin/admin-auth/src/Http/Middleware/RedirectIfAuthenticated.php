@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminAuth\Http\Middleware;
+namespace Savannabits\AdminAuth\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Class RedirectIfAuthenticated
  *
- * @package Strathmore\AdminAuth\Http\Middleware
+ * @package Savannabits\AdminAuth\Http\Middleware
  */
 class RedirectIfAuthenticated
 {

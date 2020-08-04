@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Services;
+namespace Savannabits\AdvancedLogger\Services;
 
 use RuntimeException;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Strathmore\AdminAuth\Tests\Feature\StandardUser\Password;
+namespace Savannabits\AdminAuth\Tests\Feature\StandardUser\Password;
 
-use Strathmore\AdminAuth\Notifications\ResetPassword;
-use Strathmore\AdminAuth\Tests\Models\TestStandardUserModel;
-use Strathmore\AdminAuth\Tests\StandardTestCase;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
+use Savannabits\AdminAuth\Tests\Models\TestStandardUserModel;
+use Savannabits\AdminAuth\Tests\StandardTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Notification;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Generate;
+namespace Savannabits\AdminGenerator\Generate;
 
 use Symfony\Component\Console\Input\InputOption;
 
@@ -36,7 +36,7 @@ class BulkDestroyRequest extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('brackets/admin-generator::bulk-destroy-request', [
+        return view('savannabits/admin-generator::bulk-destroy-request', [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'modelWithNamespaceFromDefault' => $this->modelWithNamespaceFromDefault,

@@ -1,11 +1,11 @@
 <?php
 
-namespace Strathmore\Media\Test\Feature;
+namespace Savannabits\Media\Test\Feature;
 
-use Strathmore\Media\Exceptions\FileCannotBeAdded\FileIsTooBig;
-use Strathmore\Media\Exceptions\FileCannotBeAdded\TooManyFiles;
+use Savannabits\Media\Exceptions\FileCannotBeAdded\FileIsTooBig;
+use Savannabits\Media\Exceptions\FileCannotBeAdded\TooManyFiles;
 
-use Strathmore\Media\Test\TestCase;
+use Savannabits\Media\Test\TestCase;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\MimeTypeNotAllowed;
 

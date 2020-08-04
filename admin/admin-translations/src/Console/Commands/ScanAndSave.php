@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Console\Commands;
+namespace Savannabits\AdminTranslations\Console\Commands;
 
-use Strathmore\AdminTranslations\Translation;
-use Strathmore\AdminTranslations\TranslationsScanner;
+use Savannabits\AdminTranslations\Translation;
+use Savannabits\AdminTranslations\TranslationsScanner;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;

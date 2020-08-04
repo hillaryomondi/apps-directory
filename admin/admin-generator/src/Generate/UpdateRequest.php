@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
 use Symfony\Component\Console\Input\InputOption;
 
@@ -52,7 +52,7 @@ class UpdateRequest extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('brackets/admin-generator::'.$this->view, [
+        return view('savannabits/admin-generator::'.$this->view, [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'modelWithNamespaceFromDefault' => $this->modelWithNamespaceFromDefault,

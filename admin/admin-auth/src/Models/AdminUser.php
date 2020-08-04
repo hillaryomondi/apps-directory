@@ -1,14 +1,14 @@
 <?php
 
-namespace Strathmore\AdminAuth\Models;
+namespace Savannabits\AdminAuth\Models;
 
-use Strathmore\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
-use Strathmore\AdminAuth\Activation\Traits\CanActivate;
-use Strathmore\AdminAuth\Notifications\ResetPassword;
-use Strathmore\Media\HasMedia\AutoProcessMediaTrait;
-use Strathmore\Media\HasMedia\HasMediaCollectionsTrait;
-use Strathmore\Media\HasMedia\HasMediaThumbsTrait;
-use Strathmore\Media\HasMedia\ProcessMediaTrait;
+use Savannabits\AdminAuth\Activation\Contracts\CanActivate as CanActivateContract;
+use Savannabits\AdminAuth\Activation\Traits\CanActivate;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
+use Savannabits\Media\HasMedia\AutoProcessMediaTrait;
+use Savannabits\Media\HasMedia\HasMediaCollectionsTrait;
+use Savannabits\Media\HasMedia\HasMediaThumbsTrait;
+use Savannabits\Media\HasMedia\ProcessMediaTrait;
 use Illuminate\Contracts\Routing\UrlGenerator;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;

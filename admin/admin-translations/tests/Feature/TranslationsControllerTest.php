@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminTranslations\Test\Feature;
+namespace Savannabits\AdminTranslations\Test\Feature;
 
-use Strathmore\AdminTranslations\Test\TestCase;
-use Strathmore\AdminTranslations\Translation;
+use Savannabits\AdminTranslations\Test\TestCase;
+use Savannabits\AdminTranslations\Translation;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Gate;
 
@@ -51,7 +51,7 @@ class TranslationsControllerTest extends TestCase
         $this->authorizedToIndex();
 
         $this->createTranslation('*', 'admin', 'Default version', ['en' => '1 English version', 'sk' => '1 Slovak version']);
-        $this->createTranslation('*', 'frontend', 'some.key', ['en' => '2 English version', 'sk' => '2 Slovak version']);
+        $this->createTranslation('*', 'web', 'some.key', ['en' => '2 English version', 'sk' => '2 Slovak version']);
 
         $this->get('/admin/translations?group=admin')
             ->assertStatus(200)

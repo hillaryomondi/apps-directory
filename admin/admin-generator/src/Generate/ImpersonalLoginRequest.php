@@ -1,4 +1,4 @@
-<?php namespace Strathmore\AdminGenerator\Generate;
+<?php namespace Savannabits\AdminGenerator\Generate;
 
 use Symfony\Component\Console\Input\InputOption;
 
@@ -34,7 +34,7 @@ class ImpersonalLoginRequest extends ClassGenerator {
 
     protected function buildClass() {
 
-        return view('brackets/admin-generator::templates.admin-user.impersonal-login-request', [
+        return view('savannabits/admin-generator::templates.admin-user.impersonal-login-request', [
             'modelBaseName' => $this->modelBaseName,
             'modelDotNotation' => $this->modelDotNotation,
             'modelWithNamespaceFromDefault' => $this->modelWithNamespaceFromDefault,

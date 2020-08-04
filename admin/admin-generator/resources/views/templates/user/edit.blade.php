@@ -1,4 +1,4 @@
-{{'@'}}extends('brackets/admin-ui::admin.layout.default')
+{{'@'}}extends('savannabits/admin-ui::admin.layout.default')
 
 {{'@'}}section('title', trans('admin.{{ $modelLangFormat }}.actions.edit', ['name' => ${{ $modelVariableName }}->{{$modelTitle}}]))
 
@@ -37,7 +37,7 @@
                     <div class="card-footer">
 	                    <button type="submit" class="btn btn-primary" :disabled="submiting">
 		                    <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
-                            @{{ trans('brackets/admin-ui::admin.btn.save') }}
+                            @{{ trans('savannabits/admin-ui::admin.btn.save') }}
 	                    </button>
                     </div>
 

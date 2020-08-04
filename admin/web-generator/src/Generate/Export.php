@@ -1,4 +1,4 @@
-<?php namespace Strathmore\WebGenerator\Generate;
+<?php namespace Savannabits\WebGenerator\Generate;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -46,7 +46,7 @@ class Export extends ClassGenerator {
     }
 
     protected function buildClass() {
-        return view('strathmore/web-generator::'.$this->view, [
+        return view('savannabits/web-generator::'.$this->view, [
             'exportNamespace' => $this->classNamespace,
             'modelFullName' => $this->modelFullName,
             'classBaseName' => $this->exportBaseName,

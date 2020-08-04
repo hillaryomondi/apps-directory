@@ -1,9 +1,9 @@
 <?php
 
-namespace Strathmore\AdminListing;
+namespace Savannabits\AdminListing;
 
-use Strathmore\AdminListing\Console\Commands\AdminListingInstall;
-use Strathmore\AdminListing\Facades\AdminListing as AdminListingFacade;
+use Savannabits\AdminListing\Console\Commands\AdminListingInstall;
+use Savannabits\AdminListing\Facades\AdminListing as AdminListingFacade;
 use Illuminate\Support\ServiceProvider;
 
 class AdminListingServiceProvider extends ServiceProvider

@@ -1,6 +1,6 @@
 <?php
 
-namespace Strathmore\AdvancedLogger\Handlers;
+namespace Savannabits\AdvancedLogger\Handlers;
 
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;

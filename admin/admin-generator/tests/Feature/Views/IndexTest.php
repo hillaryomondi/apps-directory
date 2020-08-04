@@ -1,8 +1,8 @@
 <?php
 
-namespace Strathmore\AdminGenerator\Tests\Feature\Views;
+namespace Savannabits\AdminGenerator\Tests\Feature\Views;
 
-use Strathmore\AdminGenerator\Tests\TestCase;
+use Savannabits\AdminGenerator\Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\File;
 
@@ -29,7 +29,7 @@ class IndexTest extends TestCase
         $this->assertFileExists($indexPath);
         $this->assertFileExists($listingJsPath);
         $this->assertFileExists($indexJsPath);
-        $this->assertStringStartsWith('@extends(\'brackets/admin-ui::admin.layout.default\')', File::get($indexPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($indexPath));
         $this->assertStringStartsWith('import AppListing from \'../app-components/Listing/AppListing\';
 
 Vue.component(\'category-listing\', {
@@ -60,7 +60,7 @@ Vue.component(\'category-listing\', {
         $this->assertFileExists($indexPath);
         $this->assertFileExists($listingJsPath);
         $this->assertFileExists($indexJsPath);
-        $this->assertStringStartsWith('@extends(\'brackets/admin-ui::admin.layout.default\')', File::get($indexPath));
+        $this->assertStringStartsWith('@extends(\'savannabits/admin-ui::admin.layout.default\')', File::get($indexPath));
         $this->assertStringStartsWith('import AppListing from \'../app-components/Listing/AppListing\';
 
 Vue.component(\'billing-my-article-listing\', {
