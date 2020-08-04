@@ -14,7 +14,9 @@ export default {
         }
     },
     mounted() {
-        this.fetchRole();
+        if (this.form.id) {
+            this.fetchRole();
+        }
     },
     methods: {
         fetchRole() {

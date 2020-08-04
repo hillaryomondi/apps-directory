@@ -13,12 +13,12 @@
         <link href="{{asset('search-23/css/main.css')}}" rel="stylesheet" />
     </head>
     <body>
-        <div id="app">
+        <div id="app" v-cloak>
             <search-component
                 v-cloak
                 inline-template
             >
-                <div>
+                <div v-cloak>
                     <b-navbar v-cloak type="light" variant="primary" v-if="!searched">
                         @include('layouts.partials.auth-nav')
                     </b-navbar>

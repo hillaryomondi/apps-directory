@@ -19,9 +19,6 @@ Vue.component('search-component', {
         }
     },
     mounted() {
-        console.log("The search component is working.");
-        console.log("We will call the api for testing when this component is mounted and monitor the console to see the response.")
-        this.testApi();
     },
     methods: {
         debounceInput: _.debounce(function(e) {

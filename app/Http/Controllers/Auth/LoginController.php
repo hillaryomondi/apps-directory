@@ -42,11 +42,12 @@ class LoginController extends Controller
     public function fixIntendedUrl() {
         \Log::info("Current intended url:". \Session::get('url.intended'));
         $intended = \Session::get('url.intended');
-        $base = parse_url($intended,PHP_URL_SCHEME)."://".parse_url($intended,PHP_URL_HOST);
-        \Log::info("Base: $base");
+        $path = parse_url($intended,PHP_URL_PATH);
+        $query = parse_url($intended,PHP_URL_QUERY);
+        $pathAndQuery = $query ? "$path?$query":$path;
         $newBase = url('');
-        \Log::info("Replace with $newBase");
-        $intended = str_replace($base,$newBase,$intended);
+        \Log::info("Replace base with $newBase");
+        $intended = "$newBase$pathAndQuery";
         \Log::info("New Intended: $intended");
         \Session::put('url.intended',$intended);
     }

@@ -9,6 +9,7 @@
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
+        "echo": "node echo.js",
         "css-prod": "npm run css-production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "css-production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --env.mixfile=webpack.css.mix --config=node_modules/laravel-mix/setup/webpack.config.js"
@@ -36,6 +37,7 @@
         "@babel/preset-env": "^7.9.6",
         "browser-sync": "^2.26.7",
         "browser-sync-webpack-plugin": "^2.2.2",
+        "laravel-echo-server": "^1.6.2",
         "laravel-mix-merge-manifest": "^0.1.2"
     }
 }

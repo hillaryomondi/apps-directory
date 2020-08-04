@@ -99,3 +99,4 @@ RUN  chown -R $user:www-data ${WORKING_DIR}
 #CMD find $WORKING_DIR -type d -exec chmod 755 {} \;
 #CMD find $WORKING_DIR -type f -exec chmod 664 {} \;
 USER $user
+CMD ["./entry.sh"]
