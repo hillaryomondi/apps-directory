@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Repos\Users;
 use App\User;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
@@ -68,10 +71,33 @@ class LoginController extends Controller
         \Log::info("Calling cas->user");
         /*$auth = cas()->checkAuthentication();
         if (!$auth) cas()->authenticate();*/
-        $username = cas()->user();
+        $username = cas()->user();//homondi
         \Log::info("User: $username is being logged in");
         try {
-            $user = User::whereUsername($username)->firstOrFail();
+            $user = User::whereUsername($username)->first(); // returns null if no user.
+            if (!$user) {
+                $data = Users::getUserFromWs($username);
+                if (!$data) abort(400, "No User details found from dataservice");
+                // 3. Create a new User() and fill the user with details obtained in 2 above
+                $user = new User();
+                if (is_numeric($username)) {
+                    // Data is student
+                    $user->username = $data->studentNo;
+                    $user->email = $data->email;
+                    $user->name = $data->studentNames;
+                    $user->last_name = $data->surname;
+                    $otherNames = explode(" ",$data->otherNames);
+                    $user->first_name = $otherNames[0];
+                    if (count($otherNames) > 1) $user->middle_name = $otherNames[1];
+                    $user->dob = $data->dateOfBirth;
+                    $user->gender = $data->gender;
+                    $user->saveOrFail();
+                } else {
+                    // Data is staff
+                }
+
+
+            }
             \Log::info("Logging in $user->username");
             \Auth::login($user);
             \Log::info("sending login response");
