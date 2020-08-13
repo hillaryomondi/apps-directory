@@ -29,7 +29,7 @@ class StoreSuApplication extends FormRequest
             'name' => ['required', Rule::unique('su_applications', 'name'), 'string'],
             'description' => ['nullable', 'string'],
             'enabled' => ['required', 'boolean'],
-            'departments' => ['required', 'array'],
+            'department' => ['required', 'array'],
             'tags' => ['required','array'],
             'url' => ['required', 'string'],
             'private' => ['required','boolean'],
