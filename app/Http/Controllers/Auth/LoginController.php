@@ -94,6 +94,20 @@ class LoginController extends Controller
                     $user->saveOrFail();
                 } else {
                     // Data is staff
+                    $user->username = $data->username;
+                    $user->email = $data->email;
+                    $user->name = $data->names;
+                    $user->first_name = $data->firstName;
+                    $user->middle_name = $data->middleName;
+                    $user->last_name = $data->lastName;
+                    $user->dob = $data->dateOfBirth;
+                    $user->gender = $data->gender;
+                    $user->saveOrFail();
+
+
+
+
+
                 }
 
 
