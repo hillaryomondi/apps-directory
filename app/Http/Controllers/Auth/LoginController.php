@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Repos\Users;
+use App\Role;
 use App\User;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
@@ -80,6 +81,9 @@ class LoginController extends Controller
                 if (!$data) abort(400, "No User details found from dataservice");
                 // 3. Create a new User() and fill the user with details obtained in 2 above
                 $user = new User();
+
+                $studentRole = Role::whereName('Student')->first();
+                $staffRole = Role::whereName('Staff')->first();
                 if (is_numeric($username)) {
                     // Data is student
                     $user->username = $data->studentNo;
@@ -92,8 +96,21 @@ class LoginController extends Controller
                     $user->dob = $data->dateOfBirth;
                     $user->gender = $data->gender;
                     $user->saveOrFail();
+
+                    if ($studentRole) $user->assignRole([$studentRole]);
                 } else {
                     // Data is staff
+                    $user->username = $data->username;
+                    $user->email = $data->email;
+                    $user->name = $data->names;
+                    $user->first_name = $data->firstName;
+                    $user->middle_name = $data->middleName;
+                    $user->last_name = $data->lastName;
+                    $user->dob = $data->dateOfBirth;
+                    $user->gender = $data->gender;
+                    $user->saveOrFail();
+
+                    if ($staffRole) $user->assignRole([$staffRole]);
                 }
 
 
@@ -108,13 +125,6 @@ class LoginController extends Controller
             cas()->logoutWithUrl(env('CAS_REDIRECT_PATH'));
             return $this->sendFailedLoginResponse($request);
         }
-        $this->incrementLoginAttempts($request);
-
-        return $this->sendFailedLoginResponse($request);
-
-        // If the login attempt was unsuccessful we will increment the number of attempts
-        // to login and redirect the user back to the login form. Of course, when this
-        // user surpasses their maximum number of attempts they will get locked out.
     }
     protected function sendLoginResponse(Request $request)
     {
