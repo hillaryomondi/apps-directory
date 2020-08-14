@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Repos\Users;
+use App\Role;
 use App\User;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
@@ -80,6 +81,9 @@ class LoginController extends Controller
                 if (!$data) abort(400, "No User details found from dataservice");
                 // 3. Create a new User() and fill the user with details obtained in 2 above
                 $user = new User();
+
+                $studentRole = Role::whereName('Student')->first();
+                $staffRole = Role::whereName('Staff')->first();
                 if (is_numeric($username)) {
                     // Data is student
                     $user->username = $data->studentNo;
@@ -92,6 +96,8 @@ class LoginController extends Controller
                     $user->dob = $data->dateOfBirth;
                     $user->gender = $data->gender;
                     $user->saveOrFail();
+
+                    if ($studentRole) $user->assignRole([$studentRole]);
                 } else {
                     // Data is staff
                     $user->username = $data->username;
@@ -104,10 +110,7 @@ class LoginController extends Controller
                     $user->gender = $data->gender;
                     $user->saveOrFail();
 
-
-
-
-
+                    if ($staffRole) $user->assignRole([$staffRole]);
                 }
 
 
