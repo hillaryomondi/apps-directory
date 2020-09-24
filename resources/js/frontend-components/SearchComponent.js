@@ -48,7 +48,6 @@ Vue.component('search-component', {
                 //When we hit results, we set searched = true
 
                 vm.searchResultsObject = res.data.payload;
-                console.log(vm.searchResultsObject);
                 vm.searched = true;
             }).catch(err => {
                 console.log(err);
