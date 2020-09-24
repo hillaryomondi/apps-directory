@@ -20,6 +20,12 @@ Vue.component('search-component', {
     },
     mounted() {
     },
+    computed: {
+        total() {
+            let vm = this;
+            return vm.searchResultsObject?.data?.length || 0
+        }
+    },
     methods: {
         debounceInput: _.debounce(function(e) {
             this.fetchAppResults(this.search_query);
@@ -42,6 +48,7 @@ Vue.component('search-component', {
                 //When we hit results, we set searched = true
 
                 vm.searchResultsObject = res.data.payload;
+                console.log(vm.searchResultsObject);
                 vm.searched = true;
             }).catch(err => {
                 console.log(err);
