@@ -28,6 +28,6 @@ class HomeController extends Controller
 
     public function backend()
     {
-        return view('web.backend');
+        return view('web.ticket.index');
     }
 }

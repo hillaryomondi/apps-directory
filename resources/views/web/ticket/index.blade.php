@@ -5,7 +5,7 @@
 @section('body')
 
     <ticket-listing
-        :data="{{ $data->toJson() }}"
+        {{--:data="{{ $data->toJson() }}" --}}
         :url="'{{ url('tickets') }}'"
         inline-template>
 
