@@ -42,13 +42,15 @@
             {{--TODO: Populate the app details here (Only the ones necessary or relevant) --}}
             <b-form-group label-cols="4" label="App Name">
                 <span class="form-control">
-                    @{{ currentApplication.name }}
+                    @{{  currentApplication.name }}
                 </span>
             </b-form-group>
-            <b-form-group label-cols="4" label="App URL">
-                <span class="form-control">
-                    @{{ currentApplication.url }}
-                </span>
+            <b-form-group label-cols="4" label="Go to Application">
+                <div class="border p-2">
+                    <a target="_blank" :href="currentApplication.url">
+                        @{{ currentApplication.url }}
+                    </a>
+                </div>
             </b-form-group>
             <b-form-group label-class="font-weight-bolder" label="App Description">
                 <div class="border p-2" v-html="currentApplication.description"> </div>
